@@ -103,9 +103,9 @@ export default function Footer() {
             </h3>
             <ul className={`space-y-2 text-sm ${lang === 'kh' ? 'font-khmer' : ''}`}>
               <li><Link href="/admissions" className="text-gray-300 hover:text-secondary transition-colors block py-1">{lang === 'kh' ? 'ការចុះឈ្មោះ' : 'Admissions'}</Link></li>
-              <li><Link href="/academics" className="text-gray-300 hover:text-secondary transition-colors block py-1">{lang === 'kh' ? 'ប្រតិទិនសិក្សា' : 'Academic Calendar'}</Link></li>
-              <li><Link href="/library" className="text-gray-300 hover:text-secondary transition-colors block py-1">{lang === 'kh' ? 'បណ្ណាល័យ' : 'University Library'}</Link></li>
-              <li><Link href="/campuses" className="text-gray-300 hover:text-secondary transition-colors block py-1">{lang === 'kh' ? 'ទីតាំងសាខា' : 'Our Campuses'}</Link></li>
+              <li><Link href="/admissions/intake-dates" className="text-gray-300 hover:text-secondary transition-colors block py-1">{lang === 'kh' ? 'កាលបរិច្ឆេទចូលរៀន' : 'Intake Dates'}</Link></li>
+              <li><Link href="/scholarships" className="text-gray-300 hover:text-secondary transition-colors block py-1">{lang === 'kh' ? 'អាហារូបករណ៍' : 'Scholarships'}</Link></li>
+              <li><Link href="/about/campuses" className="text-gray-300 hover:text-secondary transition-colors block py-1">{lang === 'kh' ? 'ទីតាំងសាខា' : 'Our Campuses'}</Link></li>
               <li><Link href="/news" className="text-gray-300 hover:text-secondary transition-colors block py-1">{lang === 'kh' ? 'ព័ត៌មាន និងព្រឹត្តិការណ៍' : 'News & Events'}</Link></li>
             </ul>
           </div>
