@@ -69,11 +69,15 @@ export default function CampusesPage() {
               {info.contact_and_branches.map((campus, idx) => (
                 <div key={idx} className="flex flex-col md:flex-row gap-0 items-stretch bg-white border border-gray-100 rounded-sm overflow-hidden hover:shadow-xl transition-shadow duration-300 group">
                   <div className="w-full md:w-2/5 min-h-[250px] relative overflow-hidden bg-gray-100">
-                    <img
-                      src={idx === 0 ? "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" : `https://picsum.photos/seed/${campus.branch_name.english}/800/600`}
-                      alt={t(campus.branch_name)}
-                      className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                    />
+                    <iframe
+                      width="100%"
+                      height="100%"
+                      className="absolute inset-0 w-full h-full border-0"
+                      src={`https://maps.google.com/maps?q=${encodeURIComponent(campus.address.english + ', Cambodia')}&t=&z=14&ie=UTF8&iwloc=&output=embed`}
+                      allowFullScreen
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
+                    ></iframe>
                   </div>
                   <div className="w-full md:w-3/5 p-8 flex flex-col justify-center">
                     <div className="flex items-center mb-4">

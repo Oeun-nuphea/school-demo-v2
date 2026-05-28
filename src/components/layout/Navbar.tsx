@@ -3,12 +3,14 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { Menu, X, ChevronDown, Search } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [openSection, setOpenSection] = useState<string | null>(null);
+  const pathname = usePathname() || "";
   const { t, lang } = useLanguage();
 
   const navLinks = [
@@ -52,6 +54,11 @@ export default function Navbar() {
         { label: { english: "Internships & Jobs", khmer: "កម្មសិក្សា និងការងារ" }, href: "/student-life/internships" },
       ]
     },
+    {
+      name: { english: "Research", khmer: "ការស្រាវជ្រាវ" },
+      href: "/research",
+      subItems: []
+    },
   ];
 
   const toggleSection = (name: string) => {
@@ -92,30 +99,41 @@ export default function Navbar() {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8 items-center h-full">
-            {navLinks.map((link) => (
+            {navLinks.map((link) => {
+              const isActive = (pathname.startsWith(link.href) && link.href !== '/') || link.subItems.some(subItem => pathname === subItem.href || pathname.startsWith(subItem.href));
+              return (
               <div key={link.name.english} className="relative group h-full flex items-center">
                 <Link
                   href={link.href}
-                  className={`text-gray-700 hover:text-primary font-medium flex items-center h-full transition-colors ${lang === 'kh' ? 'font-khmer text-[15px]' : ''}`}
+                  className={`flex items-center py-1 mt-1 transition-colors border-b-2 ${
+                    isActive ? 'text-primary font-bold border-primary' : 'text-gray-700 font-medium border-transparent hover:text-primary'
+                  } ${lang === 'kh' ? 'font-khmer text-[15px]' : ''}`}
                 >
                   {t(link.name)}
-                  <ChevronDown className="w-4 h-4 ml-1 opacity-50 group-hover:opacity-100 group-hover:-rotate-180 transition-all duration-300" />
+                  {link.subItems.length > 0 && (
+                    <ChevronDown className="w-4 h-4 ml-1 opacity-50 group-hover:opacity-100 group-hover:-rotate-180 transition-all duration-300" />
+                  )}
                 </Link>
                 {/* Organized dropdown indicator */}
-                <div className="absolute left-0 top-full hidden group-hover:block w-56 bg-white border-x border-b uni-border shadow-lg py-2 rounded-b-sm">
-                  <div className="absolute -top-px left-0 right-0 h-px bg-primary"></div>
-                  {link.subItems.map((subItem) => (
-                    <Link
-                      key={subItem.label.english}
-                      href={subItem.href}
-                      className={`block px-5 py-2.5 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary hover:pl-6 transition-all duration-200 ${lang === 'kh' ? 'font-khmer' : ''}`}
-                    >
-                      {t(subItem.label)}
-                    </Link>
-                  ))}
-                </div>
+                {link.subItems.length > 0 && (
+                  <div className="absolute left-0 top-full hidden group-hover:block w-56 bg-white border-x border-b uni-border shadow-lg py-2 rounded-b-sm">
+                    <div className="absolute -top-px left-0 right-0 h-px bg-primary"></div>
+                    {link.subItems.map((subItem) => (
+                      <Link
+                        key={subItem.label.english}
+                        href={subItem.href}
+                        className={`block px-5 py-2.5 text-sm transition-all duration-200 ${
+                          pathname === subItem.href || pathname.startsWith(subItem.href) ? 'text-primary font-bold bg-primary/5 pl-6 border-l-2 border-primary' : 'text-gray-700 hover:bg-gray-50 hover:text-primary hover:pl-6'
+                        } ${lang === 'kh' ? 'font-khmer' : ''}`}
+                      >
+                        {t(subItem.label)}
+                      </Link>
+                    ))}
+                  </div>
+                )}
               </div>
-            ))}
+              );
+            })}
           </nav>
 
           {/* Action Area */}
@@ -144,24 +162,32 @@ export default function Navbar() {
       {isOpen && (
         <div className="md:hidden absolute top-20 left-0 w-full bg-white shadow-xl max-h-[calc(100vh-5rem)] overflow-y-auto border-b-4 border-secondary">
           <div className="px-6 py-8 space-y-6">
-            {navLinks.map((link) => (
+            {navLinks.map((link) => {
+              const isActive = (pathname.startsWith(link.href) && link.href !== '/') || link.subItems.some(subItem => pathname === subItem.href || pathname.startsWith(subItem.href));
+              return (
               <div key={link.name.english} className="border-b border-gray-100 pb-4 last:border-0 last:pb-0">
                 <button
                   onClick={() => toggleSection(link.name.english)}
-                  className={`w-full flex justify-between items-center text-xl font-sans font-semibold text-gray-900 group ${lang === 'kh' ? 'font-khmer' : ''}`}
+                  className={`w-full flex justify-between items-center text-xl font-sans group ${
+                    isActive ? 'text-primary font-bold' : 'text-gray-900 font-semibold'
+                  } ${lang === 'kh' ? 'font-khmer' : ''}`}
                 >
                   {t(link.name)}
-                  <ChevronDown className={`w-6 h-6 text-gray-400 transition-transform duration-300 ${openSection === link.name.english ? '-rotate-180 text-primary' : ''}`} />
+                  {link.subItems.length > 0 && (
+                    <ChevronDown className={`w-6 h-6 text-gray-400 transition-transform duration-300 ${openSection === link.name.english ? '-rotate-180 text-primary' : ''}`} />
+                  )}
                 </button>
 
-                {openSection === link.name.english && (
+                {openSection === link.name.english && link.subItems.length > 0 && (
                   <div className="pt-5 pb-2 space-y-4">
                     {link.subItems.map((subItem) => (
                       <Link
                         key={subItem.label.english}
                         href={subItem.href}
                         onClick={() => setIsOpen(false)}
-                        className={`block text-base font-medium text-gray-600 hover:text-primary transition-colors pl-3 border-l-2 border-gray-200 hover:border-primary ${lang === 'kh' ? 'font-khmer' : ''}`}
+                        className={`block text-base transition-colors pl-3 border-l-2 ${
+                          pathname === subItem.href || pathname.startsWith(subItem.href) ? 'text-primary font-bold border-primary' : 'text-gray-600 font-medium border-gray-200 hover:text-primary hover:border-primary'
+                        } ${lang === 'kh' ? 'font-khmer' : ''}`}
                       >
                         {t(subItem.label)}
                       </Link>
@@ -169,7 +195,8 @@ export default function Navbar() {
                   </div>
                 )}
               </div>
-            ))}
+              );
+            })}
 
             <div className="pt-6 mt-6 border-t border-gray-200 space-y-4">
               <Link
