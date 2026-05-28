@@ -1,8 +1,10 @@
 import React from "react";
 import Link from "next/link";
 import { ChevronRight, CheckCircle, BookOpen } from "lucide-react";
-import info from "../../../information.json";import { notFound } from "next/navigation";
+import info from "../../../information.json";
+import { notFound } from "next/navigation";
 
+// Since we map English slugs, let's map them to the English names in the JSON
 const collegeSlugs: Record<string, string> = {
   "business": "College of Business Administration",
   "law": "College of Law",
@@ -14,25 +16,34 @@ const collegeSlugs: Record<string, string> = {
 
 export default async function CollegePage({ params }: { params: Promise<{ slug: string }> }) {
   const resolvedParams = await params;
-  const targetCollegeName = collegeSlugs[resolvedParams.slug];
+  const targetCollegeNameEn = collegeSlugs[resolvedParams.slug];
   
-  if (!targetCollegeName) {
+  if (!targetCollegeNameEn) {
     notFound();
   }
 
-  let degrees: string[] = [];
-  let displayTitle = targetCollegeName;
+  let degrees: {khmer: string, english: string}[] = [];
+  let displayTitleEn = targetCollegeNameEn;
+  let displayTitleKh = "";
 
   if (resolvedParams.slug === 'engineering') {
-    displayTitle = "College of Engineering (Civil & Electrical)";
-    const civil = info.academic_programs.bachelor_programs.find(c => c.college === "College of Civil Engineering");
-    const electrical = info.academic_programs.bachelor_programs.find(c => c.college === "College of Electrical Engineering and Electronics");
-    if (civil) degrees.push(...civil.degrees.map(d => `Civil Engineering: ${d}`));
-    if (electrical) degrees.push(...electrical.degrees.map(d => `Electrical Engineering: ${d}`));
+    displayTitleEn = "College of Engineering";
+    displayTitleKh = "មហាវិទ្យាល័យវិស្វកម្ម";
+    const civil = info.academic_programs.bachelor_programs_by_college.find(c => c.college_name.english === "College of Civil Engineering");
+    const electrical = info.academic_programs.bachelor_programs_by_college.find(c => c.college_name.english === "College of Electrical Engineering and Electronics");
+    if (civil) {
+      degrees.push(...civil.degrees.map(d => ({ khmer: d.khmer, english: `Civil: ${d.english}` })));
+    }
+    if (electrical) {
+      degrees.push(...electrical.degrees.map(d => ({ khmer: d.khmer, english: `Electrical: ${d.english}` })));
+    }
   } else {
-    const collegeData = info.academic_programs.bachelor_programs.find(c => c.college === targetCollegeName);
+    const collegeData = info.academic_programs.bachelor_programs_by_college.find(c => c.college_name.english === targetCollegeNameEn);
     if (collegeData) {
       degrees = collegeData.degrees;
+      displayTitleKh = collegeData.college_name.khmer;
+    } else {
+      notFound();
     }
   }
 
@@ -44,15 +55,15 @@ export default async function CollegePage({ params }: { params: Promise<{ slug: 
         {/* Using a nice library photo */}
         <img 
           src="https://images.unsplash.com/photo-1532012197267-da84d127e765?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" 
-          alt={displayTitle}
+          alt={displayTitleEn}
           className="absolute inset-0 w-full h-full object-cover z-0"
         />
         <div className="relative z-20 text-center px-4 mt-10">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white mb-4 drop-shadow-md">
-            {displayTitle}
+            {displayTitleEn}
           </h1>
-          <p className="text-xl text-gray-200 font-sans max-w-2xl mx-auto">
-            Discover our rigorous curriculum and specialized degree offerings.
+          <p className="text-xl text-gray-200 font-sans max-w-2xl mx-auto font-khmer">
+            {displayTitleKh}
           </p>
         </div>
       </div>
@@ -64,7 +75,7 @@ export default async function CollegePage({ params }: { params: Promise<{ slug: 
           <ChevronRight className="w-4 h-4 mx-2 opacity-50 flex-shrink-0" />
           <span className="text-gray-900 font-medium">Colleges</span>
           <ChevronRight className="w-4 h-4 mx-2 opacity-50 flex-shrink-0" />
-          <span className="text-gray-900 font-medium">{displayTitle}</span>
+          <span className="text-gray-900 font-medium">{displayTitleEn}</span>
         </div>
       </div>
 
@@ -103,7 +114,7 @@ export default async function CollegePage({ params }: { params: Promise<{ slug: 
             <div className="w-16 h-1 bg-secondary mb-10"></div>
             
             <p className="text-lg text-gray-700 mb-12 leading-relaxed">
-              Welcome to the {displayTitle} at {info.institute_overview.institution_name}. We offer specialized degree programs designed to equip you with deep expertise, critical thinking abilities, and practical skills for your professional career.
+              Welcome to the {displayTitleEn} at {info.institution_info.name.english}. We offer specialized degree programs designed to equip you with deep expertise, critical thinking abilities, and practical skills for your professional career.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -112,8 +123,8 @@ export default async function CollegePage({ params }: { params: Promise<{ slug: 
                   <div className="flex items-start">
                     <CheckCircle className="w-6 h-6 text-secondary mr-4 flex-shrink-0 mt-0.5" />
                     <div>
-                      <h3 className="font-bold text-gray-900 text-lg mb-1">{degree}</h3>
-                      <p className="text-sm text-gray-500 uppercase tracking-widest">Bachelor's Degree Program</p>
+                      <h3 className="font-bold text-gray-900 text-lg mb-1">{degree.english}</h3>
+                      <p className="text-sm text-gray-600 font-khmer mt-1">{degree.khmer}</p>
                     </div>
                   </div>
                 </div>

@@ -2,14 +2,15 @@ import React from "react";
 import Link from "next/link";
 import { ChevronRight, GraduationCap } from "lucide-react";
 import info from "../../../information.json";
+
 export default function MasterProgramsPage() {
   return (
     <main className="min-h-screen bg-white">
       {/* Hero Banner */}
       <div className="relative w-full h-[40vh] min-h-[300px] flex items-center justify-center">
         <div className="absolute inset-0 bg-primary-dark/80 z-10"></div>
-        <img 
-          src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" 
+        <img
+          src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80"
           alt="Master Programs"
           className="absolute inset-0 w-full h-full object-cover z-0"
         />
@@ -17,8 +18,8 @@ export default function MasterProgramsPage() {
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white mb-4 drop-shadow-md">
             Master Programs
           </h1>
-          <p className="text-xl text-gray-200 font-sans max-w-2xl mx-auto">
-            Advance your career and deepen your expertise with our rigorous postgraduate degrees.
+          <p className="text-xl text-gray-200 font-sans max-w-2xl mx-auto font-khmer">
+            ថ្នាក់បរិញ្ញាបត្រជាន់ខ្ពស់ (Master Degree)
           </p>
         </div>
       </div>
@@ -37,7 +38,7 @@ export default function MasterProgramsPage() {
       {/* Main Content Layout */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="flex flex-col lg:flex-row gap-12">
-          
+
           {/* Sidebar Navigation */}
           <aside className="lg:w-1/4">
             <div className="sticky top-28 bg-gray-50 p-6 rounded-sm border border-gray-100">
@@ -61,28 +62,30 @@ export default function MasterProgramsPage() {
 
           {/* Main Content Area */}
           <div className="lg:w-3/4">
-            <h2 className="text-3xl font-serif font-bold text-gray-900 mb-6">Postgraduate Degrees</h2>
+            <h2 className="text-3xl font-serif font-bold text-gray-900 mb-6 font-khmer">
+              កម្មវិធីសិក្សាថ្នាក់បរិញ្ញាបត្រជាន់ខ្ពស់
+            </h2>
             <div className="w-16 h-1 bg-secondary mb-10"></div>
-            
+
             <p className="text-lg text-gray-700 mb-12 leading-relaxed">
-              Designed for working professionals and ambitious scholars, our Master's programs provide advanced knowledge, leadership skills, and an expanded professional network to propel you to the next stage of your career.
+              Designed for working professionals and ambitious scholars, our Master's programs provide advanced knowledge, leadership skills, and an expanded professional network.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {info.academic_programs.master_programs.map((program, idx) => (
                 <div key={idx} className="flex items-start p-6 bg-white border border-gray-100 rounded-sm hover:shadow-md hover:border-primary/50 transition-all duration-300 group">
-                  <div className="w-10 h-10 bg-gray-50 rounded-full flex items-center justify-center mr-4 group-hover:bg-primary/10 transition-colors">
+                  <div className="w-10 h-10 bg-gray-50 rounded-full flex items-center justify-center mr-4 flex-shrink-0 group-hover:bg-primary/10 transition-colors">
                     <GraduationCap className="w-5 h-5 text-gray-400 group-hover:text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-serif font-bold text-gray-900 text-lg mb-1">{program}</h3>
-                    <p className="text-sm text-gray-500 uppercase tracking-widest">Master's Degree</p>
+                    <h3 className="font-serif font-bold text-gray-900 text-lg mb-1">{program.english}</h3>
+                    <p className="text-sm text-gray-600 font-khmer">{program.khmer}</p>
                   </div>
                 </div>
               ))}
             </div>
           </div>
-          
+
         </div>
       </div>
     </main>
