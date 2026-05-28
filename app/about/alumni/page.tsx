@@ -104,7 +104,7 @@ export default function AlumniPage() {
             
             <div className="flex items-center justify-between mb-8">
               <div>
-                <h2 className="text-3xl font-serif font-bold text-gray-900 mb-4">{lang === 'kh' ? 'រឿងរ៉ាវជោគជ័យ' : 'Alumni Success Stories'}</h2>
+                <h2 className="text-3xl font-serif font-bold text-gray-900 mb-4">{lang === 'kh' ? 'ភាពជោគជ័យ' : 'Alumni Success Stories'}</h2>
                 <div className="w-16 h-1 bg-secondary"></div>
               </div>
             </div>
