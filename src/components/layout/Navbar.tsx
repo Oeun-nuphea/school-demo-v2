@@ -28,6 +28,7 @@ export default function Navbar() {
         { label: { english: "Bachelor Programs", khmer: "ថ្នាក់បរិញ្ញាបត្រ" }, href: "/admissions/bachelor" },
         { label: { english: "Intake Dates", khmer: "កាលបរិច្ឆេទចូលរៀន" }, href: "/admissions/intake-dates" },
         { label: { english: "Tuition Fees", khmer: "តម្លៃសិក្សា" }, href: "/admissions/tuition-fees" },
+        { label: { english: "Scholarships", khmer: "អាហារូបករណ៍" }, href: "/scholarships" },
       ]
     },
     {
@@ -170,7 +171,14 @@ export default function Navbar() {
               </div>
             ))}
 
-            <div className="pt-6 mt-6 border-t border-gray-200">
+            <div className="pt-6 mt-6 border-t border-gray-200 space-y-4">
+              <Link
+                href="/portal"
+                onClick={() => setIsOpen(false)}
+                className={`block w-full py-4 text-lg font-bold text-primary bg-primary/5 border border-primary/20 text-center rounded-sm hover:bg-primary/10 transition-colors shadow-sm ${lang === 'kh' ? 'font-khmer' : ''}`}
+              >
+                {lang === 'kh' ? 'វិបផតថលនិស្សិត' : 'Student Portal'}
+              </Link>
               <Link
                 href="/apply"
                 onClick={() => setIsOpen(false)}
