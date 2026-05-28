@@ -119,9 +119,6 @@ export default function Navbar() {
 
           {/* Action Area */}
           <div className="hidden md:flex items-center space-x-4">
-            <button className="text-gray-500 hover:text-primary p-2 transition-colors">
-              <Search className="w-5 h-5" />
-            </button>
             <Link 
               href="/apply" 
               className={`bg-primary text-white px-5 py-2.5 rounded-sm font-medium hover:bg-primary-dark transition-colors shadow-sm ${lang === 'kh' ? 'font-khmer text-sm pt-3' : ''}`}

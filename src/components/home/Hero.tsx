@@ -38,25 +38,13 @@ export default function Hero() {
               <ChevronRight className="w-5 h-5 ml-2" />
             </Link>
             <Link 
-              href="/programs" 
+              href="/colleges" 
               className={`bg-transparent border border-white text-white font-medium px-8 py-3 rounded-sm hover:bg-white/10 transition-colors text-center ${lang === 'kh' ? 'font-khmer' : ''}`}
             >
               {lang === 'kh' ? 'ស្វែងរកមុខជំនាញ' : 'Explore Programs'}
             </Link>
           </div>
 
-          {/* Quick links under hero */}
-          <div className="mt-12 pt-6 border-t border-white/20 flex flex-wrap gap-6 text-sm text-white font-medium">
-            <Link href="/students" className={`hover:text-secondary flex items-center ${lang === 'kh' ? 'font-khmer' : ''}`}>
-              {lang === 'kh' ? 'និស្សិតបច្ចុប្បន្ន' : 'Current Students'} <ChevronRight className="w-4 h-4 ml-1 opacity-70"/>
-            </Link>
-            <Link href="/faculty" className={`hover:text-secondary flex items-center ${lang === 'kh' ? 'font-khmer' : ''}`}>
-              {lang === 'kh' ? 'បុគ្គលិក និងសាស្រ្តាចារ្យ' : 'Faculty & Staff'} <ChevronRight className="w-4 h-4 ml-1 opacity-70"/>
-            </Link>
-            <Link href="/alumni" className={`hover:text-secondary flex items-center ${lang === 'kh' ? 'font-khmer' : ''}`}>
-              {lang === 'kh' ? 'សមាគមអតីតនិស្សិត' : 'Alumni Portal'} <ChevronRight className="w-4 h-4 ml-1 opacity-70"/>
-            </Link>
-          </div>
         </div>
       </div>
     </div>
