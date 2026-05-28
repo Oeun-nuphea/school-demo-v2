@@ -77,7 +77,7 @@ export default function ApplyPage() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">{lang === 'kh' ? 'នាមត្រកូល និងនាមខ្លួន *' : 'Full Name *'}</label>
-                    <input required type="text" className="w-full px-4 py-3 border border-gray-300 rounded-sm focus:ring-primary focus:border-primary" placeholder={lang === 'kh' ? 'ឧទាហរណ៍៖ សុខ សាន្ត' : 'John Doe'} />
+                    <input required type="text" className="w-full px-4 py-3 border border-gray-300 rounded-sm focus:ring-primary focus:border-primary" placeholder={lang === 'kh' ? 'ឧទាហរណ៍៖ សុខ សាន្ត' : 'Sok Sen'} />
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">{lang === 'kh' ? 'លេខទូរស័ព្ទ *' : 'Phone Number *'}</label>
