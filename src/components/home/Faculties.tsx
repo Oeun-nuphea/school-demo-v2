@@ -13,7 +13,7 @@ const iconMap: Record<string, React.ElementType> = {
 
 export default function Faculties() {
   const [faculties, setFaculties] = useState<Faculty[]>([]);
-  const { lang } = useLanguage();
+  const { t, lang } = useLanguage();
 
   useEffect(() => {
     fetchFaculties().then(setFaculties);
@@ -42,14 +42,14 @@ export default function Faculties() {
                 <div className="w-14 h-14 bg-gray-50 border uni-border text-primary flex items-center justify-center rounded-sm mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
                   <Icon className="w-7 h-7" />
                 </div>
-                <h3 className="text-2xl font-serif font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">
-                  {lang === 'kh' ? 'មហាវិទ្យាល័យ ' : 'Faculty of '}{faculty.name}
+                <h3 className={`text-2xl font-serif font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors ${lang === 'kh' ? 'font-khmer' : ''}`}>
+                  {lang === 'kh' ? 'មហាវិទ្យាល័យ ' : 'Faculty of '}{t(faculty.name)}
                 </h3>
-                <p className="text-gray-600 mb-6 text-sm leading-relaxed line-clamp-3">
-                  {faculty.description}
+                <p className={`text-gray-600 mb-6 text-sm leading-relaxed line-clamp-3 ${lang === 'kh' ? 'font-khmer' : ''}`}>
+                  {t(faculty.description)}
                 </p>
                 <Link 
-                  href={`/colleges/${faculty.name.toLowerCase().split(' ')[0]}`} 
+                  href={`/colleges/${faculty.name.english.toLowerCase().split(' ')[0]}`} 
                   className={`inline-flex items-center text-primary font-semibold hover:text-primary-dark transition-colors ${lang === 'kh' ? 'font-khmer' : ''}`}
                 >
                   {lang === 'kh' ? 'ស្វែងរកមុខជំនាញ' : 'Explore Programs'}

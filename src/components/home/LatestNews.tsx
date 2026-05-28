@@ -11,7 +11,7 @@ export default function LatestNews() {
   const [news, setNews] = useState<NewsItem[]>([]);
   const [events, setEvents] = useState<EventItem[]>([]);
   const [loading, setLoading] = useState(true);
-  const { lang } = useLanguage();
+  const { t, lang } = useLanguage();
 
   useEffect(() => {
     async function loadData() {
@@ -74,21 +74,21 @@ export default function LatestNews() {
                         {/* Use standard img tag for ease without configuring next domains */}
                         <img 
                           src={item.imageUrl} 
-                          alt={item.title}
+                          alt={t(item.title)}
                           className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500"
                         />
                       </div>
                     )}
                     <div className="flex flex-col justify-center">
                       <div className="flex items-center gap-3 mb-2 text-xs font-semibold tracking-wider uppercase">
-                        <span className="text-primary">{item.category}</span>
+                        <span className={`text-primary ${lang === 'kh' ? 'font-khmer' : ''}`}>{t(item.category)}</span>
                         <span className="text-gray-400">|</span>
-                        <span className="text-gray-500">{item.date}</span>
+                        <span className={`text-gray-500 ${lang === 'kh' ? 'font-khmer' : ''}`}>{t(item.date)}</span>
                       </div>
-                      <h3 className="text-xl font-serif font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors leading-snug">
-                        <Link href={`/news/${item.id}`}>{item.title}</Link>
+                      <h3 className={`text-xl font-serif font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors leading-snug ${lang === 'kh' ? 'font-khmer' : ''}`}>
+                        <Link href={`/news/${item.id}`}>{t(item.title)}</Link>
                       </h3>
-                      <p className="text-gray-600 line-clamp-2 text-sm">{item.excerpt}</p>
+                      <p className={`text-gray-600 line-clamp-2 text-sm ${lang === 'kh' ? 'font-khmer' : ''}`}>{t(item.excerpt)}</p>
                     </div>
                   </article>
                 ))}
@@ -124,20 +124,20 @@ export default function LatestNews() {
                   <div key={event.id} className="flex bg-gray-50 hover:bg-gray-100 transition-colors border uni-border rounded-sm overflow-hidden">
                     <div className="bg-primary text-white p-4 flex flex-col justify-center items-center min-w-[80px] text-center border-r border-primary-light">
                       <span className="text-2xl font-bold font-serif leading-none">{event.date}</span>
-                      <span className="text-xs tracking-widest mt-1 font-medium">{event.month}</span>
+                      <span className={`text-xs tracking-widest mt-1 font-medium ${lang === 'kh' ? 'font-khmer text-[11px]' : ''}`}>{t(event.month)}</span>
                     </div>
                     <div className="p-4 flex-1">
-                      <h3 className="font-serif font-bold text-gray-900 mb-2 leading-tight">
-                        <Link href={`/events/${event.id}`} className="hover:text-primary">{event.title}</Link>
+                      <h3 className={`font-serif font-bold text-gray-900 mb-2 leading-tight ${lang === 'kh' ? 'font-khmer' : ''}`}>
+                        <Link href={`/events/${event.id}`} className="hover:text-primary">{t(event.title)}</Link>
                       </h3>
                       <div className="space-y-1">
                         <div className="flex items-center text-xs text-gray-500">
                           <Clock className="w-3 h-3 mr-2" />
-                          {event.time}
+                          <span className={lang === 'kh' ? 'font-khmer' : ''}>{event.time}</span>
                         </div>
                         <div className="flex items-center text-xs text-gray-500">
                           <MapPin className="w-3 h-3 mr-2" />
-                          {event.location}
+                          <span className={lang === 'kh' ? 'font-khmer' : ''}>{t(event.location)}</span>
                         </div>
                       </div>
                     </div>
