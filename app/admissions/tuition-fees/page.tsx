@@ -126,6 +126,22 @@ export default function TuitionFeesPage() {
                 </p>
               </div>
             </div>
+
+            {/* CTA Section */}
+            <div className="mt-12 text-center p-10 bg-primary/5 rounded-sm border border-primary/10">
+              <h3 className="text-2xl font-serif font-bold text-gray-900 mb-4 font-khmer">
+                {lang === 'kh' ? 'ត្រៀមខ្លួនរួចរាល់ហើយឬនៅ?' : 'Ready to Start Your Journey?'}
+              </h3>
+              <p className="text-gray-600 mb-6 font-khmer">
+                {lang === 'kh' ? 'ដាក់ពាក្យចូលរៀនឥឡូវនេះ ដើម្បីទទួលបានអាហារូបករណ៍ និងឱកាសការងារដ៏ល្អ។' : 'Apply today to secure your scholarship and unlock global opportunities.'}
+              </p>
+              <Link 
+                href="/apply" 
+                className="inline-block px-8 py-4 bg-primary text-white font-bold rounded-sm hover:bg-primary-dark transition-colors shadow-md"
+              >
+                {lang === 'kh' ? 'ដាក់ពាក្យចូលរៀនឥឡូវនេះ' : 'Apply Now'}
+              </Link>
+            </div>
           </div>
           
         </div>

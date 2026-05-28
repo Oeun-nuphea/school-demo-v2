@@ -8,6 +8,7 @@ import { useLanguage } from "@/context/LanguageContext";
 export default function ApplyPage() {
   const { t, lang } = useLanguage();
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [programLevel, setProgramLevel] = useState("");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -87,22 +88,46 @@ export default function ApplyPage() {
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">{lang === 'kh' ? 'កម្រិតសិក្សាដែលចង់រៀន *' : 'Desired Program Level *'}</label>
-                    <select required className="w-full px-4 py-3 border border-gray-300 rounded-sm focus:ring-primary focus:border-primary bg-white">
+                    <select 
+                      required 
+                      className="w-full px-4 py-3 border border-gray-300 rounded-sm focus:ring-primary focus:border-primary bg-white"
+                      value={programLevel}
+                      onChange={(e) => setProgramLevel(e.target.value)}
+                    >
                       <option value="">{lang === 'kh' ? 'ជ្រើសរើសកម្រិតសិក្សា' : 'Select Program Level'}</option>
-                      <option value="bachelor">{lang === 'kh' ? 'ថ្នាក់បរិញ្ញាបត្រ' : 'Bachelor Degree'}</option>
-                      <option value="master">{lang === 'kh' ? 'ថ្នាក់បរិញ្ញាបត្រជាន់ខ្ពស់' : 'Master Degree'}</option>
+                      {info.institution_info.levels_of_study.map((level, idx) => (
+                        <option key={idx} value={level.english}>{t(level)}</option>
+                      ))}
                     </select>
                   </div>
                   <div className="md:col-span-2">
                     <label className="block text-sm font-medium text-gray-700 mb-2">{lang === 'kh' ? 'មុខជំនាញ *' : 'Intended Major *'}</label>
                     <select required className="w-full px-4 py-3 border border-gray-300 rounded-sm focus:ring-primary focus:border-primary bg-white">
                       <option value="">{lang === 'kh' ? 'ជ្រើសរើសមុខជំនាញ' : 'Select Major'}</option>
-                      <optgroup label={lang === 'kh' ? 'មុខជំនាញពេញនិយម' : 'Popular Majors'}>
-                        <option value="business">{lang === 'kh' ? 'គ្រប់គ្រងពាណិជ្ជកម្ម' : 'Business Administration'}</option>
-                        <option value="law">{lang === 'kh' ? 'នីតិសាស្ត្រ' : 'Law'}</option>
-                        <option value="it">{lang === 'kh' ? 'ព័ត៌មានវិទ្យា' : 'Information Technology'}</option>
-                        <option value="english">{lang === 'kh' ? 'ភាសាអង់គ្លេស' : 'English Literature'}</option>
-                      </optgroup>
+                      
+                      {programLevel === 'Master Degree' && (
+                        <optgroup label={lang === 'kh' ? 'ថ្នាក់បរិញ្ញាបត្រជាន់ខ្ពស់' : 'Master Programs'}>
+                          {info.academic_programs.master_programs.map((prog, idx) => (
+                            <option key={idx} value={prog.english}>{t(prog)}</option>
+                          ))}
+                        </optgroup>
+                      )}
+
+                      {(programLevel === 'Bachelor Degree' || programLevel === 'Associate Degree') && (
+                        info.academic_programs.bachelor_programs_by_college.map((college, idx) => (
+                          <optgroup key={idx} label={t(college.college_name)}>
+                            {college.degrees.map((deg, dIdx) => (
+                              <option key={dIdx} value={deg.english}>{t(deg)}</option>
+                            ))}
+                          </optgroup>
+                        ))
+                      )}
+
+                      {(programLevel !== 'Master Degree' && programLevel !== 'Bachelor Degree' && programLevel !== 'Associate Degree' && programLevel !== '') && (
+                        <optgroup label={lang === 'kh' ? 'ជំនាញផ្សេងៗ' : 'Other Programs'}>
+                          <option value="general">{lang === 'kh' ? 'ជំនាញបច្ចេកទេសទូទៅ' : 'General Technical Skill'}</option>
+                        </optgroup>
+                      )}
                     </select>
                   </div>
                   <div className="md:col-span-2">
