@@ -49,7 +49,7 @@ export default function Faculties() {
                   {t(faculty.description)}
                 </p>
                 <Link 
-                  href={`/colleges/${faculty.name.english.toLowerCase().split(' ')[0]}`} 
+                  href={`/colleges/${faculty.name.english.toLowerCase().replace(/,/g, '').split(' ')[0]}`} 
                   className={`inline-flex items-center text-primary font-semibold hover:text-primary-dark transition-colors ${lang === 'kh' ? 'font-khmer' : ''}`}
                 >
                   {lang === 'kh' ? 'ស្វែងរកមុខជំនាញ' : 'Explore Programs'}
