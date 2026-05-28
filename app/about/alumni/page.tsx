@@ -109,13 +109,14 @@ export default function AlumniPage() {
               </div>
             </div>
 
-            <div className="grid grid-cols-1 gap-10">
+            {/* Scrollable Carousel Wrapper */}
+            <div className="flex overflow-x-auto gap-6 pb-8 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
               {alumniData.map((alumni, idx) => (
-                <div key={idx} className="bg-white border border-gray-100 shadow-sm rounded-sm p-8 flex flex-col md:flex-row gap-8 items-center hover:shadow-md transition-shadow">
+                <div key={idx} className="bg-white border border-gray-100 shadow-sm rounded-sm p-8 flex flex-col gap-6 items-center hover:shadow-md transition-shadow min-w-[320px] w-[350px] shrink-0 snap-center h-full">
                   
                   {/* Photo & Basic Info */}
-                  <div className="w-full md:w-1/3 flex flex-col items-center text-center">
-                    <div className="w-40 h-40 rounded-full overflow-hidden border-4 border-gray-50 shadow-inner mb-4 relative">
+                  <div className="w-full flex flex-col items-center text-center">
+                    <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-gray-50 shadow-inner mb-4 relative">
                       <img src={alumni.image} alt={alumni.name.english} className="w-full h-full object-cover" />
                       <div className="absolute inset-0 border-2 border-primary/10 rounded-full"></div>
                     </div>
@@ -127,21 +128,21 @@ export default function AlumniPage() {
                   </div>
 
                   {/* Professional Details & Quote */}
-                  <div className="w-full md:w-2/3 border-t md:border-t-0 md:border-l border-gray-100 pt-6 md:pt-0 md:pl-8">
+                  <div className="w-full border-t border-gray-100 pt-6 flex flex-col flex-grow">
                     <div className="space-y-3 mb-6">
-                      <div className="flex items-center text-gray-700">
-                        <Briefcase className="w-5 h-5 mr-3 text-secondary" />
-                        <span className="font-bold">{lang === 'kh' ? alumni.current_role.khmer : alumni.current_role.english}</span>
+                      <div className="flex items-start text-gray-700">
+                        <Briefcase className="w-5 h-5 mr-3 mt-0.5 text-secondary flex-shrink-0" />
+                        <span className="font-bold text-sm leading-snug">{lang === 'kh' ? alumni.current_role.khmer : alumni.current_role.english}</span>
                       </div>
-                      <div className="flex items-center text-gray-600">
-                        <GraduationCap className="w-5 h-5 mr-3 text-gray-400" />
-                        <span className="font-khmer">{lang === 'kh' ? `ជំនាញ៖ ${alumni.major.khmer}` : `Degree: ${alumni.major.english}`}</span>
+                      <div className="flex items-start text-gray-600">
+                        <GraduationCap className="w-5 h-5 mr-3 mt-0.5 text-gray-400 flex-shrink-0" />
+                        <span className="font-khmer text-sm leading-snug">{lang === 'kh' ? `ជំនាញ៖ ${alumni.major.khmer}` : `Degree: ${alumni.major.english}`}</span>
                       </div>
                     </div>
 
-                    <div className="relative bg-gray-50 rounded-sm p-6 italic text-gray-700 font-khmer leading-relaxed">
-                      <Quote className="absolute top-4 left-4 w-8 h-8 text-secondary/20" />
-                      <p className="relative z-10 pl-6">{lang === 'kh' ? alumni.quote.khmer : alumni.quote.english}</p>
+                    <div className="relative bg-gray-50 rounded-sm p-6 italic text-gray-700 font-khmer leading-relaxed text-sm flex-grow flex flex-col justify-center">
+                      <Quote className="absolute top-4 left-4 w-6 h-6 text-secondary/20" />
+                      <p className="relative z-10 pl-4">{lang === 'kh' ? alumni.quote.khmer : alumni.quote.english}</p>
                     </div>
                   </div>
 
