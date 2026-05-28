@@ -111,6 +111,10 @@
       "college": { "english": "College of Business Administration", "khmer": "មហាវិទ្យាល័យគ្រប់គ្រងពាណិជ្ជកម្ម" },
       "degree": { "english": "Bachelor of Business Administration", "khmer": "បរិញ្ញាបត្រគ្រប់គ្រងពាណិជ្ជកម្ម" },
       "duration": { "english": "4 Years (8 Semesters)", "khmer": "៤ ឆ្នាំ (៨ វគ្គ)" },
+      "description": {
+        "english": "The International Business program prepares students for careers in the global marketplace. You will develop a strong foundation in trade, finance, cross-cultural management, and international marketing — equipping you to lead and compete in today's interconnected economy.",
+        "khmer": "កម្មវិធីពាណិជ្ជកម្មអន្តរជាតិ រៀបចំសិស្សឱ្យប្រកួតប្រជែងនៅក្នុងទីផ្សារពិភពលោក។ សិស្សនឹងទទួលបាននូវចំណេះដឹងគ្រឹះស្ទាំអំពីពាណិជ្ជកម្ម ហិរញ្ញវត្ថុ ការគ្រប់គ្រងឆ្លងវប្បធម៌ និងទីផ្សារអន្តរជាតិ — ដើម្បីដឹកនាំ និងប្រកួតប្រជែងក្នុងសេដ្ឋកិច្ចសកលសម័យថ្មី។"
+      },
       "semesters": [
         {
           "label": { "english": "Semester I", "khmer": "វគ្គទី ១" },

@@ -29,6 +29,9 @@ export default function CurriculumPage({
   const collegeTitle = lang === 'kh' ? curriculum.college.khmer : curriculum.college.english;
   const degreeTitle = lang === 'kh' ? curriculum.degree.khmer : curriculum.degree.english;
   const durationTitle = lang === 'kh' ? curriculum.duration.khmer : curriculum.duration.english;
+  const description = curriculum.description
+    ? (lang === 'kh' ? curriculum.description.khmer : curriculum.description.english)
+    : null;
 
   return (
     <main className="min-h-screen bg-white">
@@ -78,8 +81,19 @@ export default function CurriculumPage({
             {lang === 'kh' ? 'គំរូកម្មវិធីសិក្សា' : 'Sample Curriculum'}
           </h2>
         </div>
-        <div className="w-16 h-1 bg-secondary mb-10" />
+        <div className="w-16 h-1 bg-secondary mb-8" />
 
+        {/* Description */}
+        {description && (
+          <div className="bg-gray-50 border border-gray-200 rounded-sm p-6 mb-12">
+            <p className={`text-sm font-semibold text-secondary uppercase tracking-wider mb-2 ${lang === 'kh' ? 'font-khmer' : ''}`}>
+              {lang === 'kh' ? 'អំពីកម្មវិធីនេះ' : 'About this Program'}
+            </p>
+            <p className={`text-gray-700 leading-relaxed ${lang === 'kh' ? 'font-khmer' : ''}`}>
+              {description}
+            </p>
+          </div>
+        )}
         {/* Semester pairs */}
         <div className="space-y-14">
           {semesterPairs.map(([left, right], pairIdx) => (
