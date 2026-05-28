@@ -18,7 +18,7 @@ export default function Navbar() {
       name: { english: "About Us", khmer: "អំពីវិទ្យាស្ថាន" },
       href: "/about",
       subItems: [
-        { label: { english: "Core Values", khmer: "សីលធម៌ និងទស្សនវិស័យ" }, href: "/about/core-values" },
+        { label: { english: "Vision & Missions", khmer: "សីលធម៌ និងទស្សនវិស័យ" }, href: "/about/vision-and-missions" },
         { label: { english: "Campus Locations", khmer: "ទីតាំងសាខា" }, href: "/about/campuses" },
       ]
     },
@@ -102,36 +102,34 @@ export default function Navbar() {
             {navLinks.map((link) => {
               const isActive = (pathname.startsWith(link.href) && link.href !== '/') || link.subItems.some(subItem => pathname === subItem.href || pathname.startsWith(subItem.href));
               return (
-              <div key={link.name.english} className="relative group h-full flex items-center">
-                <Link
-                  href={link.href}
-                  className={`flex items-center py-1 mt-1 transition-colors border-b-2 ${
-                    isActive ? 'text-primary font-bold border-primary' : 'text-gray-700 font-medium border-transparent hover:text-primary'
-                  } ${lang === 'kh' ? 'font-khmer text-[15px]' : ''}`}
-                >
-                  {t(link.name)}
+                <div key={link.name.english} className="relative group h-full flex items-center">
+                  <Link
+                    href={link.href}
+                    className={`flex items-center py-1 mt-1 transition-colors border-b-2 ${isActive ? 'text-primary font-bold border-primary' : 'text-gray-700 font-medium border-transparent hover:text-primary'
+                      } ${lang === 'kh' ? 'font-khmer text-[15px]' : ''}`}
+                  >
+                    {t(link.name)}
+                    {link.subItems.length > 0 && (
+                      <ChevronDown className="w-4 h-4 ml-1 opacity-50 group-hover:opacity-100 group-hover:-rotate-180 transition-all duration-300" />
+                    )}
+                  </Link>
+                  {/* Organized dropdown indicator */}
                   {link.subItems.length > 0 && (
-                    <ChevronDown className="w-4 h-4 ml-1 opacity-50 group-hover:opacity-100 group-hover:-rotate-180 transition-all duration-300" />
+                    <div className="absolute left-0 top-full hidden group-hover:block w-56 bg-white border-x border-b uni-border shadow-lg py-2 rounded-b-sm">
+                      <div className="absolute -top-px left-0 right-0 h-px bg-primary"></div>
+                      {link.subItems.map((subItem) => (
+                        <Link
+                          key={subItem.label.english}
+                          href={subItem.href}
+                          className={`block px-5 py-2.5 text-sm transition-all duration-200 ${pathname === subItem.href || pathname.startsWith(subItem.href) ? 'text-primary font-bold bg-primary/5 pl-6 border-l-2 border-primary' : 'text-gray-700 hover:bg-gray-50 hover:text-primary hover:pl-6'
+                            } ${lang === 'kh' ? 'font-khmer' : ''}`}
+                        >
+                          {t(subItem.label)}
+                        </Link>
+                      ))}
+                    </div>
                   )}
-                </Link>
-                {/* Organized dropdown indicator */}
-                {link.subItems.length > 0 && (
-                  <div className="absolute left-0 top-full hidden group-hover:block w-56 bg-white border-x border-b uni-border shadow-lg py-2 rounded-b-sm">
-                    <div className="absolute -top-px left-0 right-0 h-px bg-primary"></div>
-                    {link.subItems.map((subItem) => (
-                      <Link
-                        key={subItem.label.english}
-                        href={subItem.href}
-                        className={`block px-5 py-2.5 text-sm transition-all duration-200 ${
-                          pathname === subItem.href || pathname.startsWith(subItem.href) ? 'text-primary font-bold bg-primary/5 pl-6 border-l-2 border-primary' : 'text-gray-700 hover:bg-gray-50 hover:text-primary hover:pl-6'
-                        } ${lang === 'kh' ? 'font-khmer' : ''}`}
-                      >
-                        {t(subItem.label)}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </div>
+                </div>
               );
             })}
           </nav>
@@ -165,36 +163,34 @@ export default function Navbar() {
             {navLinks.map((link) => {
               const isActive = (pathname.startsWith(link.href) && link.href !== '/') || link.subItems.some(subItem => pathname === subItem.href || pathname.startsWith(subItem.href));
               return (
-              <div key={link.name.english} className="border-b border-gray-100 pb-4 last:border-0 last:pb-0">
-                <button
-                  onClick={() => toggleSection(link.name.english)}
-                  className={`w-full flex justify-between items-center text-xl font-sans group ${
-                    isActive ? 'text-primary font-bold' : 'text-gray-900 font-semibold'
-                  } ${lang === 'kh' ? 'font-khmer' : ''}`}
-                >
-                  {t(link.name)}
-                  {link.subItems.length > 0 && (
-                    <ChevronDown className={`w-6 h-6 text-gray-400 transition-transform duration-300 ${openSection === link.name.english ? '-rotate-180 text-primary' : ''}`} />
-                  )}
-                </button>
+                <div key={link.name.english} className="border-b border-gray-100 pb-4 last:border-0 last:pb-0">
+                  <button
+                    onClick={() => toggleSection(link.name.english)}
+                    className={`w-full flex justify-between items-center text-xl font-sans group ${isActive ? 'text-primary font-bold' : 'text-gray-900 font-semibold'
+                      } ${lang === 'kh' ? 'font-khmer' : ''}`}
+                  >
+                    {t(link.name)}
+                    {link.subItems.length > 0 && (
+                      <ChevronDown className={`w-6 h-6 text-gray-400 transition-transform duration-300 ${openSection === link.name.english ? '-rotate-180 text-primary' : ''}`} />
+                    )}
+                  </button>
 
-                {openSection === link.name.english && link.subItems.length > 0 && (
-                  <div className="pt-5 pb-2 space-y-4">
-                    {link.subItems.map((subItem) => (
-                      <Link
-                        key={subItem.label.english}
-                        href={subItem.href}
-                        onClick={() => setIsOpen(false)}
-                        className={`block text-base transition-colors pl-3 border-l-2 ${
-                          pathname === subItem.href || pathname.startsWith(subItem.href) ? 'text-primary font-bold border-primary' : 'text-gray-600 font-medium border-gray-200 hover:text-primary hover:border-primary'
-                        } ${lang === 'kh' ? 'font-khmer' : ''}`}
-                      >
-                        {t(subItem.label)}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </div>
+                  {openSection === link.name.english && link.subItems.length > 0 && (
+                    <div className="pt-5 pb-2 space-y-4">
+                      {link.subItems.map((subItem) => (
+                        <Link
+                          key={subItem.label.english}
+                          href={subItem.href}
+                          onClick={() => setIsOpen(false)}
+                          className={`block text-base transition-colors pl-3 border-l-2 ${pathname === subItem.href || pathname.startsWith(subItem.href) ? 'text-primary font-bold border-primary' : 'text-gray-600 font-medium border-gray-200 hover:text-primary hover:border-primary'
+                            } ${lang === 'kh' ? 'font-khmer' : ''}`}
+                        >
+                          {t(subItem.label)}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
               );
             })}
 

@@ -18,7 +18,7 @@ export default function CoreValuesPage() {
 
         <div className="relative z-20 text-center px-4 py-16">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white mb-4 drop-shadow-md">
-            {lang === 'kh' ? 'សីលធម៌ និងទស្សនវិស័យ' : 'Motto & Vision'}
+            {lang === 'kh' ? 'សីលធម៌ និងទស្សនវិស័យ' : 'Vision & Missions'}
           </h1>
           <p className="text-lg text-white/75 font-sans max-w-2xl mx-auto">
             {t(info.institution_info.motto)}
@@ -33,7 +33,7 @@ export default function CoreValuesPage() {
           <ChevronRight className="w-4 h-4 mx-2 opacity-50" />
           <span className="text-gray-900 font-medium">About Us</span>
           <ChevronRight className="w-4 h-4 mx-2 opacity-50" />
-          <span className="text-gray-900 font-medium">{lang === 'kh' ? 'សីលធម៌ និងទស្សនវិស័យ' : 'Motto & Vision'}</span>
+          <span className="text-gray-900 font-medium">{lang === 'kh' ? 'សីលធម៌ និងទស្សនវិស័យ' : 'Vision & Missions'}</span>
         </div>
       </div>
 
@@ -47,7 +47,7 @@ export default function CoreValuesPage() {
               <h3 className="text-lg font-serif font-bold text-primary mb-4 border-b border-gray-200 pb-2">In this section</h3>
               <ul className="space-y-3">
                 <li>
-                  <Link href="/about/core-values" className="block text-primary font-bold border-l-2 border-primary pl-3 transition-colors">{lang === 'kh' ? 'សីលធម៌ និងទស្សនវិស័យ' : 'Motto & Vision'}</Link>
+                  <Link href="/about/vision-and-missions" className="block text-primary font-bold border-l-2 border-primary pl-3 transition-colors">{lang === 'kh' ? 'សីលធម៌ និងទស្សនវិស័យ' : 'Vision & Missions'}</Link>
                 </li>
                 <li>
                   <Link href="/about/campuses" className="block text-gray-600 hover:text-primary transition-colors">{lang === 'kh' ? 'ទីតាំងសាខា' : 'Campus Locations'}</Link>

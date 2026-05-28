@@ -39,10 +39,10 @@ export default function Footer() {
           <div>
             <div className="flex items-center gap-3 mb-6">
               <div className="relative w-16 h-16 flex items-center justify-center">
-                <Image 
-                  src="/logo-transparent.png" 
-                  alt="AIC Logo" 
-                  fill 
+                <Image
+                  src="/logo-transparent.png"
+                  alt="AIC Logo"
+                  fill
                   sizes="64px"
                   className="object-contain"
                 />
@@ -57,9 +57,9 @@ export default function Footer() {
               </div>
             </div>
             <p className={`text-gray-300 text-sm mb-6 leading-relaxed ${lang === 'kh' ? 'font-khmer' : ''}`}>
-              {lang === 'kh' 
-                ? 'ដឹកនាំដោយសីលធម៌ បញ្ញា នវានុវត្តន៍ និងសហគ្រិនភាព នៅទូទាំងសាខាទាំង៦របស់យើង។' 
-                : 'Guided by our core values of Morality, Intelligence, Innovation, and Entrepreneurship across our 6 campuses nationwide.'}
+              {lang === 'kh'
+                ? 'ដឹកនាំដោយសីលធម៌ បញ្ញា នវានុវត្តន៍ និងសហគ្រិនភាព នៅទូទាំងសាខាទាំង៦របស់យើង។'
+                : 'Guided by our Vision & Missions of Morality, Intelligence, Innovation, and Entrepreneurship across our 6 campuses nationwide.'}
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-gray-300 hover:text-white transition-colors"><FacebookIcon className="w-5 h-5" /></a>

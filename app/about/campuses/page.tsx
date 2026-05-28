@@ -47,7 +47,7 @@ export default function CampusesPage() {
               <h3 className="text-lg font-serif font-bold text-primary mb-4 border-b border-gray-200 pb-2">In this section</h3>
               <ul className="space-y-3">
                 <li>
-                  <Link href="/about/core-values" className="block text-gray-600 hover:text-primary transition-colors">{lang === 'kh' ? 'សីលធម៌ និងទស្សនវិស័យ' : 'Motto & Vision'}</Link>
+                  <Link href="/about/vision-and-missions" className="block text-gray-600 hover:text-primary transition-colors">{lang === 'kh' ? 'សីលធម៌ និងទស្សនវិស័យ' : 'Vision & Missions'}</Link>
                 </li>
                 <li>
                   <Link href="/about/campuses" className="block text-primary font-bold border-l-2 border-primary pl-3 transition-colors">{lang === 'kh' ? 'ទីតាំងសាខា' : 'Campus Locations'}</Link>
