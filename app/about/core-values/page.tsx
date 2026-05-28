@@ -1,31 +1,85 @@
 import React from "react";
 import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 import info from "../../../information.json";
-
 export default function CoreValuesPage() {
   return (
-    <main className="min-h-screen bg-gray-50 py-12">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <Link href="/" className="inline-flex items-center text-primary hover:text-primary-light mb-8 transition-colors">
-          <ArrowLeft className="w-4 h-4 mr-2" /> Back to Home
-        </Link>
-        <div className="bg-white p-8 md:p-12 shadow-sm border uni-border rounded-sm">
-          <h1 className="text-4xl font-serif font-bold text-primary mb-6">Core Values</h1>
-          <div className="w-16 h-1 bg-secondary mb-8"></div>
-          <p className="text-lg text-gray-700 mb-8 leading-relaxed">
-            At {info.institute_overview.institution_name}, our foundation is built upon four fundamental principles that guide everything we do.
+    <main className="min-h-screen bg-white">
+      {/* Hero Banner */}
+      <div className="relative w-full h-[40vh] min-h-[300px] flex items-center justify-center">
+        <div className="absolute inset-0 bg-primary-dark/80 z-10"></div>
+        <img 
+          src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" 
+          alt="University Core Values"
+          className="absolute inset-0 w-full h-full object-cover z-0"
+        />
+        <div className="relative z-20 text-center px-4 mt-10">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white mb-4 drop-shadow-md">
+            Core Values
+          </h1>
+          <p className="text-xl text-gray-200 font-sans max-w-2xl mx-auto">
+            The fundamental principles that guide our academic excellence and community engagement.
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {info.institute_overview.core_values.map((value, idx) => (
-              <div key={idx} className="bg-gray-50 p-6 rounded-sm border border-gray-100 flex items-center space-x-4">
-                <div className="w-12 h-12 bg-primary/10 flex items-center justify-center rounded-full text-primary font-bold text-xl">
-                  {idx + 1}
+        </div>
+      </div>
+
+      {/* Breadcrumbs */}
+      <div className="bg-gray-100 border-b border-gray-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center text-sm text-gray-500">
+          <Link href="/" className="hover:text-primary transition-colors">Home</Link>
+          <ChevronRight className="w-4 h-4 mx-2 opacity-50" />
+          <span className="text-gray-900 font-medium">About AIC</span>
+          <ChevronRight className="w-4 h-4 mx-2 opacity-50" />
+          <span className="text-gray-900 font-medium">Core Values</span>
+        </div>
+      </div>
+
+      {/* Main Content Layout */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="flex flex-col lg:flex-row gap-12">
+          
+          {/* Sidebar Navigation */}
+          <aside className="lg:w-1/4">
+            <div className="sticky top-28 bg-gray-50 p-6 rounded-sm border border-gray-100">
+              <h3 className="text-lg font-serif font-bold text-primary mb-4 border-b border-gray-200 pb-2">In this section</h3>
+              <ul className="space-y-3">
+                <li>
+                  <Link href="/about/core-values" className="block text-primary font-bold border-l-2 border-primary pl-3 transition-colors">Core Values</Link>
+                </li>
+                <li>
+                  <Link href="/about/campuses" className="block text-gray-600 hover:text-primary transition-colors">Campus Locations</Link>
+                </li>
+                <li>
+                  <Link href="/news" className="block text-gray-600 hover:text-primary transition-colors">News & Announcements</Link>
+                </li>
+              </ul>
+            </div>
+          </aside>
+
+          {/* Main Content Area */}
+          <div className="lg:w-3/4">
+            <h2 className="text-3xl font-serif font-bold text-gray-900 mb-6">Our Foundation</h2>
+            <div className="w-16 h-1 bg-secondary mb-10"></div>
+            
+            <p className="text-lg text-gray-700 mb-12 leading-relaxed">
+              At {info.institute_overview.institution_name}, everything we do is built upon a strong foundation of ethics, ambition, and community focus. These four pillars guide our students, faculty, and administration in achieving global standards of education.
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {info.institute_overview.core_values.map((value, idx) => (
+                <div key={idx} className="bg-white p-8 border border-gray-100 rounded-sm hover:shadow-lg hover:border-primary/30 transition-all duration-300">
+                  <div className="w-16 h-16 bg-primary/10 flex items-center justify-center rounded-full text-primary font-serif font-bold text-2xl mb-6">
+                    0{idx + 1}
+                  </div>
+                  <h3 className="text-2xl font-serif font-bold text-gray-900 mb-4">{value}</h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    Upholding the highest standards of {value.toLowerCase()} in our academic pursuits and professional lives, ensuring our graduates are ready to make a positive impact on the world.
+                  </p>
                 </div>
-                <span className="text-xl font-serif font-semibold text-gray-900">{value}</span>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
+          
         </div>
       </div>
     </main>

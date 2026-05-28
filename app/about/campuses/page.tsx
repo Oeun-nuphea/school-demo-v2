@@ -1,31 +1,101 @@
 import React from "react";
 import Link from "next/link";
-import { ArrowLeft, MapPin } from "lucide-react";
+import { ChevronRight, MapPin } from "lucide-react";
 import info from "../../../information.json";
 
 export default function CampusesPage() {
   return (
-    <main className="min-h-screen bg-gray-50 py-12">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <Link href="/" className="inline-flex items-center text-primary hover:text-primary-light mb-8 transition-colors">
-          <ArrowLeft className="w-4 h-4 mr-2" /> Back to Home
-        </Link>
-        <div className="bg-white p-8 md:p-12 shadow-sm border uni-border rounded-sm">
-          <h1 className="text-4xl font-serif font-bold text-primary mb-6">Our Campuses</h1>
-          <div className="w-16 h-1 bg-secondary mb-8"></div>
-          <p className="text-lg text-gray-700 mb-8 leading-relaxed">
-            {info.institute_overview.institution_name} operates across {info.institute_overview.campus_locations.length} distinct campuses nationwide, bringing quality education closer to you.
+    <main className="min-h-screen bg-white">
+      {/* Hero Banner */}
+      <div className="relative w-full -[40vh] min-h-[300px] flex items-center justify-center">
+        <div className="absolute inset-0 bg-primary-dark/80 z-10"></div>
+        <img 
+          src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" 
+          alt="University Campus"
+          className="absolute inset-0 w-full h-full object-cover z-0"
+        />
+        <div className="relative z-20 text-center px-4 mt-10">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white mb-4 drop-shadow-md">
+            Our Campuses
+          </h1>
+          <p className="text-xl text-gray-200 font-sans max-w-2xl mx-auto">
+            Bringing academic excellence closer to you across {info.institute_overview.campus_locations.length} nationwide locations.
           </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {info.institute_overview.campus_locations.map((campus, idx) => (
-              <div key={idx} className="border uni-border p-6 rounded-sm flex flex-col items-center text-center hover:border-primary transition-colors hover:shadow-md">
-                <div className="w-12 h-12 bg-primary-light/10 flex items-center justify-center rounded-full mb-4">
-                  <MapPin className="w-6 h-6 text-primary" />
+        </div>
+      </div>
+
+      {/* Breadcrumbs */}
+      <div className="bg-gray-100 border-b border-gray-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center text-sm text-gray-500">
+          <Link href="/" className="hover:text-primary transition-colors">Home</Link>
+          <ChevronRight className="w-4 h-4 mx-2 opacity-50" />
+          <span className="text-gray-900 font-medium">About AIC</span>
+          <ChevronRight className="w-4 h-4 mx-2 opacity-50" />
+          <span className="text-gray-900 font-medium">Our Campuses</span>
+        </div>
+      </div>
+
+      {/* Main Content Layout */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="flex flex-col lg:flex-row gap-12">
+          
+          {/* Sidebar Navigation */}
+          <aside className="lg:w-1/4">
+            <div className="sticky top-28 bg-gray-50 p-6 rounded-sm border border-gray-100">
+              <h3 className="text-lg font-serif font-bold text-primary mb-4 border-b border-gray-200 pb-2">In this section</h3>
+              <ul className="space-y-3">
+                <li>
+                  <Link href="/about/core-values" className="block text-gray-600 hover:text-primary transition-colors">Core Values</Link>
+                </li>
+                <li>
+                  <Link href="/about/campuses" className="block text-primary font-bold border-l-2 border-primary pl-3 transition-colors">Campus Locations</Link>
+                </li>
+                <li>
+                  <Link href="/news" className="block text-gray-600 hover:text-primary transition-colors">News & Announcements</Link>
+                </li>
+              </ul>
+            </div>
+          </aside>
+
+          {/* Main Content Area */}
+          <div className="lg:w-3/4">
+            <h2 className="text-3xl font-serif font-bold text-gray-900 mb-6">Discover Our Locations</h2>
+            <div className="w-16 h-1 bg-secondary mb-10"></div>
+            
+            <p className="text-lg text-gray-700 mb-12 leading-relaxed">
+              {info.institute_overview.institution_name} is proud to serve students across Cambodia. Each of our {info.institute_overview.campus_locations.length} campuses is equipped with modern facilities, dedicated faculty, and a vibrant student community designed to foster innovation and leadership.
+            </p>
+
+            <div className="space-y-12">
+              {info.institute_overview.campus_locations.map((campus, idx) => (
+                <div key={idx} className="flex flex-col md:flex-row gap-0 items-stretch bg-white border border-gray-100 rounded-sm overflow-hidden hover:shadow-xl transition-shadow duration-300 group">
+                  <div className="w-full md:w-2/5 min-h-[250px] relative overflow-hidden bg-gray-100">
+                    {/* Using unspash for the first one, and picsum for variety to avoid broken links */}
+                    <img 
+                      src={idx === 0 ? "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" : `https://picsum.photos/seed/${campus}/800/600`}
+                      alt={`${campus} Campus`}
+                      className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    />
+                  </div>
+                  <div className="w-full md:w-3/5 p-8 flex flex-col justify-center">
+                    <div className="flex items-center mb-4">
+                      <MapPin className="w-6 h-6 text-secondary mr-3 flex-shrink-0" />
+                      <h3 className="text-2xl font-serif font-bold text-gray-900">{campus} Campus</h3>
+                    </div>
+                    <p className="text-gray-600 mb-6 leading-relaxed">
+                      Our {campus} campus offers a comprehensive range of academic programs. It serves as a central hub for student life, academic excellence, and community engagement in the region.
+                    </p>
+                    <div className="mt-auto">
+                      <button className="text-primary font-bold border-b-2 border-transparent hover:border-secondary transition-colors pb-1 flex items-center">
+                        View Campus Details <ChevronRight className="w-4 h-4 ml-1" />
+                      </button>
+                    </div>
+                  </div>
                 </div>
-                <h3 className="text-lg font-serif font-bold text-gray-900">{campus} Campus</h3>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
+          
         </div>
       </div>
     </main>
