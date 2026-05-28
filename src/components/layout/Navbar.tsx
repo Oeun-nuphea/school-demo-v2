@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Menu, X, ChevronDown, Search } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 
@@ -35,7 +36,7 @@ export default function Navbar() {
       subItems: [
         { label: { english: "Business Administration", khmer: "គ្រប់គ្រងពាណិជ្ជកម្ម" }, href: "/colleges/business" },
         { label: { english: "Law", khmer: "នីតិសាស្ត្រ" }, href: "/colleges/law" },
-        { label: { english: "Arts & Humanities", khmer: "សិល្បៈ មនុស្សសាស្ត្រ និងភាសា" }, href: "/colleges/arts" },
+        { label: { english: "Arts, Humanities & Foreign Languages", khmer: "សិល្បៈ មនុស្សសាស្ត្រ និងភាសាបរទេស" }, href: "/colleges/arts" },
         { label: { english: "Agriculture", khmer: "កសិកម្ម" }, href: "/colleges/agriculture" },
         { label: { english: "Science and Technology", khmer: "វិទ្យាសាស្ត្រ និងបច្ចេកវិទ្យា" }, href: "/colleges/science" },
         { label: { english: "Engineering", khmer: "វិស្វកម្ម" }, href: "/colleges/engineering" },
@@ -67,8 +68,15 @@ export default function Navbar() {
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
             <Link href="/" className="flex items-center gap-3">
-              <div className="w-12 h-10 bg-primary flex items-center justify-center rounded-sm">
-                <span className="text-white font-serif font-bold text-lg">AIC</span>
+              <div className="relative w-16 h-16 flex items-center justify-center">
+                <Image 
+                  src="/logo-transparent.png" 
+                  alt="AIC Logo" 
+                  fill 
+                  sizes="64px"
+                  className="object-contain"
+                  priority
+                />
               </div>
               <div className="flex flex-col">
                 <span className="font-serif font-bold text-xl text-primary leading-tight">

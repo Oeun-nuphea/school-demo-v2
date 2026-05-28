@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 import { MapPin, Phone, Mail } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 
@@ -37,8 +38,14 @@ export default function Footer() {
           {/* Brand & Info */}
           <div>
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-10 bg-white flex items-center justify-center rounded-sm">
-                <span className="text-primary font-serif font-bold text-lg">AIC</span>
+              <div className="relative w-16 h-16 flex items-center justify-center">
+                <Image 
+                  src="/logo-transparent.png" 
+                  alt="AIC Logo" 
+                  fill 
+                  sizes="64px"
+                  className="object-contain"
+                />
               </div>
               <div className="flex flex-col">
                 <span className="font-serif font-bold text-xl leading-tight text-white">
@@ -111,8 +118,8 @@ export default function Footer() {
             <ul className={`space-y-2 text-sm ${lang === 'kh' ? 'font-khmer' : ''}`}>
               <li><Link href="/colleges/business" className="text-gray-300 hover:text-secondary transition-colors block py-1">{lang === 'kh' ? 'គ្រប់គ្រងពាណិជ្ជកម្ម' : 'Business Administration'}</Link></li>
               <li><Link href="/colleges/law" className="text-gray-300 hover:text-secondary transition-colors block py-1">{lang === 'kh' ? 'នីតិសាស្ត្រ' : 'Law'}</Link></li>
-              <li><Link href="/colleges/arts" className="text-gray-300 hover:text-secondary transition-colors block py-1">{lang === 'kh' ? 'សិល្បៈ មនុស្សសាស្ត្រ' : 'Arts & Humanities'}</Link></li>
-              <li><Link href="/colleges/science" className="text-gray-300 hover:text-secondary transition-colors block py-1">{lang === 'kh' ? 'វិទ្យាសាស្ត្រ និងបច្ចេកវិទ្យា' : 'Science & Tech'}</Link></li>
+              <li><Link href="/colleges/arts" className="text-gray-300 hover:text-secondary transition-colors block py-1">{lang === 'kh' ? 'សិល្បៈ មនុស្សសាស្ត្រ និងភាសាបរទេស' : 'Arts, Humanities & Foreign Languages'}</Link></li>
+              <li><Link href="/colleges/science" className="text-gray-300 hover:text-secondary transition-colors block py-1">{lang === 'kh' ? 'វិទ្យាសាស្ត្រ និងបច្ចេកវិទ្យា' : 'Science and Technology'}</Link></li>
               <li><Link href="/colleges/engineering" className="text-gray-300 hover:text-secondary transition-colors block py-1">{lang === 'kh' ? 'វិស្វកម្ម' : 'Engineering'}</Link></li>
             </ul>
           </div>
