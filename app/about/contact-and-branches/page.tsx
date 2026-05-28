@@ -57,6 +57,9 @@ export default function ContactAndBranchesPage() {
                   <Link href="/about/vision-and-missions" className="block text-gray-600 hover:text-primary transition-colors">{lang === 'kh' ? 'សីលធម៌ និងទស្សនវិស័យ' : 'Vision & Missions'}</Link>
                 </li>
                 <li>
+                  <Link href="/about/founder-and-principal" className="block text-gray-600 hover:text-primary transition-colors">{lang === 'kh' ? 'ស្ថាបនិក និងនាយកវិទ្យាស្ថាន' : 'Priciple'}</Link>
+                </li>
+                <li>
                   <Link href="/about/campuses" className="block text-gray-600 hover:text-primary transition-colors">{lang === 'kh' ? 'ទីតាំងសាខា' : 'Campus Locations'}</Link>
                 </li>
                 <li>

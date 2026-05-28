@@ -50,6 +50,9 @@ export default function CampusesPage() {
                   <Link href="/about/vision-and-missions" className="block text-gray-600 hover:text-primary transition-colors">{lang === 'kh' ? 'សីលធម៌ និងទស្សនវិស័យ' : 'Vision & Missions'}</Link>
                 </li>
                 <li>
+                  <Link href="/about/founder-and-principal" className="block text-gray-600 hover:text-primary transition-colors">{lang === 'kh' ? 'ស្ថាបនិក និងនាយកវិទ្យាស្ថាន' : 'Priciple'}</Link>
+                </li>
+                <li>
                   <Link href="/about/campuses" className="block text-primary font-bold border-l-2 border-primary pl-3 transition-colors">{lang === 'kh' ? 'ទីតាំងសាខា' : 'Campus Locations'}</Link>
                 </li>
                 <li>
@@ -78,7 +81,7 @@ export default function CampusesPage() {
                       className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                     />
                     <div className="absolute inset-0 bg-primary/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <a 
+                      <a
                         href={`https://maps.google.com/maps?q=${encodeURIComponent(campus.address.english + ', Cambodia')}`}
                         target="_blank"
                         rel="noopener noreferrer"
