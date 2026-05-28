@@ -105,6 +105,98 @@
       ]
     }
   },
+  "curricula": {
+    "international-business": {
+      "major": { "english": "International Business", "khmer": "ពាណិជ្ជកម្មអន្តរជាតិ" },
+      "college": { "english": "College of Business Administration", "khmer": "មហាវិទ្យាល័យគ្រប់គ្រងពាណិជ្ជកម្ម" },
+      "degree": { "english": "Bachelor of Business Administration", "khmer": "បរិញ្ញាបត្រគ្រប់គ្រងពាណិជ្ជកម្ម" },
+      "duration": { "english": "4 Years (8 Semesters)", "khmer": "៤ ឆ្នាំ (៨ វគ្គ)" },
+      "semesters": [
+        {
+          "label": { "english": "Semester I", "khmer": "វគ្គទី ១" },
+          "courses": [
+            { "code": "ENG 101", "name": { "english": "Academic English I", "khmer": "ភាសាអង់គ្លេសសិក្សា I" } },
+            { "code": "KHM 101", "name": { "english": "Khmer Studies I", "khmer": "ខ្មែរសិក្សា I" } },
+            { "code": "BUS 101", "name": { "english": "Introduction to Business", "khmer": "គ្រឹះនៃពាណិជ្ជកម្ម" } },
+            { "code": "ECO 101", "name": { "english": "Introductory Economics", "khmer": "សេដ្ឋវិទ្យាបឋម" } },
+            { "code": "MAT 101", "name": { "english": "Business Mathematics", "khmer": "គណិតវិទ្យាពាណិជ្ជកម្ម" } },
+            { "code": "ITR 101", "name": { "english": "Introduction to IT", "khmer": "គ្រឹះព័ត៌មានវិទ្យា" } }
+          ]
+        },
+        {
+          "label": { "english": "Semester II", "khmer": "វគ្គទី ២" },
+          "courses": [
+            { "code": "ENG 102", "name": { "english": "Academic English II", "khmer": "ភាសាអង់គ្លេសសិក្សា II" } },
+            { "code": "KHM 102", "name": { "english": "Khmer Studies II", "khmer": "ខ្មែរសិក្សា II" } },
+            { "code": "ACC 101", "name": { "english": "Principles of Accounting", "khmer": "គោលការណ៍គណនេយ្យ" } },
+            { "code": "ECO 102", "name": { "english": "Microeconomics", "khmer": "ខ្នាតតូចសេដ្ឋវិទ្យា" } },
+            { "code": "MGT 101", "name": { "english": "Principles of Management", "khmer": "គោលការណ៍គ្រប់គ្រង" } },
+            { "code": "LAW 101", "name": { "english": "Business Law I", "khmer": "ច្បាប់ពាណិជ្ជកម្ម I" } }
+          ]
+        },
+        {
+          "label": { "english": "Semester III", "khmer": "វគ្គទី ៣" },
+          "courses": [
+            { "code": "ENG 201", "name": { "english": "Business English I", "khmer": "អង់គ្លេសពាណិជ្ជកម្ម I" } },
+            { "code": "ECO 201", "name": { "english": "Macroeconomics", "khmer": "ខ្នាតធំសេដ្ឋវិទ្យា" } },
+            { "code": "MKT 101", "name": { "english": "Principles of Marketing", "khmer": "គោលការណ៍ទីផ្សារ" } },
+            { "code": "FIN 101", "name": { "english": "Financial Management I", "khmer": "គ្រប់គ្រងហិរញ្ញវត្ថុ I" } },
+            { "code": "STA 101", "name": { "english": "Business Statistics", "khmer": "ស្ថិតិពាណិជ្ជកម្ម" } },
+            { "code": "LAW 102", "name": { "english": "Business Law II", "khmer": "ច្បាប់ពាណិជ្ជកម្ម II" } }
+          ]
+        },
+        {
+          "label": { "english": "Semester IV", "khmer": "វគ្គទី ៤" },
+          "courses": [
+            { "code": "ENG 202", "name": { "english": "Business English II", "khmer": "អង់គ្លេសពាណិជ្ជកម្ម II" } },
+            { "code": "IBS 201", "name": { "english": "International Trade", "khmer": "ពាណិជ្ជកម្មអន្តរជាតិ" } },
+            { "code": "MKT 201", "name": { "english": "International Marketing", "khmer": "ទីផ្សារអន្តរជាតិ" } },
+            { "code": "FIN 102", "name": { "english": "Financial Management II", "khmer": "គ្រប់គ្រងហិរញ្ញវត្ថុ II" } },
+            { "code": "HRM 101", "name": { "english": "Human Resource Management", "khmer": "គ្រប់គ្រងធនធានមនុស្ស" } },
+            { "code": "ACC 201", "name": { "english": "Cost Accounting", "khmer": "គណនេយ្យថ្លៃដើម" } }
+          ]
+        },
+        {
+          "label": { "english": "Semester V", "khmer": "វគ្គទី ៥" },
+          "courses": [
+            { "code": "IBS 301", "name": { "english": "Global Business Environment", "khmer": "បរិស្ថានពាណិជ្ជកម្មសកល" } },
+            { "code": "IBS 302", "name": { "english": "Export & Import Management", "khmer": "គ្រប់គ្រងនាំចេញ-នាំចូល" } },
+            { "code": "MKT 301", "name": { "english": "Consumer Behavior", "khmer": "អាកប្បកិរិយាអ្នកប្រើប្រាស់" } },
+            { "code": "FIN 301", "name": { "english": "International Finance", "khmer": "ហិរញ្ញវត្ថុអន្តរជាតិ" } },
+            { "code": "ENT 301", "name": { "english": "Entrepreneurship", "khmer": "សហគ្រិនភាព" } },
+            { "code": "LOG 301", "name": { "english": "Supply Chain & Logistics", "khmer": "ខ្សែច្រវ៉ាក់ផ្គត់ផ្គង់ និងដឹកជញ្ជូន" } }
+          ]
+        },
+        {
+          "label": { "english": "Semester VI", "khmer": "វគ្គទី ៦" },
+          "courses": [
+            { "code": "IBS 401", "name": { "english": "Cross-Cultural Management", "khmer": "គ្រប់គ្រងឆ្លងវប្បធម៌" } },
+            { "code": "IBS 402", "name": { "english": "Foreign Direct Investment", "khmer": "វិនិយោគផ្ទាល់បរទេស" } },
+            { "code": "DIG 401", "name": { "english": "Digital Business Strategy", "khmer": "យុទ្ធសាស្ត្រពាណិជ្ជកម្មឌីជីថល" } },
+            { "code": "MGT 401", "name": { "english": "Strategic Management", "khmer": "គ្រប់គ្រងយុទ្ធសាស្ត្រ" } },
+            { "code": "RES 401", "name": { "english": "Business Research Methods", "khmer": "វិធីសាស្ត្រស្រាវជ្រាវពាណិជ្ជកម្ម" } },
+            { "code": "ETH 401", "name": { "english": "Business Ethics", "khmer": "សីលធម៌ពាណិជ្ជកម្ម" } }
+          ]
+        },
+        {
+          "label": { "english": "Semester VII", "khmer": "វគ្គទី ៧" },
+          "courses": [
+            { "code": "IBS 501", "name": { "english": "ASEAN Economic Community", "khmer": "សហគមន៍សេដ្ឋកិច្ចអាស៊ាន" } },
+            { "code": "IBS 502", "name": { "english": "International Negotiation", "khmer": "ការចរចាអន្តរជាតិ" } },
+            { "code": "PRJ 501", "name": { "english": "Project Management", "khmer": "គ្រប់គ្រងគម្រោង" } },
+            { "code": "INT 501", "name": { "english": "Internship I", "khmer": "កម្មសិក្សា I" } }
+          ]
+        },
+        {
+          "label": { "english": "Semester VIII", "khmer": "វគ្គទី ៨" },
+          "courses": [
+            { "code": "INT 502", "name": { "english": "Internship II", "khmer": "កម្មសិក្សា II" } },
+            { "code": "THE 501", "name": { "english": "Thesis / Capstone Project", "khmer": "និក្ខេបបទ / គម្រោងចុងក្រោយ" } }
+          ]
+        }
+      ]
+    }
+  },
   "academic_programs": {
     "master_programs": [
       { "khmer": "បរិញ្ញាបត្រជាន់ខ្ពស់នីតិឯកជន", "english": "Master of Private Law" },

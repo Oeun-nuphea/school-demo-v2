@@ -1,7 +1,7 @@
 'use client'
 import React, { use } from "react";
 import Link from "next/link";
-import { ChevronRight, CheckCircle, BookOpen } from "lucide-react";
+import { ChevronRight, CheckCircle, BookOpen, ClipboardList } from "lucide-react";
 import info from "../../../information.json";
 import { notFound } from "next/navigation";
 import { useLanguage } from "@/context/LanguageContext";
@@ -20,6 +20,11 @@ export default function CollegePage({ params }: { params: Promise<{ slug: string
   const resolvedParams = use(params);
   const targetCollegeNameEn = collegeSlugs[resolvedParams.slug];
   const { t, lang } = useLanguage();
+
+  // Map degree English names to curriculum slugs (only for degrees that have a curriculum page)
+  const curriculumSlugs: Record<string, string> = {
+    "International Business": "international-business",
+  };
   
   if (!targetCollegeNameEn) {
     notFound();
@@ -121,16 +126,30 @@ export default function CollegePage({ params }: { params: Promise<{ slug: string
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {degrees.map((degree, idx) => (
-                <div key={idx} className="bg-white border border-gray-200 p-6 rounded-sm shadow-sm hover:shadow-md hover:border-primary/40 transition-all duration-300">
-                  <div className="flex items-start">
-                    <CheckCircle className="w-6 h-6 text-secondary mr-4 flex-shrink-0 mt-0.5" />
-                    <div>
-                      <h3 className="font-bold text-gray-900 text-lg mb-1 font-khmer">{t(degree)}</h3>
+              {degrees.map((degree, idx) => {
+                const curriculumSlug = curriculumSlugs[degree.english];
+                return (
+                  <div key={idx} className="bg-white border border-gray-200 p-6 rounded-sm shadow-sm hover:shadow-md hover:border-primary/40 transition-all duration-300">
+                    <div className="flex items-start mb-4">
+                      <CheckCircle className="w-6 h-6 text-secondary mr-4 flex-shrink-0 mt-0.5" />
+                      <div>
+                        <h3 className={`font-bold text-gray-900 text-lg ${lang === 'kh' ? 'font-khmer' : ''}`}>{t(degree)}</h3>
+                      </div>
                     </div>
+                    {curriculumSlug && (
+                      <div className="pl-10">
+                        <Link
+                          href={`/colleges/${resolvedParams.slug}/${curriculumSlug}`}
+                          className={`inline-flex items-center gap-2 text-sm text-primary border border-primary/30 px-3 py-1.5 rounded-sm hover:bg-primary hover:text-white transition-all ${lang === 'kh' ? 'font-khmer' : ''}`}
+                        >
+                          <ClipboardList className="w-3.5 h-3.5" />
+                          {lang === 'kh' ? 'មើលកម្មវិធីសិក្សា' : 'View Curriculum'}
+                        </Link>
+                      </div>
+                    )}
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
           
