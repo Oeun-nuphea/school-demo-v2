@@ -1,23 +1,45 @@
-import Link from "next/link";
-import { Phone, Mail, MapPin } from "lucide-react";
+'use client'
+import React from 'react';
+import { Mail, MapPin, Phone } from 'lucide-react';
+import { useLanguage } from '@/context/LanguageContext';
 
 export default function TopInfoBar() {
+  const { lang, setLang } = useLanguage();
+
   return (
-    <div className="bg-primary-dark text-white py-2 text-sm">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center">
-        <div className="flex items-center space-x-6 mb-2 sm:mb-0">
-          <span className="flex items-center">
-            <Phone className="w-4 h-4 mr-2 opacity-80" />
-            +1 (555) 123-4567
-          </span>
-          <span className="flex items-center hidden md:flex">
-            <Mail className="w-4 h-4 mr-2 opacity-80" />
-            info@aic.edu.kh          </span>
-        </div>
+    <div className="bg-primary-dark text-white text-xs py-2 hidden md:block">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
         <div className="flex items-center space-x-6">
-          <Link href="/students" className="hover:text-secondary transition-colors">Current Students</Link>
-          <Link href="/faculty" className="hover:text-secondary transition-colors">Faculty & Staff</Link>
-          <Link href="/alumni" className="hover:text-secondary transition-colors">Alumni</Link>
+          <div className="flex items-center text-gray-300 hover:text-white transition-colors cursor-pointer">
+            <Phone className="w-3.5 h-3.5 mr-2 text-secondary" />
+            <span>071 21 000 06 / 098 322 872</span>
+          </div>
+          <div className="flex items-center text-gray-300 hover:text-white transition-colors cursor-pointer">
+            <Mail className="w-3.5 h-3.5 mr-2 text-secondary" />
+            <span>sopheap4anka@gmail.com</span>
+          </div>
+        </div>
+        
+        <div className="flex items-center space-x-6">
+          <div className="flex items-center text-gray-300 hover:text-white transition-colors cursor-pointer">
+            <MapPin className="w-3.5 h-3.5 mr-2 text-secondary" />
+            <span>{lang === 'kh' ? 'រាជធានីភ្នំពេញ អាគារលេខ១២ ផ្លូវ២៧១' : 'Phnom Penh, Building 12, St. 271'}</span>
+          </div>
+          <div className="flex items-center space-x-3 bg-primary-light/20 px-3 py-1 rounded-sm border border-primary-light/30">
+            <button 
+              onClick={() => setLang('kh')} 
+              className={`text-xs transition-colors ${lang === 'kh' ? 'text-secondary font-bold' : 'text-gray-300 hover:text-white'}`}
+            >
+              KH
+            </button>
+            <span className="text-gray-500 opacity-50">|</span>
+            <button 
+              onClick={() => setLang('en')} 
+              className={`text-xs transition-colors ${lang === 'en' ? 'text-secondary font-bold' : 'text-gray-300 hover:text-white'}`}
+            >
+              EN
+            </button>
+          </div>
         </div>
       </div>
     </div>

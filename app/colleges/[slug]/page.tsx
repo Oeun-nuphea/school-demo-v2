@@ -1,10 +1,12 @@
-import React from "react";
+'use client'
+import React, { use } from "react";
 import Link from "next/link";
 import { ChevronRight, CheckCircle, BookOpen } from "lucide-react";
 import info from "../../../information.json";
 import { notFound } from "next/navigation";
+import { useLanguage } from "@/context/LanguageContext";
 
-// Since we map English slugs, let's map them to the English names in the JSON
+// Map English slugs to JSON English Names
 const collegeSlugs: Record<string, string> = {
   "business": "College of Business Administration",
   "law": "College of Law",
@@ -14,9 +16,10 @@ const collegeSlugs: Record<string, string> = {
   "engineering": "College of Civil Engineering", 
 };
 
-export default async function CollegePage({ params }: { params: Promise<{ slug: string }> }) {
-  const resolvedParams = await params;
+export default function CollegePage({ params }: { params: Promise<{ slug: string }> }) {
+  const resolvedParams = use(params);
   const targetCollegeNameEn = collegeSlugs[resolvedParams.slug];
+  const { t, lang } = useLanguage();
   
   if (!targetCollegeNameEn) {
     notFound();
@@ -47,12 +50,13 @@ export default async function CollegePage({ params }: { params: Promise<{ slug: 
     }
   }
 
+  const currentTitle = lang === 'kh' ? displayTitleKh : displayTitleEn;
+
   return (
     <main className="min-h-screen bg-white">
       {/* Hero Banner */}
       <div className="relative w-full h-[40vh] min-h-[300px] flex items-center justify-center">
         <div className="absolute inset-0 bg-primary-dark/80 z-10"></div>
-        {/* Using a nice library photo */}
         <img 
           src="https://images.unsplash.com/photo-1532012197267-da84d127e765?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" 
           alt={displayTitleEn}
@@ -60,11 +64,8 @@ export default async function CollegePage({ params }: { params: Promise<{ slug: 
         />
         <div className="relative z-20 text-center px-4 mt-10">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white mb-4 drop-shadow-md">
-            {displayTitleEn}
+            {currentTitle}
           </h1>
-          <p className="text-xl text-gray-200 font-sans max-w-2xl mx-auto font-khmer">
-            {displayTitleKh}
-          </p>
         </div>
       </div>
 
@@ -75,7 +76,7 @@ export default async function CollegePage({ params }: { params: Promise<{ slug: 
           <ChevronRight className="w-4 h-4 mx-2 opacity-50 flex-shrink-0" />
           <span className="text-gray-900 font-medium">Colleges</span>
           <ChevronRight className="w-4 h-4 mx-2 opacity-50 flex-shrink-0" />
-          <span className="text-gray-900 font-medium">{displayTitleEn}</span>
+          <span className="text-gray-900 font-medium">{currentTitle}</span>
         </div>
       </div>
 
@@ -90,13 +91,15 @@ export default async function CollegePage({ params }: { params: Promise<{ slug: 
               <ul className="space-y-3">
                 {Object.keys(collegeSlugs).map((slugKey) => {
                   const isActive = slugKey === resolvedParams.slug;
+                  const enName = slugKey === 'engineering' ? 'Engineering' : collegeSlugs[slugKey].replace("College of ", "");
+                  const khName = info.academic_programs.bachelor_programs_by_college.find(c => c.college_name.english === collegeSlugs[slugKey])?.college_name.khmer || enName;
                   return (
                     <li key={slugKey}>
                       <Link 
                         href={`/colleges/${slugKey}`} 
                         className={`block transition-colors ${isActive ? "text-primary font-bold border-l-2 border-primary pl-3" : "text-gray-600 hover:text-primary"}`}
                       >
-                        {slugKey === 'engineering' ? 'Engineering' : collegeSlugs[slugKey].replace("College of ", "")}
+                        {lang === 'kh' ? khName.replace('មហាវិទ្យាល័យ', '') : enName}
                       </Link>
                     </li>
                   )
@@ -109,12 +112,14 @@ export default async function CollegePage({ params }: { params: Promise<{ slug: 
           <div className="lg:w-3/4">
             <div className="flex items-center mb-6">
               <BookOpen className="w-8 h-8 text-secondary mr-4" />
-              <h2 className="text-3xl font-serif font-bold text-gray-900">Available Majors & Degrees</h2>
+              <h2 className="text-3xl font-serif font-bold text-gray-900">
+                {lang === 'kh' ? 'មុខជំនាញ និងបរិញ្ញាបត្រ' : 'Available Majors & Degrees'}
+              </h2>
             </div>
             <div className="w-16 h-1 bg-secondary mb-10"></div>
             
             <p className="text-lg text-gray-700 mb-12 leading-relaxed">
-              Welcome to the {displayTitleEn} at {info.institution_info.name.english}. We offer specialized degree programs designed to equip you with deep expertise, critical thinking abilities, and practical skills for your professional career.
+              {lang === 'kh' ? `សូមស្វាគមន៍មកកាន់ ${displayTitleKh} នៅ ${t(info.institution_info.name)}។ យើងផ្តល់ជូននូវកម្មវិធីសិក្សាឯកទេស ដែលរចនាឡើងដើម្បីបំពាក់ឱ្យអ្នកនូវចំណេះដឹងជ្រៅជ្រះ សមត្ថភាពត្រិះរិះពិចារណា និងជំនាញជាក់ស្តែងសម្រាប់អាជីពរបស់អ្នក។` : `Welcome to the ${displayTitleEn} at ${t(info.institution_info.name)}. We offer specialized degree programs designed to equip you with deep expertise, critical thinking abilities, and practical skills for your professional career.`}
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -123,8 +128,7 @@ export default async function CollegePage({ params }: { params: Promise<{ slug: 
                   <div className="flex items-start">
                     <CheckCircle className="w-6 h-6 text-secondary mr-4 flex-shrink-0 mt-0.5" />
                     <div>
-                      <h3 className="font-bold text-gray-900 text-lg mb-1">{degree.english}</h3>
-                      <p className="text-sm text-gray-600 font-khmer mt-1">{degree.khmer}</p>
+                      <h3 className="font-bold text-gray-900 text-lg mb-1 font-khmer">{t(degree)}</h3>
                     </div>
                   </div>
                 </div>
