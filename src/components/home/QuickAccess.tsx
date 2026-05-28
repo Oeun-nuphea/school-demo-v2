@@ -8,11 +8,11 @@ export default function QuickAccess() {
 
   const links = [
     { name: lang === 'kh' ? 'ការចុះឈ្មោះ' : "Admissions", icon: GraduationCap, href: "/admissions", desc: lang === 'kh' ? 'ដាក់ពាក្យ និងចូលរួមជាមួយយើង' : "Apply and join our community" },
-    { name: lang === 'kh' ? 'មហាវិទ្យាល័យ' : "Faculties", icon: BookOpen, href: "/faculties", desc: lang === 'kh' ? 'ស្វែងរកមហាវិទ្យាល័យ' : "Explore academic departments" },
+    { name: lang === 'kh' ? 'មហាវិទ្យាល័យ' : "Colleges", icon: BookOpen, href: "/colleges", desc: lang === 'kh' ? 'ស្វែងរកមហាវិទ្យាល័យ' : "Explore academic departments" },
     { name: lang === 'kh' ? 'អាហារូបករណ៍' : "Scholarships", icon: Award, href: "/scholarships", desc: lang === 'kh' ? 'ជំនួយហិរញ្ញវត្ថុ' : "Financial aid and funding" },
-    { name: lang === 'kh' ? 'ប្រតិទិនសិក្សា' : "Academic Calendar", icon: Calendar, href: "/calendar", desc: lang === 'kh' ? 'កាលបរិច្ឆេទសំខាន់ៗ' : "Important dates and deadlines" },
-    { name: lang === 'kh' ? 'គណនីនិស្សិត' : "Student Portal", icon: Users, href: "/portal", desc: lang === 'kh' ? 'ចូលគណនីរបស់អ្នក' : "Access your student account" },
-    { name: lang === 'kh' ? 'បណ្ណាល័យ' : "Library", icon: Library, href: "/library", desc: lang === 'kh' ? 'ធនធានស្រាវជ្រាវ' : "Research and academic resources" },
+    { name: lang === 'kh' ? 'កាលបរិច្ឆេទចូលរៀន' : "Intake Dates", icon: Calendar, href: "/admissions/intake-dates", desc: lang === 'kh' ? 'កាលបរិច្ឆេទសំខាន់ៗ' : "Important dates and deadlines" },
+    { name: lang === 'kh' ? 'ជីវិតនិស្សិត' : "Student Life", icon: Users, href: "/student-life", desc: lang === 'kh' ? 'ស្វែងយល់ពីជីវិតក្នុងបរិវេណសាលា' : "Discover campus life" },
+    { name: lang === 'kh' ? 'អំពីយើង' : "About Us", icon: Library, href: "/about", desc: lang === 'kh' ? 'ស្វែងយល់អំពីវិទ្យាស្ថាន' : "Learn about our institute" },
   ];
 
   return (
