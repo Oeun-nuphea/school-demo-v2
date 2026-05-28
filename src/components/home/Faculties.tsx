@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { fetchFaculties, Faculty } from "@/services/api";
 import { Cog, Briefcase, Monitor, BookOpen, GraduationCap, Scale, ChevronRight } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
 
 // Map string icon names to Lucide components
 const iconMap: Record<string, React.ElementType> = {
@@ -12,6 +13,7 @@ const iconMap: Record<string, React.ElementType> = {
 
 export default function Faculties() {
   const [faculties, setFaculties] = useState<Faculty[]>([]);
+  const { lang } = useLanguage();
 
   useEffect(() => {
     fetchFaculties().then(setFaculties);
@@ -21,10 +23,14 @@ export default function Faculties() {
     <section className="py-20 bg-gray-50 border-y uni-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-4xl font-serif font-bold text-primary mb-4">Academic Faculties</h2>
+          <h2 className={`text-3xl md:text-4xl font-serif font-bold text-primary mb-4 ${lang === 'kh' ? 'font-khmer' : ''}`}>
+            {lang === 'kh' ? 'មហាវិទ្យាល័យរបស់យើង' : 'Academic Faculties'}
+          </h2>
           <div className="w-20 h-1 bg-secondary mx-auto mb-6"></div>
-          <p className="text-gray-600 text-lg">
-            Discover our diverse range of academic departments, led by world-renowned experts dedicated to advancing knowledge and innovation.
+          <p className={`text-gray-600 text-lg ${lang === 'kh' ? 'font-khmer' : ''}`}>
+            {lang === 'kh' 
+              ? 'ស្វែងរកមុខជំនាញនិងមហាវិទ្យាល័យដែលដឹកនាំដោយអ្នកជំនាញល្បីៗរបស់យើង។' 
+              : 'Discover our diverse range of academic departments, led by world-renowned experts dedicated to advancing knowledge and innovation.'}
           </p>
         </div>
 
@@ -37,16 +43,16 @@ export default function Faculties() {
                   <Icon className="w-7 h-7" />
                 </div>
                 <h3 className="text-2xl font-serif font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">
-                  Faculty of {faculty.name}
+                  {lang === 'kh' ? 'មហាវិទ្យាល័យ ' : 'Faculty of '}{faculty.name}
                 </h3>
-                <p className="text-gray-600 mb-6 text-sm leading-relaxed">
+                <p className="text-gray-600 mb-6 text-sm leading-relaxed line-clamp-3">
                   {faculty.description}
                 </p>
                 <Link 
-                  href={`/faculties/${faculty.id}`} 
-                  className="inline-flex items-center text-primary font-semibold hover:text-primary-dark transition-colors"
+                  href={`/colleges/${faculty.name.toLowerCase().split(' ')[0]}`} 
+                  className={`inline-flex items-center text-primary font-semibold hover:text-primary-dark transition-colors ${lang === 'kh' ? 'font-khmer' : ''}`}
                 >
-                  Explore Programs
+                  {lang === 'kh' ? 'ស្វែងរកមុខជំនាញ' : 'Explore Programs'}
                   <ChevronRight className="w-4 h-4 ml-1" />
                 </Link>
               </div>

@@ -1,5 +1,7 @@
+"use client";
 import Link from "next/link";
 import { MapPin, Phone, Mail } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
 
 const FacebookIcon = ({ className }: { className?: string }) => (
   <svg className={className} fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -26,6 +28,8 @@ const LinkedinIcon = ({ className }: { className?: string }) => (
 );
 
 export default function Footer() {
+  const { lang } = useLanguage();
+
   return (
     <footer className="bg-primary text-white pt-16 pb-8 border-t-4 border-secondary">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -37,12 +41,18 @@ export default function Footer() {
                 <span className="text-primary font-serif font-bold text-lg">AIC</span>
               </div>
               <div className="flex flex-col">
-                <span className="font-serif font-bold text-xl leading-tight text-white">Asian Institute</span>
-                <span className="font-sans text-xs tracking-widest text-gray-300 uppercase">of Cambodia</span>
+                <span className="font-serif font-bold text-xl leading-tight text-white">
+                  {lang === 'kh' ? 'វិទ្យាស្ថានអាស៊ី កម្ពុជា' : 'Asian Institute'}
+                </span>
+                <span className="font-sans text-xs tracking-widest text-gray-300 uppercase">
+                  {lang === 'kh' ? '' : 'of Cambodia'}
+                </span>
               </div>
             </div>
-            <p className="text-gray-300 text-sm mb-6 leading-relaxed">
-              Guided by our core values of Morality, Intelligence, Innovation, and Entrepreneurship across our 6 campuses nationwide.
+            <p className={`text-gray-300 text-sm mb-6 leading-relaxed ${lang === 'kh' ? 'font-khmer' : ''}`}>
+              {lang === 'kh' 
+                ? 'ដឹកនាំដោយសីលធម៌ បញ្ញា នវានុវត្តន៍ និងសហគ្រិនភាព នៅទូទាំងសាខាទាំង៦របស់យើង។' 
+                : 'Guided by our core values of Morality, Intelligence, Innovation, and Entrepreneurship across our 6 campuses nationwide.'}
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-gray-300 hover:text-white transition-colors"><FacebookIcon className="w-5 h-5" /></a>
@@ -54,50 +64,62 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h3 className="text-lg font-serif font-bold mb-6 text-white border-b border-primary-light pb-2 inline-block">Contact Us</h3>
+            <h3 className={`text-lg font-serif font-bold mb-6 text-white border-b border-primary-light pb-2 inline-block ${lang === 'kh' ? 'font-khmer' : ''}`}>
+              {lang === 'kh' ? 'ទំនាក់ទំនង' : 'Contact Us'}
+            </h3>
             <ul className="space-y-4 text-sm text-gray-300">
               <li className="flex items-start">
                 <MapPin className="w-5 h-5 mr-3 mt-0.5 flex-shrink-0 text-secondary" />
-                <span>Main Campus<br />Phnom Penh<br />Cambodia</span>
+                <span className={lang === 'kh' ? 'font-khmer' : ''}>
+                  {lang === 'kh' ? 'អាគារលេខ១២ ផ្លូវ២៧១ សង្កាត់ទឹកថ្លា' : 'Main Campus'}
+                  <br />
+                  {lang === 'kh' ? 'ខណ្ឌសែនសុខ រាជធានីភ្នំពេញ' : 'Phnom Penh'}
+                  <br />
+                  {lang === 'kh' ? 'កម្ពុជា' : 'Cambodia'}
+                </span>
               </li>
               <li className="flex items-center">
                 <Phone className="w-5 h-5 mr-3 flex-shrink-0 text-secondary" />
-                <span>+855 12 345 678</span>
+                <span>071 21 000 06 / 098 322 872</span>
               </li>
               <li className="flex items-center">
                 <Mail className="w-5 h-5 mr-3 flex-shrink-0 text-secondary" />
-                <span>info@aic.edu.kh</span>
+                <span>sopheap4anka@gmail.com</span>
               </li>
             </ul>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-serif font-bold mb-6 text-white border-b border-primary-light pb-2 inline-block">Quick Links</h3>
-            <ul className="space-y-2 text-sm">
-              <li><Link href="/admissions" className="text-gray-300 hover:text-secondary transition-colors block py-1">Admissions</Link></li>
-              <li><Link href="/academics" className="text-gray-300 hover:text-secondary transition-colors block py-1">Academic Calendar</Link></li>
-              <li><Link href="/library" className="text-gray-300 hover:text-secondary transition-colors block py-1">University Library</Link></li>
-              <li><Link href="/campuses" className="text-gray-300 hover:text-secondary transition-colors block py-1">Our Campuses</Link></li>
-              <li><Link href="/news" className="text-gray-300 hover:text-secondary transition-colors block py-1">News & Events</Link></li>
+            <h3 className={`text-lg font-serif font-bold mb-6 text-white border-b border-primary-light pb-2 inline-block ${lang === 'kh' ? 'font-khmer' : ''}`}>
+              {lang === 'kh' ? 'តំណរហ័ស' : 'Quick Links'}
+            </h3>
+            <ul className={`space-y-2 text-sm ${lang === 'kh' ? 'font-khmer' : ''}`}>
+              <li><Link href="/admissions" className="text-gray-300 hover:text-secondary transition-colors block py-1">{lang === 'kh' ? 'ការចុះឈ្មោះ' : 'Admissions'}</Link></li>
+              <li><Link href="/academics" className="text-gray-300 hover:text-secondary transition-colors block py-1">{lang === 'kh' ? 'ប្រតិទិនសិក្សា' : 'Academic Calendar'}</Link></li>
+              <li><Link href="/library" className="text-gray-300 hover:text-secondary transition-colors block py-1">{lang === 'kh' ? 'បណ្ណាល័យ' : 'University Library'}</Link></li>
+              <li><Link href="/campuses" className="text-gray-300 hover:text-secondary transition-colors block py-1">{lang === 'kh' ? 'ទីតាំងសាខា' : 'Our Campuses'}</Link></li>
+              <li><Link href="/news" className="text-gray-300 hover:text-secondary transition-colors block py-1">{lang === 'kh' ? 'ព័ត៌មាន និងព្រឹត្តិការណ៍' : 'News & Events'}</Link></li>
             </ul>
           </div>
 
           {/* Colleges */}
           <div>
-            <h3 className="text-lg font-serif font-bold mb-6 text-white border-b border-primary-light pb-2 inline-block">Colleges</h3>
-            <ul className="space-y-2 text-sm">
-              <li><Link href="/college/business" className="text-gray-300 hover:text-secondary transition-colors block py-1">Business Administration</Link></li>
-              <li><Link href="/college/law" className="text-gray-300 hover:text-secondary transition-colors block py-1">Law</Link></li>
-              <li><Link href="/college/arts" className="text-gray-300 hover:text-secondary transition-colors block py-1">Arts & Humanities</Link></li>
-              <li><Link href="/college/science" className="text-gray-300 hover:text-secondary transition-colors block py-1">Science & Tech</Link></li>
-              <li><Link href="/college/engineering" className="text-gray-300 hover:text-secondary transition-colors block py-1">Civil Engineering</Link></li>
+            <h3 className={`text-lg font-serif font-bold mb-6 text-white border-b border-primary-light pb-2 inline-block ${lang === 'kh' ? 'font-khmer' : ''}`}>
+              {lang === 'kh' ? 'មហាវិទ្យាល័យ' : 'Colleges'}
+            </h3>
+            <ul className={`space-y-2 text-sm ${lang === 'kh' ? 'font-khmer' : ''}`}>
+              <li><Link href="/colleges/business" className="text-gray-300 hover:text-secondary transition-colors block py-1">{lang === 'kh' ? 'គ្រប់គ្រងពាណិជ្ជកម្ម' : 'Business Administration'}</Link></li>
+              <li><Link href="/colleges/law" className="text-gray-300 hover:text-secondary transition-colors block py-1">{lang === 'kh' ? 'នីតិសាស្ត្រ' : 'Law'}</Link></li>
+              <li><Link href="/colleges/arts" className="text-gray-300 hover:text-secondary transition-colors block py-1">{lang === 'kh' ? 'សិល្បៈ មនុស្សសាស្ត្រ' : 'Arts & Humanities'}</Link></li>
+              <li><Link href="/colleges/science" className="text-gray-300 hover:text-secondary transition-colors block py-1">{lang === 'kh' ? 'វិទ្យាសាស្ត្រ និងបច្ចេកវិទ្យា' : 'Science & Tech'}</Link></li>
+              <li><Link href="/colleges/engineering" className="text-gray-300 hover:text-secondary transition-colors block py-1">{lang === 'kh' ? 'វិស្វកម្ម' : 'Engineering'}</Link></li>
             </ul>
           </div>
         </div>
 
-        <div className="pt-8 border-t border-primary-light flex flex-col md:flex-row justify-between items-center text-xs text-gray-400">
-          <p>&copy; {new Date().getFullYear()} Asian Institute of Cambodia (AIC). All rights reserved.</p>
+        <div className={`pt-8 border-t border-primary-light flex flex-col md:flex-row justify-between items-center text-xs text-gray-400 ${lang === 'kh' ? 'font-khmer' : ''}`}>
+          <p>&copy; {new Date().getFullYear()} {lang === 'kh' ? 'វិទ្យាស្ថានអាស៊ី កម្ពុជា' : 'Asian Institute of Cambodia (AIC)'}. All rights reserved.</p>
           <div className="flex space-x-4 mt-4 md:mt-0">
             <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
             <Link href="/terms" className="hover:text-white transition-colors">Terms of Use</Link>

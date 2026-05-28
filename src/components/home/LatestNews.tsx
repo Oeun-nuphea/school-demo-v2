@@ -5,11 +5,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { fetchNews, fetchEvents, NewsItem, EventItem } from "@/services/api";
 import { ArrowRight, MapPin, Clock } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function LatestNews() {
   const [news, setNews] = useState<NewsItem[]>([]);
   const [events, setEvents] = useState<EventItem[]>([]);
   const [loading, setLoading] = useState(true);
+  const { lang } = useLanguage();
 
   useEffect(() => {
     async function loadData() {
@@ -38,11 +40,15 @@ export default function LatestNews() {
           <div className="lg:col-span-2">
             <div className="flex justify-between items-end mb-8 border-b pb-4">
               <div>
-                <h2 className="text-3xl font-serif font-bold text-primary">University News</h2>
-                <p className="text-gray-500 mt-2">Latest announcements and academic updates</p>
+                <h2 className={`text-3xl font-serif font-bold text-primary ${lang === 'kh' ? 'font-khmer' : ''}`}>
+                  {lang === 'kh' ? 'ព័ត៌មានវិទ្យាស្ថាន' : 'University News'}
+                </h2>
+                <p className={`text-gray-500 mt-2 ${lang === 'kh' ? 'font-khmer' : ''}`}>
+                  {lang === 'kh' ? 'សេចក្តីប្រកាស និងព្រឹត្តិការណ៍ថ្មីៗ' : 'Latest announcements and academic updates'}
+                </p>
               </div>
-              <Link href="/news" className="text-primary font-medium hover:text-primary-light flex items-center text-sm mb-1">
-                All News <ArrowRight className="w-4 h-4 ml-1" />
+              <Link href="/news" className={`text-primary font-medium hover:text-primary-light flex items-center text-sm mb-1 ${lang === 'kh' ? 'font-khmer' : ''}`}>
+                {lang === 'kh' ? 'ព័ត៌មានទាំងអស់' : 'All News'} <ArrowRight className="w-4 h-4 ml-1" />
               </Link>
             </div>
 
@@ -94,11 +100,15 @@ export default function LatestNews() {
           <div>
             <div className="flex justify-between items-end mb-8 border-b pb-4">
               <div>
-                <h2 className="text-3xl font-serif font-bold text-primary">Upcoming Events</h2>
-                <p className="text-gray-500 mt-2">Join our vibrant campus community</p>
+                <h2 className={`text-3xl font-serif font-bold text-primary ${lang === 'kh' ? 'font-khmer' : ''}`}>
+                  {lang === 'kh' ? 'ព្រឹត្តិការណ៍នាពេលខាងមុខ' : 'Upcoming Events'}
+                </h2>
+                <p className={`text-gray-500 mt-2 ${lang === 'kh' ? 'font-khmer' : ''}`}>
+                  {lang === 'kh' ? 'ចូលរួមជាមួយសហគមន៍របស់យើង' : 'Join our vibrant campus community'}
+                </p>
               </div>
-              <Link href="/events" className="text-primary font-medium hover:text-primary-light flex items-center text-sm mb-1">
-                All Events <ArrowRight className="w-4 h-4 ml-1" />
+              <Link href="/events" className={`text-primary font-medium hover:text-primary-light flex items-center text-sm mb-1 ${lang === 'kh' ? 'font-khmer' : ''}`}>
+                {lang === 'kh' ? 'ព្រឹត្តិការណ៍ទាំងអស់' : 'All Events'} <ArrowRight className="w-4 h-4 ml-1" />
               </Link>
             </div>
 

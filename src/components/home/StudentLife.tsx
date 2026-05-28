@@ -1,32 +1,36 @@
+"use client";
+import { useLanguage } from "@/context/LanguageContext";
+import info from "../../../information.json";
+
 export default function StudentLife() {
+  const { lang, t } = useLanguage();
+
   return (
     <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row gap-12 items-center">
           
           <div className="w-full md:w-1/2 space-y-6">
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-primary">Vibrant Campus Life</h2>
+            <h2 className={`text-3xl md:text-4xl font-serif font-bold text-primary ${lang === 'kh' ? 'font-khmer' : ''}`}>
+              {lang === 'kh' ? 'ជីវិតនិស្សិតដ៏រស់រវើក' : 'Vibrant Campus Life'}
+            </h2>
             <div className="w-16 h-1 bg-secondary mb-6"></div>
-            <p className="text-gray-600 text-lg leading-relaxed">
-              At AIC, learning extends far beyond the classroom. We provide exceptional opportunities to build your network, gain global perspective, and prepare for a successful career.
+            <p className={`text-gray-600 text-lg leading-relaxed ${lang === 'kh' ? 'font-khmer' : ''}`}>
+              {lang === 'kh' 
+                ? 'នៅ វិទ្យាស្ថានអាស៊ី កម្ពុជា ការរៀនសូត្រមិនមែនមានតែក្នុងថ្នាក់រៀននោះទេ។ យើងផ្តល់ឱកាសពិសេសដើម្បីកសាងបណ្តាញ ទទួលបានបទពិសោធន៍សកល និងត្រៀមខ្លួនសម្រាប់អាជីពជោគជ័យ។' 
+                : 'At AIC, learning extends far beyond the classroom. We provide exceptional opportunities to build your network, gain global perspective, and prepare for a successful career.'}
             </p>
             <ul className="space-y-4">
-              <li className="flex items-start">
-                <div className="w-2 h-2 bg-secondary mt-2 mr-3 rounded-full flex-shrink-0"></div>
-                <span className="text-gray-700">International study tours and factory visits (e.g., Japan, China)</span>
-              </li>
-              <li className="flex items-start">
-                <div className="w-2 h-2 bg-secondary mt-2 mr-3 rounded-full flex-shrink-0"></div>
-                <span className="text-gray-700">Participation in international conferences (e.g., Eurasia Foundation)</span>
-              </li>
-              <li className="flex items-start">
-                <div className="w-2 h-2 bg-secondary mt-2 mr-3 rounded-full flex-shrink-0"></div>
-                <span className="text-gray-700">Opportunities for jobs and internships abroad, particularly in Japan</span>
-              </li>
+              {info.opportunities.study_tours_abroad.details.map((detail, idx) => (
+                <li key={idx} className="flex items-start">
+                  <div className="w-2 h-2 bg-secondary mt-2 mr-3 rounded-full flex-shrink-0"></div>
+                  <span className={`text-gray-700 ${lang === 'kh' ? 'font-khmer' : ''}`}>{t(detail)}</span>
+                </li>
+              ))}
             </ul>
             <div className="pt-4">
-              <a href="/campus-life" className="inline-block border-2 border-primary text-primary hover:bg-primary hover:text-white font-bold px-6 py-2 rounded-sm transition-colors">
-                Explore Campus Life
+              <a href="/student-life/activities" className={`inline-block border-2 border-primary text-primary hover:bg-primary hover:text-white font-bold px-6 py-2 rounded-sm transition-colors ${lang === 'kh' ? 'font-khmer' : ''}`}>
+                {lang === 'kh' ? 'ស្វែងយល់បន្ថែម' : 'Explore Campus Life'}
               </a>
             </div>
           </div>

@@ -1,14 +1,18 @@
+"use client";
 import Link from "next/link";
 import { GraduationCap, BookOpen, Calendar, Users, Library, Award } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function QuickAccess() {
+  const { lang } = useLanguage();
+
   const links = [
-    { name: "Admissions", icon: GraduationCap, href: "/admissions", desc: "Apply and join our community" },
-    { name: "Faculties", icon: BookOpen, href: "/faculties", desc: "Explore academic departments" },
-    { name: "Scholarships", icon: Award, href: "/scholarships", desc: "Financial aid and funding" },
-    { name: "Academic Calendar", icon: Calendar, href: "/calendar", desc: "Important dates and deadlines" },
-    { name: "Student Portal", icon: Users, href: "/portal", desc: "Access your student account" },
-    { name: "Library", icon: Library, href: "/library", desc: "Research and academic resources" },
+    { name: lang === 'kh' ? 'ការចុះឈ្មោះ' : "Admissions", icon: GraduationCap, href: "/admissions", desc: lang === 'kh' ? 'ដាក់ពាក្យ និងចូលរួមជាមួយយើង' : "Apply and join our community" },
+    { name: lang === 'kh' ? 'មហាវិទ្យាល័យ' : "Faculties", icon: BookOpen, href: "/faculties", desc: lang === 'kh' ? 'ស្វែងរកមហាវិទ្យាល័យ' : "Explore academic departments" },
+    { name: lang === 'kh' ? 'អាហារូបករណ៍' : "Scholarships", icon: Award, href: "/scholarships", desc: lang === 'kh' ? 'ជំនួយហិរញ្ញវត្ថុ' : "Financial aid and funding" },
+    { name: lang === 'kh' ? 'ប្រតិទិនសិក្សា' : "Academic Calendar", icon: Calendar, href: "/calendar", desc: lang === 'kh' ? 'កាលបរិច្ឆេទសំខាន់ៗ' : "Important dates and deadlines" },
+    { name: lang === 'kh' ? 'គណនីនិស្សិត' : "Student Portal", icon: Users, href: "/portal", desc: lang === 'kh' ? 'ចូលគណនីរបស់អ្នក' : "Access your student account" },
+    { name: lang === 'kh' ? 'បណ្ណាល័យ' : "Library", icon: Library, href: "/library", desc: lang === 'kh' ? 'ធនធានស្រាវជ្រាវ' : "Research and academic resources" },
   ];
 
   return (
@@ -26,8 +30,8 @@ export default function QuickAccess() {
                 <div className="w-12 h-12 bg-primary/5 text-primary rounded-full flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-white transition-colors">
                   <Icon className="w-6 h-6" />
                 </div>
-                <h3 className="font-serif font-bold text-gray-900 mb-1">{link.name}</h3>
-                <p className="text-xs text-gray-500 font-sans hidden sm:block">{link.desc}</p>
+                <h3 className={`font-serif font-bold text-gray-900 mb-1 ${lang === 'kh' ? 'font-khmer' : ''}`}>{link.name}</h3>
+                <p className={`text-xs text-gray-500 font-sans hidden sm:block ${lang === 'kh' ? 'font-khmer' : ''}`}>{link.desc}</p>
               </Link>
             );
           })}
