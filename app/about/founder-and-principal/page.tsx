@@ -57,6 +57,9 @@ export default function FounderAndPrincipalPage() {
                 <li>
                   <Link href="/about/contact-and-branches" className="block text-gray-600 hover:text-primary transition-colors">{lang === 'kh' ? 'ទំនាក់ទំនង និងសាខា' : 'Contact and Branches'}</Link>
                 </li>
+                <li>
+                  <Link href="/about/alumni" className="block text-gray-600 hover:text-primary transition-colors">{lang === 'kh' ? 'អតីតនិស្សិតរបស់យើង' : 'Our Alumni'}</Link>
+                </li>
               </ul>
             </div>
           </aside>

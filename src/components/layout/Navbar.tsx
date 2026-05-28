@@ -22,6 +22,7 @@ export default function Navbar() {
         { label: { english: "Founder & Principal", khmer: "ស្ថាបនិក និងនាយកវិទ្យាស្ថាន" }, href: "/about/founder-and-principal" },
         { label: { english: "Campus Locations", khmer: "ទីតាំងសាខា" }, href: "/about/campuses" },
         { label: { english: "Contact and Branches", khmer: "ទំនាក់ទំនង និងសាខា" }, href: "/about/contact-and-branches" },
+        { label: { english: "Our Alumni", khmer: "អតីតនិស្សិតរបស់យើង" }, href: "/about/alumni" },
       ]
     },
     {

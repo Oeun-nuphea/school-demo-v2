@@ -65,6 +65,9 @@ export default function ContactAndBranchesPage() {
                 <li>
                   <Link href="/about/contact-and-branches" className="block text-primary font-bold border-l-2 border-primary pl-3 transition-colors">{lang === 'kh' ? 'ទំនាក់ទំនង និងសាខា' : 'Contact and Branches'}</Link>
                 </li>
+                <li>
+                  <Link href="/about/alumni" className="block text-gray-600 hover:text-primary transition-colors">{lang === 'kh' ? 'អតីតនិស្សិតរបស់យើង' : 'Our Alumni'}</Link>
+                </li>
               </ul>
             </div>
           </aside>
