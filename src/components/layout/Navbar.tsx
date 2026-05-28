@@ -101,7 +101,7 @@ export default function Navbar() {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8 items-center h-full">
+          <nav className="hidden lg:flex space-x-8 items-center h-full">
             {navLinks.map((link) => {
               const isActive = (pathname.startsWith(link.href) && link.href !== '/') || link.subItems.some(subItem => pathname === subItem.href || pathname.startsWith(subItem.href));
               return (
@@ -138,7 +138,7 @@ export default function Navbar() {
           </nav>
 
           {/* Action Area */}
-          <div className="hidden md:flex items-center space-x-4">
+          <div className="hidden lg:flex items-center space-x-4">
             <Link
               href="/apply"
               className={`bg-primary text-white px-5 py-2.5 rounded-sm font-medium hover:bg-primary-dark transition-colors shadow-sm ${lang === 'kh' ? 'font-khmer text-sm pt-3' : ''}`}
@@ -148,7 +148,7 @@ export default function Navbar() {
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden flex items-center">
+          <div className="lg:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="text-gray-500 hover:text-primary p-2"
@@ -161,7 +161,7 @@ export default function Navbar() {
 
       {/* Mobile Navigation */}
       {isOpen && (
-        <div className="md:hidden absolute top-20 left-0 w-full bg-white shadow-xl max-h-[calc(100vh-5rem)] overflow-y-auto border-b-4 border-secondary">
+        <div className="lg:hidden absolute top-20 left-0 w-full bg-white shadow-xl max-h-[calc(100vh-5rem)] overflow-y-auto border-b-4 border-secondary">
           <div className="px-6 py-8 space-y-6">
             {navLinks.map((link) => {
               const isActive = (pathname.startsWith(link.href) && link.href !== '/') || link.subItems.some(subItem => pathname === subItem.href || pathname.startsWith(subItem.href));
