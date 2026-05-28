@@ -11,18 +11,16 @@ export default function ActivitiesPage() {
   return (
     <main className="min-h-screen bg-white">
       {/* Hero Banner */}
-      <div className="relative w-full h-[40vh] min-h-[300px] flex items-center justify-center">
-        <div className="absolute inset-0 bg-primary-dark/80 z-10"></div>
-        <img 
-          src="https://images.unsplash.com/photo-1529070538774-1843cb1665e8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" 
-          alt="International Activities"
-          className="absolute inset-0 w-full h-full object-cover z-0"
-        />
-        <div className="relative z-20 text-center px-4 mt-10">
+      <div className="relative w-full min-h-[260px] flex items-center justify-center bg-gradient-to-r from-primary-dark to-primary overflow-hidden">
+        {/* Decorative blobs */}
+        <div className="absolute top-0 right-0 -mr-20 -mt-20 w-64 h-64 rounded-full bg-white opacity-5 blur-3xl" />
+        <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-secondary opacity-10 blur-3xl" />
+
+        <div className="relative z-20 text-center px-4 py-16">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white mb-4 drop-shadow-md">
             {lang === 'kh' ? 'សកម្មភាពអន្តរជាតិ' : 'International Activities'}
           </h1>
-          <p className="text-xl text-gray-200 font-sans max-w-2xl mx-auto font-khmer">
+          <p className="text-lg text-white/75 font-sans max-w-2xl mx-auto">
             {t(info.opportunities.study_tours_abroad.title)}
           </p>
         </div>
@@ -49,13 +47,13 @@ export default function ActivitiesPage() {
               <h3 className="text-lg font-serif font-bold text-primary mb-4 border-b border-gray-200 pb-2">Student Life</h3>
               <ul className="space-y-3">
                 <li>
-                  <Link href="/student-life/schedules" className="block text-gray-600 hover:text-primary transition-colors">{lang === 'kh' ? 'វេនសិក្សា' : 'Study Schedules'}</Link>
+                  <Link href="/student-life/schedules" className="block text-gray-600 hover:text-primary border-l-2 border-transparent pl-3 transition-colors">{lang === 'kh' ? 'វេនសិក្សា' : 'Study Schedules'}</Link>
                 </li>
                 <li>
                   <Link href="/student-life/activities" className="block text-primary font-bold border-l-2 border-primary pl-3 transition-colors">{lang === 'kh' ? 'សកម្មភាពអន្តរជាតិ' : 'International Activities'}</Link>
                 </li>
                 <li>
-                  <Link href="/student-life/internships" className="block text-gray-600 hover:text-primary transition-colors">{lang === 'kh' ? 'កម្មសិក្សា និងការងារ' : 'Internships & Jobs'}</Link>
+                  <Link href="/student-life/internships" className="block text-gray-600 hover:text-primary border-l-2 border-transparent pl-3 transition-colors">{lang === 'kh' ? 'កម្មសិក្សា និងការងារ' : 'Internships & Jobs'}</Link>
                 </li>
               </ul>
             </div>

@@ -11,18 +11,16 @@ export default function SchedulesPage() {
   return (
     <main className="min-h-screen bg-white">
       {/* Hero Banner */}
-      <div className="relative w-full h-[40vh] min-h-[300px] flex items-center justify-center">
-        <div className="absolute inset-0 bg-primary-dark/80 z-10"></div>
-        <img 
-          src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" 
-          alt="Study Schedules"
-          className="absolute inset-0 w-full h-full object-cover z-0"
-        />
-        <div className="relative z-20 text-center px-4 mt-10">
+      <div className="relative w-full min-h-[260px] flex items-center justify-center bg-gradient-to-r from-primary-dark to-primary overflow-hidden">
+        {/* Decorative blobs */}
+        <div className="absolute top-0 right-0 -mr-20 -mt-20 w-64 h-64 rounded-full bg-white opacity-5 blur-3xl" />
+        <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-secondary opacity-10 blur-3xl" />
+
+        <div className="relative z-20 text-center px-4 py-16">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white mb-4 drop-shadow-md">
             {lang === 'kh' ? 'វេនសិក្សា' : 'Study Schedules'}
           </h1>
-          <p className="text-xl text-gray-200 font-sans max-w-2xl mx-auto font-khmer">
+          <p className="text-lg text-white/75 font-sans max-w-2xl mx-auto">
             {lang === 'kh' ? 'ជម្រើសនៃវេនសិក្សាដើម្បីសម្រួលដល់ការសិក្សារបស់អ្នក' : 'Flexible learning shifts to accommodate your lifestyle.'}
           </p>
         </div>
@@ -52,10 +50,10 @@ export default function SchedulesPage() {
                   <Link href="/student-life/schedules" className="block text-primary font-bold border-l-2 border-primary pl-3 transition-colors">{lang === 'kh' ? 'វេនសិក្សា' : 'Study Schedules'}</Link>
                 </li>
                 <li>
-                  <Link href="/student-life/activities" className="block text-gray-600 hover:text-primary transition-colors">{lang === 'kh' ? 'សកម្មភាពអន្តរជាតិ' : 'International Activities'}</Link>
+                  <Link href="/student-life/activities" className="block text-gray-600 hover:text-primary border-l-2 border-transparent pl-3 transition-colors">{lang === 'kh' ? 'សកម្មភាពអន្តរជាតិ' : 'International Activities'}</Link>
                 </li>
                 <li>
-                  <Link href="/student-life/internships" className="block text-gray-600 hover:text-primary transition-colors">{lang === 'kh' ? 'កម្មសិក្សា និងការងារ' : 'Internships & Jobs'}</Link>
+                  <Link href="/student-life/internships" className="block text-gray-600 hover:text-primary border-l-2 border-transparent pl-3 transition-colors">{lang === 'kh' ? 'កម្មសិក្សា និងការងារ' : 'Internships & Jobs'}</Link>
                 </li>
               </ul>
             </div>
@@ -91,8 +89,8 @@ export default function SchedulesPage() {
 
               {/* Weekend */}
               <div>
-                <h3 className="text-xl font-serif font-bold text-secondary mb-6 flex items-center font-khmer">
-                  <Clock className="w-6 h-6 mr-3" /> 
+                <h3 className="text-xl font-serif font-bold text-gray-900 mb-6 flex items-center font-khmer">
+                  <Clock className="w-6 h-6 mr-3 text-secondary" /> 
                   {lang === 'kh' ? info.study_schedules.saturday_and_sunday.khmer_label : info.study_schedules.saturday_and_sunday.english_label}
                 </h3>
                 <div className="space-y-4">

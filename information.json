@@ -9,10 +9,10 @@
       "english": "Morality, Intelligence, Innovation, Entrepreneurship"
     },
     "levels_of_study": [
-      { "khmer": "បរិញ្ញាបត្រជាន់ខ្ពស់", "english": "Master Degree" },
-      { "khmer": "បរិញ្ញាបត្រ", "english": "Bachelor Degree" },
-      { "khmer": "បរិញ្ញាបត្ររង", "english": "Associate Degree" },
-      { "khmer": "សញ្ញាបត្របច្ចេកទេស និងវិជ្ជាជីវៈ ១ ២ និង ៣", "english": "TVET 1, 2, and 3" }
+      { "khmer": "បរិញ្ញាបត្រជាន់ខ្ពស់", "english": "Master Degree", "duration": { "khmer": "សិក្សារយៈពេល ២ឆ្នាំ", "english": "2 Years" } },
+      { "khmer": "បរិញ្ញាបត្រ", "english": "Bachelor Degree", "duration": { "khmer": "សិក្សារយៈពេល ៤ឆ្នាំ", "english": "4 Years" } },
+      { "khmer": "បរិញ្ញាបត្ររង", "english": "Associate Degree", "duration": { "khmer": "សិក្សារយៈពេល ២ឆ្នាំ", "english": "2 Years" } },
+      { "khmer": "សញ្ញាបត្របច្ចេកទេស និងវិជ្ជាជីវៈ ១ ២ ៣", "english": "TVET 1, 2, and 3", "duration": { "khmer": "-", "english": "-" } }
     ]
   },
   "contact_and_branches": [
@@ -126,7 +126,7 @@
       {
         "college_name": { "khmer": "មហាវិទ្យាល័យគ្រប់គ្រងពាណិជ្ជកម្ម", "english": "College of Business Administration" },
         "degrees": [
-          { "khmer": "ធុរកិច្ចអន្តរជាតិ", "english": "International Business" },
+          { "khmer": "ពាណិជ្ជកម្មអន្តរជាតិ", "english": "International Business" },
           { "khmer": "ទីផ្សារអន្តរជាតិ", "english": "International Marketing" },
           { "khmer": "ការគ្រប់គ្រងទូទៅ", "english": "General Management" },
           { "khmer": "អភិវឌ្ឍន៍សេដ្ឋកិច្ច", "english": "Economic Development" },
@@ -152,9 +152,9 @@
       {
         "college_name": { "khmer": "មហាវិទ្យាល័យសិល្បៈ មនុស្សសាស្ត្រ និងភាសាបរទេស", "english": "College of Arts, Humanities & Foreign Languages" },
         "degrees": [
-          { "khmer": "ការបង្រៀនភាសាអង់គ្លេសជាភាសាបរទេស", "english": "Teaching English as a Foreign Language" },
+          { "khmer": "ភាសាអង់គ្លេសសម្រាប់បង្រៀន", "english": "Teaching English as a Foriegn Language" },
           { "khmer": "ភាសាអង់គ្លេសសម្រាប់ទំនាក់ទំនង", "english": "English for Communication" },
-          { "khmer": "ភាសាអង់គ្លេសសម្រាប់ការបកប្រែ", "english": "English for Translation" },
+          { "khmer": "ភាសាអង់គ្លេសសម្រាប់បកប្រែ", "english": "English for Translation" },
           { "khmer": "ទំនាក់ទំនងអន្តរជាតិ", "english": "International Relations" },
           { "khmer": "អក្សរសាស្ត្រខ្មែរ", "english": "Khmer Literature" }
         ]
@@ -163,7 +163,7 @@
         "college_name": { "khmer": "មហាវិទ្យាល័យកសិកម្ម", "english": "College of Agriculture" },
         "degrees": [
           { "khmer": "អភិវឌ្ឍន៍ជនបទ", "english": "Rural Development" },
-          { "khmer": "កសិកម្មវិទ្យា", "english": "Agronomy" },
+          { "khmer": "កសិកម្មសាស្ត្រ", "english": "Agronomy" },
           { "khmer": "គ្រប់គ្រងធនធានធម្មជាតិ", "english": "Natural Resource Management" },
           { "khmer": "គីមីចំណីអាហារ", "english": "Food Chemistry" },
           { "khmer": "កែច្នៃចំណីអាហារ", "english": "Food Processing" },
@@ -191,9 +191,9 @@
       {
         "college_name": { "khmer": "មហាវិទ្យាល័យវិស្វកម្មសំណង់", "english": "College of Civil Engineering" },
         "degrees": [
-          { "khmer": "វិស្វកម្មសំណង់ស៊ីវិល", "english": "Civil Engineering" },
+          { "khmer": "វិស្វកម្មសំណង់", "english": "Civil Engineering" },
           { "khmer": "គ្រប់គ្រងសំណង់", "english": "Construction Engineering and Management" },
-          { "khmer": "ហេដ្ឋារចនាសម្ព័ន្ធ", "english": "Infrastructure Engineering" }
+          { "khmer": "វិស្វកម្មផ្លូវថ្នល់", "english": "Infrastructure Engineering" }
         ]
       }
     ]

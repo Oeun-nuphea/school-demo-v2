@@ -11,18 +11,16 @@ export default function IntakeDatesPage() {
   return (
     <main className="min-h-screen bg-white">
       {/* Hero Banner */}
-      <div className="relative w-full h-[40vh] min-h-[300px] flex items-center justify-center">
-        <div className="absolute inset-0 bg-primary-dark/80 z-10"></div>
-        <img 
-          src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" 
-          alt="Intake Dates"
-          className="absolute inset-0 w-full h-full object-cover z-0"
-        />
-        <div className="relative z-20 text-center px-4 mt-10">
+      <div className="relative w-full min-h-[260px] flex items-center justify-center bg-gradient-to-r from-primary-dark to-primary overflow-hidden">
+        {/* Decorative blobs */}
+        <div className="absolute top-0 right-0 -mr-20 -mt-20 w-64 h-64 rounded-full bg-white opacity-5 blur-3xl" />
+        <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-secondary opacity-10 blur-3xl" />
+
+        <div className="relative z-20 text-center px-4 py-16">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white mb-4 drop-shadow-md">
             {lang === 'kh' ? 'កាលបរិច្ឆេទចូលរៀន' : 'Intake Dates'}
           </h1>
-          <p className="text-xl text-gray-200 font-sans max-w-2xl mx-auto font-khmer">
+          <p className="text-lg text-white/75 font-sans max-w-2xl mx-auto">
             {lang === 'kh' ? 'វគ្គសិក្សាថ្មី និងការទទួលពាក្យ' : 'Important deadlines and upcoming semesters.'}
           </p>
         </div>
