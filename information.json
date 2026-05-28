@@ -1,0 +1,179 @@
+{
+  "institute_overview": {
+    "institution_name": "Asian Institute of Cambodia (AIC)",
+    "core_values": [
+      "Morality",
+      "Intelligence",
+      "Innovation",
+      "Entrepreneurship"
+    ],
+    "campus_locations": [
+      "Phnom Penh",
+      "Kratie",
+      "Mondulkiri",
+      "Ratanakiri",
+      "Stung Treng",
+      "Preah Vihear"
+    ]
+  },
+  "academic_programs": {
+    "master_programs": [
+      "Master of Private Law",
+      "Master of Public Administration",
+      "Master of Arts in English",
+      "Master in Development Management",
+      "Master of Science in Agriculture",
+      "Master of Education Science",
+      "Master of Business Administration",
+      "Master of General Management",
+      "Master of Information Technology",
+      "Master of Finance & Accounting",
+      "Master of Auditing",
+      "Master of Architecture",
+      "Master of Economics Development"
+    ],
+    "bachelor_programs": [
+      {
+        "college": "College of Business Administration",
+        "degrees": [
+          "International Business",
+          "International Marketing",
+          "General Management",
+          "Economic Development",
+          "Finance and Banking",
+          "Digital Banking and FinTech",
+          "Digital Business and Innovation",
+          "Digital Marketing",
+          "Accounting",
+          "Human Resource Management",
+          "Tourism"
+        ]
+      },
+      {
+        "college": "College of Law",
+        "degrees": [
+          "Public Law",
+          "Private Law",
+          "Public Administration",
+          "Political Science",
+          "International Relations"
+        ]
+      },
+      {
+        "college": "College of Arts, Humanities & Foreign Languages",
+        "degrees": [
+          "Teaching English as a Foreign Language",
+          "English for Communication",
+          "English for Translation",
+          "International Relations",
+          "Khmer Literature"
+        ]
+      },
+      {
+        "college": "College of Agriculture",
+        "degrees": [
+          "Rural Development",
+          "Agronomy",
+          "Natural Resource Management",
+          "Food Chemistry",
+          "Food Processing",
+          "Food Safety Management"
+        ]
+      },
+      {
+        "college": "College of Science and Technology",
+        "degrees": [
+          "Data Science",
+          "Artificial Intelligence",
+          "Cyber-network Security",
+          "Computer Science",
+          "Computer Network",
+          "Computer Engineering"
+        ]
+      },
+      {
+        "college": "College of Electrical Engineering and Electronics",
+        "degrees": [
+          "Electrical Engineering",
+          "Electronic Engineering"
+        ]
+      },
+      {
+        "college": "College of Civil Engineering",
+        "degrees": [
+          "Civil Engineering",
+          "Construction Engineering and Management",
+          "Infrastructure Engineering"
+        ]
+      }
+    ]
+  },
+  "study_schedule": {
+    "monday_to_friday": [
+      {
+        "shift": "Morning",
+        "time": "08:00 - 11:00"
+      },
+      {
+        "shift": "Afternoon",
+        "time": "14:00 - 17:00"
+      },
+      {
+        "shift": "Evening",
+        "time": "17:30 - 20:30"
+      }
+    ],
+    "weekend_saturday_and_sunday": [
+      {
+        "shift": "Morning",
+        "time": "08:00 - 11:00"
+      },
+      {
+        "shift": "Afternoon",
+        "time": "14:00 - 17:00"
+      }
+    ]
+  },
+  "intake_dates": [
+    "2023-12-01",
+    "2024-01-01",
+    "2024-03-01"
+  ],
+  "tuition_fees_per_year_usd": [
+    {
+      "campus": "Phnom Penh",
+      "master_degree": 550,
+      "bachelor_degree": 450,
+      "associate_degree": 400
+    },
+    {
+      "campus": "Kratie",
+      "master_degree": 450,
+      "bachelor_degree": 400,
+      "associate_degree": 350
+    },
+    {
+      "campus": "Mondulkiri",
+      "master_degree": 450,
+      "bachelor_degree": 400,
+      "associate_degree": 350
+    },
+    {
+      "campus": "Ratanakiri",
+      "master_degree": 450,
+      "bachelor_degree": 400,
+      "associate_degree": 350
+    },
+    {
+      "campus": "Stung Treng",
+      "master_degree": 450,
+      "bachelor_degree": 400,
+      "associate_degree": 350
+    }
+  ],
+  "student_activities_and_opportunities": [
+    "International study tours and factory visits (e.g., Japan, China)",
+    "Participation in international conferences (e.g., Eurasia Foundation)",
+    "Opportunities for jobs and internships abroad, particularly in Japan (e.g., OKAYAMA, YAMASHUKU)"
+  ]
+}
