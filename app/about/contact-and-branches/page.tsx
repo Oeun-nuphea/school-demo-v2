@@ -139,7 +139,7 @@ export default function ContactAndBranchesPage() {
             </div>
 
             {/* Branches Directory */}
-            <h2 className="text-3xl font-serif font-bold text-gray-900 mb-6">{lang === 'kh' ? 'បញ្ជីសាខារបស់យើង' : 'Our Branch Directory'}</h2>
+            <h2 className="text-3xl font-serif font-bold text-gray-900 mb-6">{lang === 'kh' ? 'បញ្ជីសាខារបស់យើង' : 'Our Branch'}</h2>
             <div className="w-16 h-1 bg-secondary mb-10"></div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
