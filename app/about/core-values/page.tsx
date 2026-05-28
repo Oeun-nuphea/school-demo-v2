@@ -31,7 +31,7 @@ export default function CoreValuesPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center text-sm text-gray-500">
           <Link href="/" className="hover:text-primary transition-colors">Home</Link>
           <ChevronRight className="w-4 h-4 mx-2 opacity-50" />
-          <span className="text-gray-900 font-medium">About AIC</span>
+          <span className="text-gray-900 font-medium">About Us</span>
           <ChevronRight className="w-4 h-4 mx-2 opacity-50" />
           <span className="text-gray-900 font-medium">{lang === 'kh' ? 'សីលធម៌ និងទស្សនវិស័យ' : 'Motto & Vision'}</span>
         </div>
@@ -40,7 +40,7 @@ export default function CoreValuesPage() {
       {/* Main Content Layout */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="flex flex-col lg:flex-row gap-12">
-          
+
           {/* Sidebar Navigation */}
           <aside className="lg:w-1/4">
             <div className="sticky top-28 bg-gray-50 p-6 rounded-sm border border-gray-100">
@@ -60,7 +60,7 @@ export default function CoreValuesPage() {
           <div className="lg:w-3/4">
             <h2 className="text-3xl font-serif font-bold text-gray-900 mb-6">{lang === 'kh' ? 'ទស្សនវិស័យ និងបេសកកម្ម' : 'Vision & Mission'}</h2>
             <div className="w-16 h-1 bg-secondary mb-10"></div>
-            
+
             <div className="space-y-8 mb-12">
               <div className="bg-white p-8 border border-gray-100 rounded-sm shadow-sm">
                 <p className="text-lg text-gray-700 leading-relaxed font-khmer">
@@ -76,7 +76,7 @@ export default function CoreValuesPage() {
 
             <h2 className="text-3xl font-serif font-bold text-gray-900 mb-6">{t(info.about_institute.goals.title)}</h2>
             <div className="w-16 h-1 bg-secondary mb-8"></div>
-            
+
             <ul className="space-y-4">
               {info.about_institute.goals.points.map((point, idx) => (
                 <li key={idx} className="flex items-start bg-gray-50 p-4 border border-gray-100 rounded-sm">
@@ -85,7 +85,7 @@ export default function CoreValuesPage() {
               ))}
             </ul>
           </div>
-          
+
         </div>
       </div>
     </main>

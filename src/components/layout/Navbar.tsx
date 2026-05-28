@@ -13,7 +13,7 @@ export default function Navbar() {
 
   const navLinks = [
     {
-      name: { english: "About AIC", khmer: "អំពីវិទ្យាស្ថាន" },
+      name: { english: "About Us", khmer: "អំពីវិទ្យាស្ថាន" },
       href: "/about",
       subItems: [
         { label: { english: "Core Values", khmer: "សីលធម៌ និងទស្សនវិស័យ" }, href: "/about/core-values" },
@@ -69,10 +69,10 @@ export default function Navbar() {
           <div className="flex-shrink-0 flex items-center">
             <Link href="/" className="flex items-center gap-3">
               <div className="relative w-16 h-16 flex items-center justify-center">
-                <Image 
-                  src="/logo-transparent.png" 
-                  alt="AIC Logo" 
-                  fill 
+                <Image
+                  src="/logo-transparent.png"
+                  alt="AIC Logo"
+                  fill
                   sizes="64px"
                   className="object-contain"
                   priority
@@ -93,8 +93,8 @@ export default function Navbar() {
           <nav className="hidden md:flex space-x-8 items-center h-full">
             {navLinks.map((link) => (
               <div key={link.name.english} className="relative group h-full flex items-center">
-                <Link 
-                  href={link.href} 
+                <Link
+                  href={link.href}
                   className={`text-gray-700 hover:text-primary font-medium flex items-center h-full transition-colors ${lang === 'kh' ? 'font-khmer text-[15px]' : ''}`}
                 >
                   {t(link.name)}
@@ -104,9 +104,9 @@ export default function Navbar() {
                 <div className="absolute left-0 top-full hidden group-hover:block w-56 bg-white border-x border-b uni-border shadow-lg py-2 rounded-b-sm">
                   <div className="absolute -top-px left-0 right-0 h-px bg-primary"></div>
                   {link.subItems.map((subItem) => (
-                    <Link 
-                      key={subItem.label.english} 
-                      href={subItem.href} 
+                    <Link
+                      key={subItem.label.english}
+                      href={subItem.href}
                       className={`block px-5 py-2.5 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary hover:pl-6 transition-all duration-200 ${lang === 'kh' ? 'font-khmer' : ''}`}
                     >
                       {t(subItem.label)}
@@ -119,8 +119,8 @@ export default function Navbar() {
 
           {/* Action Area */}
           <div className="hidden md:flex items-center space-x-4">
-            <Link 
-              href="/apply" 
+            <Link
+              href="/apply"
               className={`bg-primary text-white px-5 py-2.5 rounded-sm font-medium hover:bg-primary-dark transition-colors shadow-sm ${lang === 'kh' ? 'font-khmer text-sm pt-3' : ''}`}
             >
               {lang === 'kh' ? 'ដាក់ពាក្យចូលរៀន' : 'Apply Now'}
@@ -152,7 +152,7 @@ export default function Navbar() {
                   {t(link.name)}
                   <ChevronDown className={`w-6 h-6 text-gray-400 transition-transform duration-300 ${openSection === link.name.english ? '-rotate-180 text-primary' : ''}`} />
                 </button>
-                
+
                 {openSection === link.name.english && (
                   <div className="pt-5 pb-2 space-y-4">
                     {link.subItems.map((subItem) => (
@@ -169,7 +169,7 @@ export default function Navbar() {
                 )}
               </div>
             ))}
-            
+
             <div className="pt-6 mt-6 border-t border-gray-200">
               <Link
                 href="/apply"

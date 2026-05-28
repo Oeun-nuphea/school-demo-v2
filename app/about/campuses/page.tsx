@@ -31,7 +31,7 @@ export default function CampusesPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center text-sm text-gray-500">
           <Link href="/" className="hover:text-primary transition-colors">Home</Link>
           <ChevronRight className="w-4 h-4 mx-2 opacity-50" />
-          <span className="text-gray-900 font-medium">About AIC</span>
+          <span className="text-gray-900 font-medium">About Us</span>
           <ChevronRight className="w-4 h-4 mx-2 opacity-50" />
           <span className="text-gray-900 font-medium">{lang === 'kh' ? 'ទីតាំងសាខា' : 'Our Campuses'}</span>
         </div>
@@ -40,7 +40,7 @@ export default function CampusesPage() {
       {/* Main Content Layout */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="flex flex-col lg:flex-row gap-12">
-          
+
           {/* Sidebar Navigation */}
           <aside className="lg:w-1/4">
             <div className="sticky top-28 bg-gray-50 p-6 rounded-sm border border-gray-100">
@@ -60,7 +60,7 @@ export default function CampusesPage() {
           <div className="lg:w-3/4">
             <h2 className="text-3xl font-serif font-bold text-gray-900 mb-6">{lang === 'kh' ? 'ស្វែងរកទីតាំងរបស់យើង' : 'Discover Our Locations'}</h2>
             <div className="w-16 h-1 bg-secondary mb-10"></div>
-            
+
             <p className="text-lg text-gray-700 mb-12 leading-relaxed">
               {t(info.institution_info.name)} operates across {info.contact_and_branches.length} distinct campuses nationwide.
             </p>
@@ -69,7 +69,7 @@ export default function CampusesPage() {
               {info.contact_and_branches.map((campus, idx) => (
                 <div key={idx} className="flex flex-col md:flex-row gap-0 items-stretch bg-white border border-gray-100 rounded-sm overflow-hidden hover:shadow-xl transition-shadow duration-300 group">
                   <div className="w-full md:w-2/5 min-h-[250px] relative overflow-hidden bg-gray-100">
-                    <img 
+                    <img
                       src={idx === 0 ? "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" : `https://picsum.photos/seed/${campus.branch_name.english}/800/600`}
                       alt={t(campus.branch_name)}
                       className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
@@ -83,7 +83,7 @@ export default function CampusesPage() {
                     <p className="text-gray-600 mb-4 leading-relaxed font-khmer">
                       {t(campus.address)}
                     </p>
-                    
+
                     <div className="mt-4 space-y-2">
                       {campus.phone_numbers.map((phone, pIdx) => (
                         <div key={pIdx} className="flex items-center text-gray-700">
@@ -92,13 +92,13 @@ export default function CampusesPage() {
                         </div>
                       ))}
                     </div>
-                    
+
                   </div>
                 </div>
               ))}
             </div>
           </div>
-          
+
         </div>
       </div>
     </main>
