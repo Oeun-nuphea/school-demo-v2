@@ -199,13 +199,6 @@ export default function Navbar() {
 
             <div className="pt-6 mt-6 border-t border-gray-200 space-y-4">
               <Link
-                href="/portal"
-                onClick={() => setIsOpen(false)}
-                className={`block w-full py-4 text-lg font-bold text-primary bg-primary/5 border border-primary/20 text-center rounded-sm hover:bg-primary/10 transition-colors shadow-sm ${lang === 'kh' ? 'font-khmer' : ''}`}
-              >
-                {lang === 'kh' ? 'វិបផតថលនិស្សិត' : 'Student Portal'}
-              </Link>
-              <Link
                 href="/apply"
                 onClick={() => setIsOpen(false)}
                 className={`block w-full py-4 text-lg font-bold text-white bg-primary text-center rounded-sm hover:bg-primary-dark transition-colors shadow-md ${lang === 'kh' ? 'font-khmer' : ''}`}
