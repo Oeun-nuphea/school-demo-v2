@@ -11,7 +11,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [openSection, setOpenSection] = useState<string | null>(null);
   const pathname = usePathname() || "";
-  const { t, lang } = useLanguage();
+  const { t, lang, setLang } = useLanguage();
 
   const navLinks = [
     {
@@ -167,16 +167,25 @@ export default function Navbar() {
               const isActive = (pathname.startsWith(link.href) && link.href !== '/') || link.subItems.some(subItem => pathname === subItem.href || pathname.startsWith(subItem.href));
               return (
                 <div key={link.name.english} className="border-b border-gray-100 pb-4 last:border-0 last:pb-0">
-                  <button
-                    onClick={() => toggleSection(link.name.english)}
-                    className={`w-full flex justify-between items-center text-xl font-sans group ${isActive ? 'text-primary font-bold' : 'text-gray-900 font-semibold'
-                      } ${lang === 'kh' ? 'font-khmer' : ''}`}
-                  >
-                    {t(link.name)}
-                    {link.subItems.length > 0 && (
+                  {link.subItems.length > 0 ? (
+                    <button
+                      onClick={() => toggleSection(link.name.english)}
+                      className={`w-full flex justify-between items-center text-xl font-sans group ${isActive ? 'text-primary font-bold' : 'text-gray-900 font-semibold'
+                        } ${lang === 'kh' ? 'font-khmer' : ''}`}
+                    >
+                      {t(link.name)}
                       <ChevronDown className={`w-6 h-6 text-gray-400 transition-transform duration-300 ${openSection === link.name.english ? '-rotate-180 text-primary' : ''}`} />
-                    )}
-                  </button>
+                    </button>
+                  ) : (
+                    <Link
+                      href={link.href}
+                      onClick={() => setIsOpen(false)}
+                      className={`w-full flex justify-between items-center text-xl font-sans group ${isActive ? 'text-primary font-bold' : 'text-gray-900 font-semibold'
+                        } ${lang === 'kh' ? 'font-khmer' : ''}`}
+                    >
+                      {t(link.name)}
+                    </Link>
+                  )}
 
                   {openSection === link.name.english && link.subItems.length > 0 && (
                     <div className="pt-5 pb-2 space-y-4">
@@ -198,6 +207,25 @@ export default function Navbar() {
             })}
 
             <div className="pt-6 mt-6 border-t border-gray-200 space-y-4">
+              <div className="flex bg-gray-100 p-1 rounded-sm w-full">
+                <button
+                  onClick={() => setLang('kh')}
+                  className={`flex-1 py-2.5 text-center text-sm font-bold rounded-sm transition-colors ${
+                    lang === 'kh' ? 'bg-white shadow-sm text-primary' : 'text-gray-500 hover:text-gray-900'
+                  }`}
+                >
+                  ភាសាខ្មែរ (KH)
+                </button>
+                <button
+                  onClick={() => setLang('en')}
+                  className={`flex-1 py-2.5 text-center text-sm font-bold rounded-sm transition-colors ${
+                    lang === 'en' ? 'bg-white shadow-sm text-primary' : 'text-gray-500 hover:text-gray-900'
+                  }`}
+                >
+                  English (EN)
+                </button>
+              </div>
+
               <Link
                 href="/apply"
                 onClick={() => setIsOpen(false)}
