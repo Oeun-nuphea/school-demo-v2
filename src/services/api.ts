@@ -98,7 +98,7 @@ const mockFaculties: Faculty[] = [
 ];
 
 const mockStats: Statistic[] = [
-  { id: "1", label: "Nationwide Campuses", value: "6" },
+  { id: "1", label: "Nationwide Campuses", value: "5" },
   { id: "2", label: "Academic Colleges", value: "7" },
   { id: "3", label: "Degree Programs", value: "40+" },
   { id: "4", label: "International Partners", value: "25+" },
