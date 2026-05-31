@@ -106,16 +106,23 @@ export default function Navbar() {
               const isActive = (pathname.startsWith(link.href) && link.href !== '/') || link.subItems.some(subItem => pathname === subItem.href || pathname.startsWith(subItem.href));
               return (
                 <div key={link.name.english} className="relative group h-full flex items-center">
-                  <Link
-                    href={link.href}
-                    className={`flex items-center py-1 mt-1 transition-colors border-b-2 ${isActive ? 'text-primary font-bold border-primary' : 'text-gray-700 font-medium border-transparent hover:text-primary'
-                      } ${lang === 'kh' ? 'font-khmer text-[15px]' : ''}`}
-                  >
-                    {t(link.name)}
-                    {link.subItems.length > 0 && (
+                  {link.subItems.length > 0 ? (
+                    <button
+                      className={`flex items-center py-1 mt-1 transition-colors border-b-2 ${isActive ? 'text-primary font-bold border-primary' : 'text-gray-700 font-medium border-transparent hover:text-primary'
+                        } ${lang === 'kh' ? 'font-khmer text-[15px]' : ''}`}
+                    >
+                      {t(link.name)}
                       <ChevronDown className="w-4 h-4 ml-1 opacity-50 group-hover:opacity-100 group-hover:-rotate-180 transition-all duration-300" />
-                    )}
-                  </Link>
+                    </button>
+                  ) : (
+                    <Link
+                      href={link.href}
+                      className={`flex items-center py-1 mt-1 transition-colors border-b-2 ${isActive ? 'text-primary font-bold border-primary' : 'text-gray-700 font-medium border-transparent hover:text-primary'
+                        } ${lang === 'kh' ? 'font-khmer text-[15px]' : ''}`}
+                    >
+                      {t(link.name)}
+                    </Link>
+                  )}
                   {/* Organized dropdown indicator */}
                   {link.subItems.length > 0 && (
                     <div className="absolute left-0 top-full hidden group-hover:block w-56 bg-white border-x border-b uni-border shadow-lg py-2 rounded-b-sm">
