@@ -10,7 +10,7 @@ export default function Hero() {
   return (
     <div className="relative bg-gray-900 h-[600px] flex items-center">
       {/* Background Image with Overlay */}
-      <div 
+      <div
         className="absolute inset-0 z-0 opacity-50 bg-cover bg-center"
         style={{ backgroundImage: "url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')" }}
       ></div>
@@ -28,17 +28,10 @@ export default function Hero() {
           <p className="text-lg md:text-xl text-gray-200 mb-8 font-sans leading-relaxed">
             {lang === 'kh' ? 'ស្ថាប័នស្តង់ដារអន្តរជាតិដែលផ្តោតលើភាពល្អឯកក្នុងការអប់រំ ការស្រាវជ្រាវ និងការអភិវឌ្ឍអ្នកដឹកនាំជំនាន់ក្រោយ។' : 'A world-class institution dedicated to academic excellence, groundbreaking research, and the development of future leaders.'}
           </p>
-          
+
           <div className="flex flex-col sm:flex-row gap-4">
-            <Link 
-              href="/apply" 
-              className={`bg-secondary text-primary-dark font-bold px-8 py-3 rounded-sm hover:bg-secondary-dark transition-colors flex items-center justify-center ${lang === 'kh' ? 'font-khmer' : ''}`}
-            >
-              {lang === 'kh' ? 'ដាក់ពាក្យចូលរៀន' : 'Apply for Fall 2026'}
-              <ChevronRight className="w-5 h-5 ml-2" />
-            </Link>
-            <Link 
-              href="/colleges" 
+            <Link
+              href="/colleges"
               className={`bg-transparent border border-white text-white font-medium px-8 py-3 rounded-sm hover:bg-white/10 transition-colors text-center ${lang === 'kh' ? 'font-khmer' : ''}`}
             >
               {lang === 'kh' ? 'ស្វែងរកមុខជំនាញ' : 'Explore Programs'}

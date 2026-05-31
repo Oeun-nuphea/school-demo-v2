@@ -1,6 +1,6 @@
 'use client'
 import React from 'react';
-import { Mail, MapPin, Phone } from 'lucide-react';
+import { Mail, MapPin, Phone, Send } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 
 export default function TopInfoBar() {
@@ -18,6 +18,10 @@ export default function TopInfoBar() {
             <Mail className="w-3.5 h-3.5 mr-2 text-secondary" />
             <span>sopheap4anka@gmail.com</span>
           </div>
+          <a href="https://t.me/aicofficialchannel" target="_blank" rel="noopener noreferrer" className="flex items-center text-gray-300 hover:text-white transition-colors cursor-pointer">
+            <Send className="w-3.5 h-3.5 mr-2 text-secondary" />
+            <span>Telegram</span>
+          </a>
         </div>
         
         <div className="flex items-center space-x-6">

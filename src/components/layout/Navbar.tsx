@@ -22,7 +22,6 @@ export default function Navbar() {
         { label: { english: "Founder & Principal", khmer: "ស្ថាបនិក និងនាយកវិទ្យាស្ថាន" }, href: "/about/founder-and-principal" },
         { label: { english: "Campus Locations", khmer: "ទីតាំងសាខា" }, href: "/about/campuses" },
         { label: { english: "Contact and Branches", khmer: "ទំនាក់ទំនង និងសាខា" }, href: "/about/contact-and-branches" },
-        { label: { english: "Our Alumni", khmer: "អតីតនិស្សិតរបស់យើង" }, href: "/about/alumni" },
       ]
     },
     {
@@ -146,12 +145,6 @@ export default function Navbar() {
 
           {/* Action Area */}
           <div className="hidden lg:flex items-center space-x-4">
-            <Link
-              href="/apply"
-              className={`bg-primary text-white px-5 py-2.5 rounded-sm font-medium hover:bg-primary-dark transition-colors shadow-sm ${lang === 'kh' ? 'font-khmer text-sm pt-3' : ''}`}
-            >
-              {lang === 'kh' ? 'ដាក់ពាក្យចូលរៀន' : 'Apply Now'}
-            </Link>
           </div>
 
           {/* Mobile menu button */}
@@ -232,14 +225,6 @@ export default function Navbar() {
                   English (EN)
                 </button>
               </div>
-
-              <Link
-                href="/apply"
-                onClick={() => setIsOpen(false)}
-                className={`block w-full py-4 text-lg font-bold text-white bg-primary text-center rounded-sm hover:bg-primary-dark transition-colors shadow-md ${lang === 'kh' ? 'font-khmer' : ''}`}
-              >
-                {lang === 'kh' ? 'ដាក់ពាក្យចូលរៀន' : 'Apply Now'}
-              </Link>
             </div>
           </div>
         </div>
