@@ -25,7 +25,7 @@ export default function ContactAndBranchesPage() {
 
         <div className="relative z-20 text-center px-4 py-16">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white mb-4 drop-shadow-md">
-            {lang === 'kh' ? 'ទំនាក់ទំនង និងសាខា' : 'Contact and Branches'}
+            {lang === 'kh' ? 'ទំនាក់ទំនង' : 'Contact'}
           </h1>
           <p className="text-lg text-white/75 font-sans max-w-2xl mx-auto">
             {lang === 'kh' ? `ទំនាក់ទំនងមកកាន់ ${t(info.institution_info.name)} តាមរយៈសាខាណាមួយរបស់យើង` : `Get in touch with ${t(info.institution_info.name)} at any of our national branches.`}
@@ -40,7 +40,7 @@ export default function ContactAndBranchesPage() {
           <ChevronRight className="w-4 h-4 mx-2 opacity-50" />
           <span className="text-gray-900 font-medium">About Us</span>
           <ChevronRight className="w-4 h-4 mx-2 opacity-50" />
-          <span className="text-gray-900 font-medium">{lang === 'kh' ? 'ទំនាក់ទំនង និងសាខា' : 'Contact and Branches'}</span>
+          <span className="text-gray-900 font-medium">{lang === 'kh' ? 'ទំនាក់ទំនង' : 'Contact'}</span>
         </div>
       </div>
 
@@ -63,10 +63,7 @@ export default function ContactAndBranchesPage() {
                   <Link href="/about/campuses" className="block text-gray-600 hover:text-primary transition-colors">{lang === 'kh' ? 'ទីតាំងសាខា' : 'Campus Locations'}</Link>
                 </li>
                 <li>
-                  <Link href="/about/contact-and-branches" className="block text-primary font-bold border-l-2 border-primary pl-3 transition-colors">{lang === 'kh' ? 'ទំនាក់ទំនង និងសាខា' : 'Contact and Branches'}</Link>
-                </li>
-                <li>
-                  <Link href="/about/alumni" className="block text-gray-600 hover:text-primary transition-colors">{lang === 'kh' ? 'អតីតនិស្សិតរបស់យើង' : 'Our Alumni'}</Link>
+                  <Link href="/about/contact" className="block text-primary font-bold border-l-2 border-primary pl-3 transition-colors">{lang === 'kh' ? 'ទំនាក់ទំនង' : 'Contact'}</Link>
                 </li>
               </ul>
             </div>
@@ -138,52 +135,7 @@ export default function ContactAndBranchesPage() {
               </div>
             </div>
 
-            {/* Branches Directory */}
-            <h2 className="text-3xl font-serif font-bold text-gray-900 mb-6">{lang === 'kh' ? 'បញ្ជីសាខារបស់យើង' : 'Our Branch'}</h2>
-            <div className="w-16 h-1 bg-secondary mb-10"></div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {info.contact_and_branches.map((campus, idx) => (
-                <div key={idx} className="bg-white border border-gray-100 rounded-sm p-8 shadow-sm hover:shadow-md transition-shadow">
-                  <div className="flex items-center mb-6 border-b border-gray-100 pb-4">
-                    <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4">
-                      <MapPin className="w-6 h-6 text-primary" />
-                    </div>
-                    <h3 className="text-2xl font-serif font-bold text-gray-900 font-khmer">{t(campus.branch_name)}</h3>
-                  </div>
-
-                  <div className="space-y-4">
-                    <div className="flex items-start text-gray-700">
-                      <MapPin className="w-5 h-5 mr-3 mt-0.5 text-secondary flex-shrink-0" />
-                      <span className="font-khmer leading-relaxed">{t(campus.address)}</span>
-                    </div>
-
-                    <div className="flex items-start text-gray-700">
-                      <Phone className="w-5 h-5 mr-3 mt-0.5 text-secondary flex-shrink-0" />
-                      <div className="flex flex-col space-y-1">
-                        {campus.phone_numbers.map((phone, pIdx) => (
-                          <span key={pIdx} className="font-medium">{phone}</span>
-                        ))}
-                      </div>
-                    </div>
-
-                    {(campus as any).email && (
-                      <div className="flex items-center text-gray-700">
-                        <Mail className="w-5 h-5 mr-3 text-secondary flex-shrink-0" />
-                        <a href={`mailto:${(campus as any).email}`} className="hover:text-primary transition-colors">{(campus as any).email}</a>
-                      </div>
-                    )}
-
-                    {(campus as any).website && (
-                      <div className="flex items-center text-gray-700">
-                        <Globe className="w-5 h-5 mr-3 text-secondary flex-shrink-0" />
-                        <a href={`https://${(campus as any).website}`} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">{(campus as any).website}</a>
-                      </div>
-                    )}
-                  </div>
-                </div>
-              ))}
-            </div>
 
           </div>
         </div>

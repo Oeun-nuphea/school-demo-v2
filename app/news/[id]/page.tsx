@@ -84,20 +84,27 @@ export default function NewsDetailPage({ params }: { params: Promise<{ id: strin
               </div>
             )}
 
-            <div className="prose max-w-none text-gray-700 leading-relaxed font-khmer text-lg">
+            <div className="max-w-none text-gray-700 leading-relaxed font-khmer text-lg [&_p]:mb-4 [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:mb-4 [&_ol]:list-decimal [&_ol]:pl-5 [&_ol]:mb-4 [&_a]:text-primary [&_a]:underline hover:[&_a]:text-primary-dark [&_strong]:font-bold [&_h3]:text-2xl [&_h3]:font-bold [&_h3]:mb-3 [&_h3]:mt-6 [&_h3]:text-gray-900 [&_h2]:text-3xl [&_h2]:font-bold [&_h2]:mb-4 [&_h2]:mt-8 [&_h2]:text-gray-900 [&_li]:mb-1">
               <p className="font-medium text-xl text-gray-800 mb-6 border-l-4 border-primary pl-4">
                 {t(newsItem.excerpt)}
               </p>
-              <p className="mb-4">
-                {lang === 'kh' 
-                  ? 'នេះគឺជាព័ត៌មានលម្អិតបឋម។ វិទ្យាស្ថានអាស៊ី កម្ពុជា បន្តអភិវឌ្ឍគុណភាពអប់រំ និងផ្តល់នូវព័ត៌មានថ្មីៗដល់និស្សិត និងសាធារណជនជាប្រចាំ។' 
-                  : 'This is the detailed content placeholder. Asian Institute of Cambodia continuously develops education quality and provides recent updates to students and the public.'}
-              </p>
-              <p>
-                {lang === 'kh'
-                  ? 'សូមតាមដានព័ត៌មានបន្ថែមនៅលើគេហទំព័ររបស់យើង។'
-                  : 'Stay tuned for more information on our website.'}
-              </p>
+              
+              {newsItem.content ? (
+                <div dangerouslySetInnerHTML={{ __html: t(newsItem.content) }} />
+              ) : (
+                <>
+                  <p className="mb-4">
+                    {lang === 'kh' 
+                      ? 'នេះគឺជាព័ត៌មានលម្អិតបឋម។ វិទ្យាស្ថានអាស៊ី កម្ពុជា បន្តអភិវឌ្ឍគុណភាពអប់រំ និងផ្តល់នូវព័ត៌មានថ្មីៗដល់និស្សិត និងសាធារណជនជាប្រចាំ។' 
+                      : 'This is the detailed content placeholder. Asian Institute of Cambodia continuously develops education quality and provides recent updates to students and the public.'}
+                  </p>
+                  <p>
+                    {lang === 'kh'
+                      ? 'សូមតាមដានព័ត៌មានបន្ថែមនៅលើគេហទំព័ររបស់យើង។'
+                      : 'Stay tuned for more information on our website.'}
+                  </p>
+                </>
+              )}
             </div>
           </article>
         ) : null}

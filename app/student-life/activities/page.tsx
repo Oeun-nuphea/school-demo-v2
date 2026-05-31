@@ -167,7 +167,7 @@ export default function ActivitiesPage() {
                 </p>
               </div>
               <Link
-                href="/about/contact-and-branches"
+                href="/about/contact"
                 className={`inline-flex items-center gap-2 bg-secondary hover:bg-secondary/90 text-white font-bold px-6 py-3 rounded-sm whitespace-nowrap transition-colors ${kh ? 'font-khmer' : ''}`}
               >
                 {kh ? 'ទំនាក់ទំនងយើង' : 'Contact Us'}

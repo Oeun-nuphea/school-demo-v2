@@ -9,6 +9,7 @@ export interface NewsItem {
   category: Translatable;
   date: Translatable;
   excerpt: Translatable;
+  content?: Translatable;
   imageUrl?: string;
 }
 
@@ -41,6 +42,10 @@ const mockNews: NewsItem[] = [
     category: { english: "Academic News", khmer: "ព័ត៌មានសិក្សាធិការ" },
     date: { english: "May 25, 2026", khmer: "២៥ ឧសភា ២០២៦" },
     excerpt: { english: "A new $5 million grant has been awarded to the Faculty of Engineering to further research in sustainable energy solutions.", khmer: "មូលនិធិថ្មីចំនួន ៥ លានដុល្លារត្រូវបានផ្តល់ជូនមហាវិទ្យាល័យវិស្វកម្មដើម្បីបន្តការស្រាវជ្រាវលើដំណោះស្រាយថាមពលប្រកបដោយចីរភាព។" },
+    content: { 
+      english: "<p>The Asian Institute of Cambodia is proud to announce a new <strong>$5 million grant</strong> awarded to the Faculty of Engineering.</p><h3>Key Objectives:</h3><ul><li>Develop sustainable energy solutions</li><li>Enhance smart grid technologies</li><li>Promote green building practices</li></ul>", 
+      khmer: "<p>វិទ្យាស្ថានអាស៊ីកម្ពុជាមានមោទនភាពក្នុងការប្រកាសពីមូលនិធិថ្មីចំនួន <strong>៥ លានដុល្លារ</strong> ដែលត្រូវបានផ្តល់ជូនមហាវិទ្យាល័យវិស្វកម្ម។</p><h3>គោលបំណងសំខាន់ៗ៖</h3><ul><li>អភិវឌ្ឍដំណោះស្រាយថាមពលប្រកបដោយចីរភាព</li><li>ពង្រឹងបច្ចេកវិទ្យាបណ្តាញអគ្គិសនីឆ្លាតវៃ</li><li>លើកកម្ពស់ការអនុវត្តអគារបៃតង</li></ul>" 
+    },
     imageUrl: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
   },
   {
@@ -49,6 +54,10 @@ const mockNews: NewsItem[] = [
     category: { english: "Admissions", khmer: "ការចុះឈ្មោះចូលរៀន" },
     date: { english: "May 20, 2026", khmer: "២០ ឧសភា ២០២៦" },
     excerpt: { english: "Prospective students are reminded that the deadline for Fall 2026 undergraduate applications is fast approaching.", khmer: "សូមរំលឹកដល់សិស្សានុសិស្សថា ថ្ងៃផុតកំណត់សម្រាប់ការដាក់ពាក្យចូលរៀនថ្នាក់បរិញ្ញាបត្រឆ្នាំ២០២៦ ជិតឈានចូលមកដល់ហើយ។" },
+    content: {
+      english: "<p>Prospective students are reminded that the deadline for Fall 2026 undergraduate applications is fast approaching.</p><p>Please ensure all documents are submitted via the <a href='/apply' class='text-primary underline'>online portal</a>.</p>",
+      khmer: "<p>សូមរំលឹកដល់សិស្សានុសិស្សថា ថ្ងៃផុតកំណត់សម្រាប់ការដាក់ពាក្យចូលរៀនថ្នាក់បរិញ្ញាបត្រឆ្នាំ២០២៦ ជិតឈានចូលមកដល់ហើយ។</p><p>សូមប្រាកដថាឯកសារទាំងអស់ត្រូវបានបញ្ជូនតាមរយៈ <a href='/apply' class='text-primary underline'>ប្រព័ន្ធអនឡាញ</a>។</p>"
+    },
     imageUrl: "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
   },
   {
@@ -57,6 +66,10 @@ const mockNews: NewsItem[] = [
     category: { english: "Scholarships", khmer: "អាហារូបករណ៍" },
     date: { english: "May 18, 2026", khmer: "១៨ ឧសភា ២០២៦" },
     excerpt: { english: "We are proud to announce the 50 recipients of this year's Global Excellence Scholarships.", khmer: "យើងមានមោទនភាពប្រកាសអ្នកទទួលអាហារូបករណ៍ឧត្តមភាពសកលចំនួន ៥០ នាក់ប្រចាំឆ្នាំនេះ។" },
+    content: {
+      english: "<p>We are proud to announce the 50 recipients of this year's Global Excellence Scholarships.</p><p>Congratulations to all the winners! You can view the full list <a href='/scholarships' class='text-primary underline'>here</a>.</p>",
+      khmer: "<p>យើងមានមោទនភាពប្រកាសអ្នកទទួលអាហារូបករណ៍ឧត្តមភាពសកលចំនួន ៥០ នាក់ប្រចាំឆ្នាំនេះ។</p><p>សូមអបអរសាទរដល់អ្នកឈ្នះទាំងអស់! អ្នកអាចមើលបញ្ជីឈ្មោះពេញលេញ <a href='/scholarships' class='text-primary underline'>នៅទីនេះ</a>។</p>"
+    },
     imageUrl: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
   }
 ];

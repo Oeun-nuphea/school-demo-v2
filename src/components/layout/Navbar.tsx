@@ -21,7 +21,7 @@ export default function Navbar() {
         { label: { english: "Vision & Missions", khmer: "សីលធម៌ និងទស្សនវិស័យ" }, href: "/about/vision-and-missions" },
         { label: { english: "Founder & Principal", khmer: "ស្ថាបនិក និងនាយកវិទ្យាស្ថាន" }, href: "/about/founder-and-principal" },
         { label: { english: "Campus Locations", khmer: "ទីតាំងសាខា" }, href: "/about/campuses" },
-        { label: { english: "Contact and Branches", khmer: "ទំនាក់ទំនង និងសាខា" }, href: "/about/contact-and-branches" },
+        { label: { english: "Contact", khmer: "ទំនាក់ទំនង" }, href: "/about/contact" },
       ]
     },
     {
@@ -55,11 +55,6 @@ export default function Navbar() {
         { label: { english: "International Activities", khmer: "សកម្មភាពអន្តរជាតិ" }, href: "/student-life/activities" },
         { label: { english: "Internships & Jobs", khmer: "កម្មសិក្សា និងការងារ" }, href: "/student-life/internships" },
       ]
-    },
-    {
-      name: { english: "Research", khmer: "ការស្រាវជ្រាវ" },
-      href: "/research",
-      subItems: []
     },
   ];
 
