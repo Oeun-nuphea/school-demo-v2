@@ -52,7 +52,6 @@ export default function Navbar() {
       href: "/student-life",
       subItems: [
         { label: { english: "Study Schedules", khmer: "វេនសិក្សា" }, href: "/student-life/schedules" },
-        { label: { english: "International Activities", khmer: "សកម្មភាពអន្តរជាតិ" }, href: "/student-life/activities" },
         { label: { english: "Internships & Jobs", khmer: "កម្មសិក្សា និងការងារ" }, href: "/student-life/internships" },
       ]
     },

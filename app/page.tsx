@@ -4,6 +4,7 @@ import LatestNews from "@/components/home/LatestNews";
 import Faculties from "@/components/home/Faculties";
 import StudentLife from "@/components/home/StudentLife";
 import Statistics from "@/components/home/Statistics";
+import InternationalActivities from "@/components/home/InternationalActivities";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <Statistics />
       <Faculties />
       <StudentLife />
+      <InternationalActivities />
     </main>
   );
 }

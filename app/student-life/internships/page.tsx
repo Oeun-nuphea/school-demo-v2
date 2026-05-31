@@ -71,7 +71,6 @@ export default function InternshipsPage() {
               <ul className="space-y-3">
                 {[
                   { href: '/student-life/schedules', en: 'Study Schedules', kh: 'វេនសិក្សា' },
-                  { href: '/student-life/activities', en: 'International Activities', kh: 'សកម្មភាពអន្តរជាតិ' },
                   { href: '/student-life/internships', en: 'Internships & Jobs', kh: 'កម្មសិក្សា និងការងារ', active: true },
                 ].map((item) => (
                   <li key={item.href}>

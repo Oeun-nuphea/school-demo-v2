@@ -28,11 +28,7 @@ export default function StudentLife() {
                 </li>
               ))}
             </ul>
-            <div className="pt-4">
-              <a href="/student-life/activities" className={`inline-block border-2 border-primary text-primary hover:bg-primary hover:text-white font-bold px-6 py-2 rounded-sm transition-colors ${lang === 'kh' ? 'font-khmer' : ''}`}>
-                {lang === 'kh' ? 'ស្វែងយល់បន្ថែម' : 'Explore Campus Life'}
-              </a>
-            </div>
+
           </div>
 
           <div className="w-full md:w-1/2 grid grid-cols-2 gap-4">

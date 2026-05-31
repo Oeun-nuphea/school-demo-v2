@@ -50,9 +50,6 @@ export default function SchedulesPage() {
                   <Link href="/student-life/schedules" className="block text-primary font-bold border-l-2 border-primary pl-3 transition-colors">{lang === 'kh' ? 'វេនសិក្សា' : 'Study Schedules'}</Link>
                 </li>
                 <li>
-                  <Link href="/student-life/activities" className="block text-gray-600 hover:text-primary border-l-2 border-transparent pl-3 transition-colors">{lang === 'kh' ? 'សកម្មភាពអន្តរជាតិ' : 'International Activities'}</Link>
-                </li>
-                <li>
                   <Link href="/student-life/internships" className="block text-gray-600 hover:text-primary border-l-2 border-transparent pl-3 transition-colors">{lang === 'kh' ? 'កម្មសិក្សា និងការងារ' : 'Internships & Jobs'}</Link>
                 </li>
               </ul>
