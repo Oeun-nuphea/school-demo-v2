@@ -13,9 +13,9 @@ export default function Home() {
       <QuickAccess />
       <LatestNews />
       <Statistics />
+      <InternationalActivities />
       <Faculties />
       <StudentLife />
-      <InternationalActivities />
     </main>
   );
 }
