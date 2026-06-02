@@ -41,7 +41,7 @@ export default function LatestNews() {
             <div className="flex justify-between items-end mb-8 border-b pb-4">
               <div>
                 <h2 className={`text-3xl font-serif font-bold text-primary ${lang === 'kh' ? 'font-khmer' : ''}`}>
-                  {lang === 'kh' ? 'ព័ត៌មានវិទ្យាស្ថាន' : 'University News'}
+                  {lang === 'kh' ? 'ព័ត៌មានវិទ្យាស្ថាន' : 'News'}
                 </h2>
                 <p className={`text-gray-500 mt-2 ${lang === 'kh' ? 'font-khmer' : ''}`}>
                   {lang === 'kh' ? 'សេចក្តីប្រកាស និងព្រឹត្តិការណ៍ថ្មីៗ' : 'Latest announcements and academic updates'}
