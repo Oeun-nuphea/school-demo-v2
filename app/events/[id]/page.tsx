@@ -131,51 +131,52 @@ export default function EventDetailPage({ params }: { params: Promise<{ id: stri
             </div>
           </div>
         ) : eventItem ? (
-          <article className="bg-white rounded-sm shadow-sm border border-gray-100 overflow-hidden">
+          <article className="bg-white rounded-xl shadow-md border border-gray-200 overflow-hidden">
             {(() => {
               const { day, displayMonth, timeRange, durationDays } = getEventDateInfo(eventItem);
               const displayLocation = lang === 'kh' ? eventItem.location.khmer : eventItem.location.english;
               return (
                 <div className="bg-primary text-white p-8 md:p-12 relative overflow-hidden">
-                  <div className="absolute top-0 right-0 p-12 opacity-10">
-                    <CalendarDays className="w-64 h-64" />
+                  <div className="absolute right-12 top-1/2 -translate-y-1/2 opacity-10 hidden md:block">
+                    <CalendarDays className="w-48 h-48 text-white" strokeWidth={1} />
                   </div>
                   <div className="relative z-10">
-                    <div className="inline-block bg-secondary text-primary-dark font-bold px-4 py-2 rounded-sm mb-6 font-khmer shadow-sm text-sm">
+                    <div className="inline-block bg-secondary text-primary-dark font-bold px-3.5 py-1.5 rounded-sm mb-4 text-xs tracking-wider uppercase font-sans">
                       {day} {displayMonth}
                     </div>
-                    <h1 className="text-3xl md:text-5xl font-serif font-bold mb-6 leading-tight font-khmer drop-shadow-sm">
+                    <h1 className="text-3xl md:text-5xl font-serif font-bold mb-6 leading-tight drop-shadow-sm">
                       {lang === 'kh' ? eventItem.title.khmer : eventItem.title.english}
                     </h1>
                     
-                    <div className="flex flex-col sm:flex-row flex-wrap gap-4 sm:gap-8 mt-8">
+                    <div className="flex flex-wrap items-center gap-x-8 gap-y-3 text-sm md:text-base font-medium opacity-90">
                       <div className="flex items-center">
                         <Clock className="w-5 h-5 mr-3 text-secondary flex-shrink-0" />
-                        <span className="text-lg font-khmer">{timeRange}</span>
+                        <span className={lang === 'kh' ? 'font-khmer' : ''}>{timeRange}</span>
                       </div>
                       <div className="flex items-center">
                         <CalendarDays className="w-5 h-5 mr-3 text-secondary flex-shrink-0" />
-                        <span className="text-lg font-khmer">
+                        <span className={lang === 'kh' ? 'font-khmer' : ''}>
                           {lang === 'kh' 
                             ? `រយៈពេល៖ ${durationDays} ថ្ងៃ` 
                             : `Duration: ${durationDays} ${durationDays > 1 ? 'Days' : 'Day'}`}
                         </span>
                       </div>
-                      <div className="flex items-center">
-                        <MapPin className="w-5 h-5 mr-3 text-secondary flex-shrink-0" />
-                        {eventItem.isVirtual && eventItem.virtualLink ? (
-                          <a 
-                            href={eventItem.virtualLink.startsWith('http') ? eventItem.virtualLink : `https://${eventItem.virtualLink}`}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-lg font-khmer text-secondary hover:underline break-all"
-                          >
-                            {eventItem.virtualLink}
-                          </a>
-                        ) : (
-                          <span className="text-lg font-khmer">{displayLocation}</span>
-                        )}
-                      </div>
+                    </div>
+                    
+                    <div className="flex items-center text-sm md:text-base font-medium opacity-90 mt-4">
+                      <MapPin className="w-5 h-5 mr-3 text-secondary flex-shrink-0" />
+                      {eventItem.isVirtual && eventItem.virtualLink ? (
+                        <a 
+                          href={eventItem.virtualLink.startsWith('http') ? eventItem.virtualLink : `https://${eventItem.virtualLink}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-secondary hover:underline break-all"
+                        >
+                          {eventItem.virtualLink}
+                        </a>
+                      ) : (
+                        <span className={lang === 'kh' ? 'font-khmer' : ''}>{displayLocation}</span>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -184,21 +185,12 @@ export default function EventDetailPage({ params }: { params: Promise<{ id: stri
 
             {/* Event Content */}
             <div className="p-8 md:p-12">
-              <div className="prose max-w-none text-gray-700 leading-relaxed font-khmer text-lg mb-10">
-                <p>
-                  {lang === 'kh' 
-                    ? 'សូមអញ្ជើញចូលរួមកម្មវិធីនេះដើម្បីទទួលបានបទពិសោធន៍ថ្មីៗ និងការចែករំលែកចំណេះដឹងពីវាគ្មិនកិត្តិយស។ កម្មវិធីនេះបើកទូលាយសម្រាប់សិស្ស និស្សិត និងសាធារណជនទូទៅ។' 
-                    : 'Join us for this exciting event to gain new experiences and knowledge sharing from our guest speakers. This event is open to all students and the general public.'}
-                </p>
-                <h3 className="text-xl font-bold text-gray-900 mt-8 mb-4">{lang === 'kh' ? 'របៀបវារៈកម្មវិធី' : 'Event Agenda'}</h3>
-                <ul className="list-disc pl-5 space-y-2">
-                  <li>{lang === 'kh' ? 'ការចុះឈ្មោះ និងការស្វាគមន៍' : 'Registration and Welcome'}</li>
-                  <li>{lang === 'kh' ? 'សុន្ទរកថាបើកកម្មវិធី' : 'Opening Remarks'}</li>
-                  <li>{lang === 'kh' ? 'វគ្គចែករំលែកបទពិសោធន៍' : 'Knowledge Sharing Session'}</li>
-                  <li>{lang === 'kh' ? 'សំណួរ និងចម្លើយ' : 'Q&A Session'}</li>
-                </ul>
-              </div>
-
+              <div 
+                className="max-w-none text-gray-700 leading-relaxed font-khmer text-lg [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:space-y-2 [&_ol]:list-decimal [&_ol]:pl-5 [&_ol]:space-y-2 [&_h3]:text-xl [&_h3]:font-bold [&_h3]:text-gray-900 [&_h3]:mt-6 [&_h3]:mb-3 [&_p]:mb-4 [&_li]:mt-1"
+                dangerouslySetInnerHTML={{ 
+                  __html: (lang === 'kh' ? eventItem.description?.khmer : eventItem.description?.english) || '' 
+                }} 
+              />
             </div>
           </article>
         ) : null}

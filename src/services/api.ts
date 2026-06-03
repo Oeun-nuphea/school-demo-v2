@@ -22,7 +22,6 @@ export interface EventItem {
   location: Translatable;
   isVirtual: boolean;
   virtualLink?: string;
-  type: string;
   description?: Translatable;
 }
 
@@ -87,10 +86,9 @@ const mockEvents: EventItem[] = [
     endDate: "2026-06-15T16:00",
     location: { english: "Main Campus Grounds", khmer: "បរិវេណសាខាធំ" },
     isVirtual: false,
-    type: "Open House",
     description: {
-      english: "Join us for our Open Campus Day! Explore the campus, meet our faculty, and learn about the diverse degree programs we offer.",
-      khmer: "សូមចូលរួមទិវាបើកទ្វារវិទ្យាស្ថានរបស់យើង! ស្វែងយល់ពីបរិវេណសាលា ជួបជាមួយសាស្ត្រាចារ្យ និងស្វែងយល់អំពីកម្មវិធីសិក្សាផ្សេងៗរបស់យើង។"
+      english: "Join us for this exciting event to gain new experiences and knowledge sharing from our guest speakers. This event is open to all students and the general public.<br/><br/><h3><strong>Event Agenda</strong></h3><ul><li>Registration and Welcome</li><li>Opening Remarks</li><li>Knowledge Sharing Session</li><li>Q&A Session</li></ul>",
+      khmer: "សូមអញ្ជើញចូលរួមកម្មវិធីនេះដើម្បីទទួលបានបទពិសោធន៍ថ្មីៗ និងការចែករំលែកចំណេះដឹងពីវាគ្មិនកិត្តិយស។ កម្មវិធីនេះបើកទូលាយសម្រាប់សិស្ស និស្សិត និងសាធារណជនទូទៅ។<br/><br/><h3><strong>របៀបវារៈកម្មវិធី</strong></h3><ul><li>ការចុះឈ្មោះ និងការស្វាគមន៍</li><li>សុន្ទរកថាបើកកម្មវិធី</li><li>វគ្គចែករំលែកបទពិសោធន៍</li><li>សំណួរ និងចម្លើយ</li></ul>"
     }
   },
   {
@@ -101,7 +99,6 @@ const mockEvents: EventItem[] = [
     endDate: "2026-06-22T21:30",
     location: { english: "University Grand Hall", khmer: "សាលធំសាកលវិទ្យាល័យ" },
     isVirtual: false,
-    type: "Alumni",
     description: {
       english: "An evening of celebration and connection. Reconnect with fellow alumni, expand your professional network, and support our future graduates.",
       khmer: "រាត្រីនៃការអបអរសាទរ និងការតភ្ជាប់ទំនាក់ទំនង។ ជួបជុំជាមួយអតីតនិស្សិតរួមជំនាន់ ពង្រីកបណ្តាញទំនាក់ទំនងអាជីពរបស់អ្នក និងគាំទ្រដល់និស្សិតជំនាន់ក្រោយ។"
@@ -115,7 +112,6 @@ const mockEvents: EventItem[] = [
     endDate: "2026-07-05T15:30",
     location: { english: "Science Building, Room 402", khmer: "អគារវិទ្យាសាស្ត្រ បន្ទប់ ៤០២" },
     isVirtual: false,
-    type: "Seminar",
     description: {
       english: "Discover how Artificial Intelligence is transforming classroom dynamics, tutoring systems, and personalized learning path development.",
       khmer: "ស្វែងយល់ពីរបៀបដែលបញ្ញាសិប្បនិម្មិត (AI) កំពុងផ្លាស់ប្តូរថ្នាក់រៀន ប្រព័ន្ធបង្រៀន និងការអភិវឌ្ឍវិធីសាស្ត្រសិក្សាផ្ទាល់ខ្លួន។"
@@ -130,7 +126,6 @@ const mockEvents: EventItem[] = [
     location: { english: "Online via Zoom", khmer: "អនឡាញតាម Zoom" },
     isVirtual: true,
     virtualLink: "https://zoom.us/j/9876543210",
-    type: "Open House",
     description: {
       english: "Join our virtual info session from the comfort of your home to learn about application requirements and scholarships.",
       khmer: "សូមចូលរួមវគ្គព័ត៌មាននិម្មិតរបស់យើងពីគេហដ្ឋានរបស់អ្នក ដើម្បីស្វែងយល់អំពីតម្រូវការចុះឈ្មោះ និងអាហារូបករណ៍។"
