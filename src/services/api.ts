@@ -23,7 +23,6 @@ export interface EventItem {
   isVirtual: boolean;
   virtualLink?: string;
   type: string;
-  status: string;
   description?: Translatable;
 }
 
@@ -89,7 +88,6 @@ const mockEvents: EventItem[] = [
     location: { english: "Main Campus Grounds", khmer: "បរិវេណសាខាធំ" },
     isVirtual: false,
     type: "Open House",
-    status: "Upcoming",
     description: {
       english: "Join us for our Open Campus Day! Explore the campus, meet our faculty, and learn about the diverse degree programs we offer.",
       khmer: "សូមចូលរួមទិវាបើកទ្វារវិទ្យាស្ថានរបស់យើង! ស្វែងយល់ពីបរិវេណសាលា ជួបជាមួយសាស្ត្រាចារ្យ និងស្វែងយល់អំពីកម្មវិធីសិក្សាផ្សេងៗរបស់យើង។"
@@ -104,7 +102,6 @@ const mockEvents: EventItem[] = [
     location: { english: "University Grand Hall", khmer: "សាលធំសាកលវិទ្យាល័យ" },
     isVirtual: false,
     type: "Alumni",
-    status: "Upcoming",
     description: {
       english: "An evening of celebration and connection. Reconnect with fellow alumni, expand your professional network, and support our future graduates.",
       khmer: "រាត្រីនៃការអបអរសាទរ និងការតភ្ជាប់ទំនាក់ទំនង។ ជួបជុំជាមួយអតីតនិស្សិតរួមជំនាន់ ពង្រីកបណ្តាញទំនាក់ទំនងអាជីពរបស់អ្នក និងគាំទ្រដល់និស្សិតជំនាន់ក្រោយ។"
@@ -119,7 +116,6 @@ const mockEvents: EventItem[] = [
     location: { english: "Science Building, Room 402", khmer: "អគារវិទ្យាសាស្ត្រ បន្ទប់ ៤០២" },
     isVirtual: false,
     type: "Seminar",
-    status: "Upcoming",
     description: {
       english: "Discover how Artificial Intelligence is transforming classroom dynamics, tutoring systems, and personalized learning path development.",
       khmer: "ស្វែងយល់ពីរបៀបដែលបញ្ញាសិប្បនិម្មិត (AI) កំពុងផ្លាស់ប្តូរថ្នាក់រៀន ប្រព័ន្ធបង្រៀន និងការអភិវឌ្ឍវិធីសាស្ត្រសិក្សាផ្ទាល់ខ្លួន។"
@@ -135,7 +131,6 @@ const mockEvents: EventItem[] = [
     isVirtual: true,
     virtualLink: "https://zoom.us/j/9876543210",
     type: "Open House",
-    status: "Upcoming",
     description: {
       english: "Join our virtual info session from the comfort of your home to learn about application requirements and scholarships.",
       khmer: "សូមចូលរួមវគ្គព័ត៌មាននិម្មិតរបស់យើងពីគេហដ្ឋានរបស់អ្នក ដើម្បីស្វែងយល់អំពីតម្រូវការចុះឈ្មោះ និងអាហារូបករណ៍។"
