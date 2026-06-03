@@ -258,14 +258,6 @@ export default function ScholarshipsPage() {
                     </div>
                   )}
                 </div>
-                <div className="px-6 pb-6">
-                  <Link
-                    href="/apply"
-                    className={`block w-full text-center bg-secondary hover:bg-secondary/90 text-white font-bold py-3 px-4 rounded-sm transition-colors text-sm ${lang === 'kh' ? 'font-khmer' : ''}`}
-                  >
-                    {lang === 'kh' ? 'ដាក់ពាក្យឥឡូវនេះ' : 'Apply Now'}
-                  </Link>
-                </div>
               </div>
 
               {/* Intake dates */}
