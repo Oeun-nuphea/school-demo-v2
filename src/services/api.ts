@@ -16,10 +16,15 @@ export interface NewsItem {
 export interface EventItem {
   id: string;
   title: Translatable;
-  date: string;
-  month: Translatable;
-  time: string;
+  slug: string;
+  startDate: string;
+  endDate: string;
   location: Translatable;
+  isVirtual: boolean;
+  virtualLink?: string;
+  type: string;
+  status: string;
+  description?: Translatable;
 }
 
 export interface Faculty {
@@ -78,26 +83,63 @@ const mockEvents: EventItem[] = [
   {
     id: "1",
     title: { english: "Open Campus Day", khmer: "ទិវាបើកទ្វារវិទ្យាស្ថាន" },
-    date: "15",
-    month: { english: "JUN", khmer: "មិថុនា" },
-    time: "09:00 AM - 04:00 PM",
+    slug: "open-campus-day",
+    startDate: "2026-06-15T09:00",
+    endDate: "2026-06-15T16:00",
     location: { english: "Main Campus Grounds", khmer: "បរិវេណសាខាធំ" },
+    isVirtual: false,
+    type: "Open House",
+    status: "Upcoming",
+    description: {
+      english: "Join us for our Open Campus Day! Explore the campus, meet our faculty, and learn about the diverse degree programs we offer.",
+      khmer: "សូមចូលរួមទិវាបើកទ្វារវិទ្យាស្ថានរបស់យើង! ស្វែងយល់ពីបរិវេណសាលា ជួបជាមួយសាស្ត្រាចារ្យ និងស្វែងយល់អំពីកម្មវិធីសិក្សាផ្សេងៗរបស់យើង។"
+    }
   },
   {
     id: "2",
     title: { english: "Annual Alumni Networking Gala", khmer: "កម្មវិធីជួបជុំអតីតនិស្សិតប្រចាំឆ្នាំ" },
-    date: "22",
-    month: { english: "JUN", khmer: "មិថុនា" },
-    time: "06:30 PM - 09:30 PM",
+    slug: "annual-alumni-networking-gala",
+    startDate: "2026-06-22T18:30",
+    endDate: "2026-06-22T21:30",
     location: { english: "University Grand Hall", khmer: "សាលធំសាកលវិទ្យាល័យ" },
+    isVirtual: false,
+    type: "Alumni",
+    status: "Upcoming",
+    description: {
+      english: "An evening of celebration and connection. Reconnect with fellow alumni, expand your professional network, and support our future graduates.",
+      khmer: "រាត្រីនៃការអបអរសាទរ និងការតភ្ជាប់ទំនាក់ទំនង។ ជួបជុំជាមួយអតីតនិស្សិតរួមជំនាន់ ពង្រីកបណ្តាញទំនាក់ទំនងអាជីពរបស់អ្នក និងគាំទ្រដល់និស្សិតជំនាន់ក្រោយ។"
+    }
   },
   {
     id: "3",
     title: { english: "Guest Lecture: The Future of AI in Education", khmer: "បាឋកថា៖ អនាគតនៃបញ្ញាសិប្បនិម្មិតក្នុងវិស័យអប់រំ" },
-    date: "05",
-    month: { english: "JUL", khmer: "កក្កដា" },
-    time: "02:00 PM - 03:30 PM",
+    slug: "guest-lecture-future-of-ai-in-education",
+    startDate: "2026-07-05T14:00",
+    endDate: "2026-07-05T15:30",
     location: { english: "Science Building, Room 402", khmer: "អគារវិទ្យាសាស្ត្រ បន្ទប់ ៤០២" },
+    isVirtual: false,
+    type: "Seminar",
+    status: "Upcoming",
+    description: {
+      english: "Discover how Artificial Intelligence is transforming classroom dynamics, tutoring systems, and personalized learning path development.",
+      khmer: "ស្វែងយល់ពីរបៀបដែលបញ្ញាសិប្បនិម្មិត (AI) កំពុងផ្លាស់ប្តូរថ្នាក់រៀន ប្រព័ន្ធបង្រៀន និងការអភិវឌ្ឍវិធីសាស្ត្រសិក្សាផ្ទាល់ខ្លួន។"
+    }
+  },
+  {
+    id: "4",
+    title: { english: "Virtual Open House & Info Session", khmer: "កម្មវិធីបើកទ្វារវិទ្យាស្ថាននិម្មិត និងវគ្គព័ត៌មាន" },
+    slug: "virtual-open-house-info-session",
+    startDate: "2026-07-10T10:00",
+    endDate: "2026-07-12T12:00",
+    location: { english: "Online via Zoom", khmer: "អនឡាញតាម Zoom" },
+    isVirtual: true,
+    virtualLink: "https://zoom.us/j/9876543210",
+    type: "Open House",
+    status: "Upcoming",
+    description: {
+      english: "Join our virtual info session from the comfort of your home to learn about application requirements and scholarships.",
+      khmer: "សូមចូលរួមវគ្គព័ត៌មាននិម្មិតរបស់យើងពីគេហដ្ឋានរបស់អ្នក ដើម្បីស្វែងយល់អំពីតម្រូវការចុះឈ្មោះ និងអាហារូបករណ៍។"
+    }
   }
 ];
 

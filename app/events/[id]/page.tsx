@@ -1,7 +1,7 @@
 'use client'
 import React, { useEffect, useState, use } from "react";
 import Link from "next/link";
-import { ChevronRight, Clock, MapPin, CalendarDays, Share2 } from "lucide-react";
+import { ChevronRight, Clock, MapPin, CalendarDays } from "lucide-react";
 import { fetchEvents, EventItem } from "@/services/api";
 import { notFound } from "next/navigation";
 import { useLanguage } from "@/context/LanguageContext";
@@ -24,6 +24,81 @@ export default function EventDetailPage({ params }: { params: Promise<{ id: stri
     });
   }, [resolvedParams.id]);
 
+  const formatTime = (dateStr: string) => {
+    if (!dateStr) return '';
+    try {
+      const date = new Date(dateStr);
+      let hours = date.getHours();
+      const minutes = date.getMinutes();
+      const ampm = hours >= 12 ? 'PM' : 'AM';
+      hours = hours % 12;
+      hours = hours ? hours : 12;
+      const minutesStr = minutes < 10 ? '0' + minutes : minutes;
+      const hoursStr = hours < 10 ? '0' + hours : hours;
+      return `${hoursStr}:${minutesStr} ${ampm}`;
+    } catch {
+      return '';
+    }
+  };
+
+  const getEventDateInfo = (event: EventItem) => {
+    const dateObj = new Date(event.startDate);
+    const day = dateObj.getDate();
+    const monthEn = dateObj.toLocaleString('en-US', { month: 'short' }).toUpperCase();
+    const monthKhmerMap: { [key: string]: string } = {
+      'JAN': 'មករា', 'FEB': 'កុម្ភៈ', 'MAR': 'មីនា', 'APR': 'មេសា', 'MAY': 'ឧសភា', 'JUN': 'មិថុនា',
+      'JUL': 'កក្កដា', 'AUG': 'សីហា', 'SEP': 'កញ្ញា', 'OCT': 'តុលា', 'NOV': 'វិច្ឆិកា', 'DEC': 'ធ្នូ'
+    };
+    const monthKh = monthKhmerMap[monthEn] || monthEn;
+    const displayMonth = lang === 'kh' ? monthKh : monthEn;
+
+    // Time & Date range
+    let timeRange = '';
+    try {
+      const startFormatted = dateObj.toLocaleDateString(lang === 'kh' ? 'km-KH' : 'en-US', {
+        month: 'short',
+        day: 'numeric',
+        year: 'numeric'
+      });
+      const startT = formatTime(event.startDate);
+
+      if (!event.endDate) {
+        timeRange = lang === 'kh' ? `${startFormatted} នៅម៉ោង ${startT}` : `${startFormatted} at ${startT}`;
+      } else {
+        const end = new Date(event.endDate);
+        const endFormatted = end.toLocaleDateString(lang === 'kh' ? 'km-KH' : 'en-US', {
+          month: 'short',
+          day: 'numeric',
+          year: 'numeric'
+        });
+        const endT = formatTime(event.endDate);
+
+        if (startFormatted === endFormatted) {
+          timeRange = `${startFormatted} | ${startT} - ${endT}`;
+        } else {
+          timeRange = `${startFormatted} (${startT}) - ${endFormatted} (${endT})`;
+        }
+      }
+    } catch {
+      timeRange = lang === 'kh' ? 'មិនទាន់កំណត់កាលបរិច្ឆេទ' : 'Not scheduled';
+    }
+
+    // Duration in days
+    let durationDays = 1;
+    try {
+      const start = new Date(event.startDate);
+      const end = new Date(event.endDate);
+      const startD = new Date(start.getFullYear(), start.getMonth(), start.getDate());
+      const endD = new Date(end.getFullYear(), end.getMonth(), end.getDate());
+      const diffTime = endD.getTime() - startD.getTime();
+      if (diffTime >= 0) {
+        durationDays = Math.floor(diffTime / (1000 * 60 * 60 * 24)) + 1;
+      }
+    } catch {}
+
+    return { day, displayMonth, timeRange, durationDays };
+  };
+
   if (!loading && !eventItem) {
     notFound();
   }
@@ -39,7 +114,7 @@ export default function EventDetailPage({ params }: { params: Promise<{ id: stri
           {eventItem && (
             <>
               <ChevronRight className="w-4 h-4 mx-2 opacity-50 flex-shrink-0" />
-              <span className="text-gray-900 font-medium truncate">{t(eventItem.title)}</span>
+              <span className="text-gray-900 font-medium truncate">{lang === 'kh' ? eventItem.title.khmer : eventItem.title.english}</span>
             </>
           )}
         </div>
@@ -57,31 +132,55 @@ export default function EventDetailPage({ params }: { params: Promise<{ id: stri
           </div>
         ) : eventItem ? (
           <article className="bg-white rounded-sm shadow-sm border border-gray-100 overflow-hidden">
-            {/* Event Header */}
-            <div className="bg-primary text-white p-8 md:p-12 relative overflow-hidden">
-              <div className="absolute top-0 right-0 p-12 opacity-10">
-                <CalendarDays className="w-64 h-64" />
-              </div>
-              <div className="relative z-10">
-                <div className="inline-block bg-secondary text-primary-dark font-bold px-4 py-2 rounded-sm mb-6 font-khmer shadow-sm text-sm">
-                  {eventItem.date} {t(eventItem.month)}
-                </div>
-                <h1 className="text-3xl md:text-5xl font-serif font-bold mb-6 leading-tight font-khmer drop-shadow-sm">
-                  {t(eventItem.title)}
-                </h1>
-                
-                <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 mt-8">
-                  <div className="flex items-center">
-                    <Clock className="w-5 h-5 mr-3 text-secondary" />
-                    <span className="text-lg font-khmer">{eventItem.time}</span>
+            {(() => {
+              const { day, displayMonth, timeRange, durationDays } = getEventDateInfo(eventItem);
+              const displayLocation = lang === 'kh' ? eventItem.location.khmer : eventItem.location.english;
+              return (
+                <div className="bg-primary text-white p-8 md:p-12 relative overflow-hidden">
+                  <div className="absolute top-0 right-0 p-12 opacity-10">
+                    <CalendarDays className="w-64 h-64" />
                   </div>
-                  <div className="flex items-center">
-                    <MapPin className="w-5 h-5 mr-3 text-secondary" />
-                    <span className="text-lg font-khmer">{t(eventItem.location)}</span>
+                  <div className="relative z-10">
+                    <div className="inline-block bg-secondary text-primary-dark font-bold px-4 py-2 rounded-sm mb-6 font-khmer shadow-sm text-sm">
+                      {day} {displayMonth}
+                    </div>
+                    <h1 className="text-3xl md:text-5xl font-serif font-bold mb-6 leading-tight font-khmer drop-shadow-sm">
+                      {lang === 'kh' ? eventItem.title.khmer : eventItem.title.english}
+                    </h1>
+                    
+                    <div className="flex flex-col sm:flex-row flex-wrap gap-4 sm:gap-8 mt-8">
+                      <div className="flex items-center">
+                        <Clock className="w-5 h-5 mr-3 text-secondary flex-shrink-0" />
+                        <span className="text-lg font-khmer">{timeRange}</span>
+                      </div>
+                      <div className="flex items-center">
+                        <CalendarDays className="w-5 h-5 mr-3 text-secondary flex-shrink-0" />
+                        <span className="text-lg font-khmer">
+                          {lang === 'kh' 
+                            ? `រយៈពេល៖ ${durationDays} ថ្ងៃ` 
+                            : `Duration: ${durationDays} ${durationDays > 1 ? 'Days' : 'Day'}`}
+                        </span>
+                      </div>
+                      <div className="flex items-center">
+                        <MapPin className="w-5 h-5 mr-3 text-secondary flex-shrink-0" />
+                        {eventItem.isVirtual && eventItem.virtualLink ? (
+                          <a 
+                            href={eventItem.virtualLink.startsWith('http') ? eventItem.virtualLink : `https://${eventItem.virtualLink}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-lg font-khmer text-secondary hover:underline break-all"
+                          >
+                            {eventItem.virtualLink}
+                          </a>
+                        ) : (
+                          <span className="text-lg font-khmer">{displayLocation}</span>
+                        )}
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
+              );
+            })()}
 
             {/* Event Content */}
             <div className="p-8 md:p-12">
@@ -100,15 +199,6 @@ export default function EventDetailPage({ params }: { params: Promise<{ id: stri
                 </ul>
               </div>
 
-              <div className="flex flex-wrap gap-4 pt-8 border-t border-gray-100">
-                <button className="flex items-center px-6 py-3 bg-gray-100 hover:bg-gray-200 text-gray-800 font-medium rounded-sm transition-colors">
-                  <Share2 className="w-4 h-4 mr-2" />
-                  {lang === 'kh' ? 'ចែករំលែក' : 'Share Event'}
-                </button>
-                <button className="flex items-center px-6 py-3 bg-primary hover:bg-primary-dark text-white font-medium rounded-sm transition-colors ml-auto shadow-sm">
-                  {lang === 'kh' ? 'ចុះឈ្មោះចូលរួម' : 'Register to Attend'}
-                </button>
-              </div>
             </div>
           </article>
         ) : null}
