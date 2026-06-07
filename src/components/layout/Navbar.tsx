@@ -32,14 +32,7 @@ export default function Navbar() {
       href: "/programs",
       subItems: [
         { label: { english: "Master Programs", khmer: "ថ្នាក់បរិញ្ញាបត្រជាន់ខ្ពស់" }, href: "/programs/master" },
-        { 
-          label: { english: "Bachelor Programs", khmer: "ថ្នាក់បរិញ្ញាបត្រ" }, 
-          href: "/programs/bachelor",
-          nestedItems: [
-            { label: { english: "National Curriculum", khmer: "កម្មវិធីសិក្សាថ្នាក់ជាតិ" }, href: "/programs/bachelor/national" },
-            { label: { english: "International Curriculum", khmer: "កម្មវិធីសិក្សាអន្តរជាតិ" }, href: "/programs/bachelor/international" },
-          ]
-        },
+        { label: { english: "Bachelor Programs", khmer: "ថ្នាក់បរិញ្ញាបត្រ" }, href: "/programs/bachelor" },
         { label: { english: "Associate Programs", khmer: "ថ្នាក់បរិញ្ញាបត្ររង" }, href: "/programs/associate" },
         { label: { english: "TVET Programs", khmer: "កម្មវិធីបណ្តុះបណ្តាលបច្ចេកទេស និងវិជ្ជាជីវៈ" }, href: "/programs/tvet" },
       ]
@@ -135,7 +128,7 @@ export default function Navbar() {
 
   return (
     <header className="bg-white border-b uni-border sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
@@ -162,14 +155,14 @@ export default function Navbar() {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex space-x-8 items-center h-full">
+          <nav className="hidden xl:flex space-x-6 2xl:space-x-8 items-center h-full">
             {navLinks.map((link) => {
               const isActive = isLinkActive(link);
               return (
                 <div key={link.name.english} className="relative group h-full flex items-center">
                   {link.subItems.length > 0 ? (
                     <button
-                      className={`flex items-center py-1 mt-1 transition-colors border-b-2 ${isActive ? 'text-primary font-bold border-primary' : 'text-gray-700 font-medium border-transparent hover:text-primary'
+                      className={`flex items-center py-1 mt-1 transition-colors whitespace-nowrap border-b-2 ${isActive ? 'text-primary font-bold border-primary' : 'text-gray-700 font-medium border-transparent hover:text-primary'
                         } ${lang === 'kh' ? 'font-khmer text-[15px]' : ''}`}
                     >
                       {t(link.name)}
@@ -178,7 +171,7 @@ export default function Navbar() {
                   ) : (
                     <Link
                       href={link.href}
-                      className={`flex items-center py-1 mt-1 transition-colors border-b-2 ${isActive ? 'text-primary font-bold border-primary' : 'text-gray-700 font-medium border-transparent hover:text-primary'
+                      className={`flex items-center py-1 mt-1 transition-colors whitespace-nowrap border-b-2 ${isActive ? 'text-primary font-bold border-primary' : 'text-gray-700 font-medium border-transparent hover:text-primary'
                         } ${lang === 'kh' ? 'font-khmer text-[15px]' : ''}`}
                     >
                       {t(link.name)}
@@ -229,11 +222,17 @@ export default function Navbar() {
           </nav>
 
           {/* Action Area */}
-          <div className="hidden lg:flex items-center space-x-4">
+          <div className="hidden xl:flex items-center space-x-4">
+            <Link
+              href="/admissions/how-to-apply"
+              className={`bg-primary hover:bg-primary-dark text-white px-6 py-2.5 rounded-sm font-bold transition-colors shadow-sm ${lang === 'kh' ? 'font-khmer' : ''}`}
+            >
+              {lang === 'kh' ? 'ដាក់ពាក្យចូលរៀន' : 'How to Apply'}
+            </Link>
           </div>
 
           {/* Mobile menu button */}
-          <div className="lg:hidden flex items-center">
+          <div className="xl:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="text-gray-500 hover:text-primary p-2"
@@ -246,7 +245,7 @@ export default function Navbar() {
 
       {/* Mobile Navigation */}
       {isOpen && (
-        <div className="lg:hidden absolute top-20 left-0 w-full bg-white shadow-xl max-h-[calc(100vh-5rem)] overflow-y-auto border-b-4 border-secondary">
+        <div className="xl:hidden absolute top-20 left-0 w-full bg-white shadow-xl max-h-[calc(100vh-5rem)] overflow-y-auto border-b-4 border-secondary">
           <div className="px-6 py-8 space-y-6">
             {navLinks.map((link) => {
               const isActive = isLinkActive(link);
@@ -321,6 +320,13 @@ export default function Navbar() {
             })}
 
             <div className="pt-6 mt-6 border-t border-gray-200 space-y-4">
+              <Link
+                href="/admissions/how-to-apply"
+                onClick={() => setIsOpen(false)}
+                className={`block w-full text-center bg-primary hover:bg-primary-dark text-white px-6 py-3 rounded-sm font-bold transition-colors shadow-sm mb-4 ${lang === 'kh' ? 'font-khmer' : ''}`}
+              >
+                {lang === 'kh' ? 'ដាក់ពាក្យចូលរៀន' : 'How to Apply'}
+              </Link>
               <div className="flex bg-gray-100 p-1 rounded-sm w-full">
                 <button
                   onClick={() => setLang('kh')}
