@@ -38,6 +38,18 @@ export default function Navbar() {
       ]
     },
     {
+      name: { english: "Colleges", khmer: "មហាវិទ្យាល័យ" },
+      href: "/colleges",
+      subItems: [
+        { label: { english: "Business Administration", khmer: "គ្រប់គ្រងពាណិជ្ជកម្ម" }, href: "/colleges/business" },
+        { label: { english: "Law", khmer: "នីតិសាស្ត្រ" }, href: "/colleges/law" },
+        { label: { english: "Arts, Humanities & Foreign Languages", khmer: "សិល្បៈ មនុស្សសាស្ត្រ និងភាសាបរទេស" }, href: "/colleges/arts" },
+        { label: { english: "Agriculture", khmer: "កសិកម្ម" }, href: "/colleges/agriculture" },
+        { label: { english: "Science and Technology", khmer: "វិទ្យាសាស្ត្រ និងបច្ចេកវិទ្យា" }, href: "/colleges/science" },
+        { label: { english: "Engineering", khmer: "វិស្វកម្ម" }, href: "/colleges/engineering" },
+      ]
+    },
+    {
       name: { english: "Admissions", khmer: "ការចុះឈ្មោះចូលរៀន" },
       href: "/admissions",
       subItems: [
@@ -96,6 +108,11 @@ export default function Navbar() {
         { label: { english: "Academic Journal", khmer: "ទិនានុប្បវត្តិសិក្សា" }, href: "/research/journal" },
         { label: { english: "Publications", khmer: "ការបោះពុម្ពផ្សាយ" }, href: "/research/publications" },
       ]
+    },
+    {
+      name: { english: "News", khmer: "ព័ត៌មាន" },
+      href: "/news",
+      subItems: []
     }
   ];
 
