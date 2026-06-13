@@ -195,24 +195,24 @@ export default function Navbar() {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden xl:flex space-x-6 2xl:space-x-8 items-center h-full">
+          <nav className="hidden xl:flex space-x-4 2xl:space-x-6 items-center h-full">
             {navLinks.map((link) => {
               const isActive = isLinkActive(link);
               return (
                 <div key={link.name.english} className="relative group h-full flex items-center">
                   {link.subItems.length > 0 ? (
                     <button
-                      className={`flex items-center py-1 mt-1 transition-colors whitespace-nowrap border-b-2 ${isActive ? 'text-primary font-bold border-primary' : 'text-gray-700 font-medium border-transparent hover:text-primary'
-                        } ${lang === 'kh' ? 'font-khmer text-[15px]' : ''}`}
+                      className={`flex items-center py-1 mt-1 text-sm transition-colors whitespace-nowrap border-b-2 ${isActive ? 'text-primary font-bold border-primary' : 'text-gray-700 font-medium border-transparent hover:text-primary'
+                        } ${lang === 'kh' ? 'font-khmer text-[13px]' : ''}`}
                     >
                       {t(link.name)}
-                      <ChevronDown className="w-4 h-4 ml-1 opacity-50 group-hover:opacity-100 group-hover:-rotate-180 transition-all duration-300" />
+                      <ChevronDown className="w-3.5 h-3.5 ml-1 opacity-50 group-hover:opacity-100 group-hover:-rotate-180 transition-all duration-300" />
                     </button>
                   ) : (
                     <Link
                       href={link.href}
-                      className={`flex items-center py-1 mt-1 transition-colors whitespace-nowrap border-b-2 ${isActive ? 'text-primary font-bold border-primary' : 'text-gray-700 font-medium border-transparent hover:text-primary'
-                        } ${lang === 'kh' ? 'font-khmer text-[15px]' : ''}`}
+                      className={`flex items-center py-1 mt-1 text-sm transition-colors whitespace-nowrap border-b-2 ${isActive ? 'text-primary font-bold border-primary' : 'text-gray-700 font-medium border-transparent hover:text-primary'
+                        } ${lang === 'kh' ? 'font-khmer text-[13px]' : ''}`}
                     >
                       {t(link.name)}
                     </Link>
