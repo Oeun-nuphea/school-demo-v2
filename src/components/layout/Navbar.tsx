@@ -19,12 +19,15 @@ export default function Navbar() {
       name: { english: "About Us", khmer: "អំពីវិទ្យាស្ថាន" },
       href: "/about",
       subItems: [
-        { label: { english: "Vision, Mission & Goals", khmer: "ទស្សនវិស័យ បេសកកម្ម និងគោលដៅ" }, href: "/about/vision-and-missions" },
+        { label: { english: "Vision & Mission", khmer: "ទស្សនវិស័យ" }, href: "/about/vision" },
+        // { label: { english: "Mission", khmer: "បេសកកម្ម" }, href: "/about/mission" },
+        { label: { english: "Goal & Objective", khmer: "គោលដៅ" }, href: "/about/goal" },
+        // { label: { english: "Objective", khmer: "គោលបំណង" }, href: "/about/objective" },
         { label: { english: "Organization Structure", khmer: "រចនាសម្ព័ន្ធស្ថាប័ន" }, href: "/about/structure" },
-        { label: { english: "Founder & Principal", khmer: "ស្ថាបនិក និងនាយកវិទ្យាស្ថាន" }, href: "/about/founder-and-principal" },
+        // { label: { english: "Founder & Principal", khmer: "ស្ថាបនិក និងនាយកវិទ្យាស្ថាន" }, href: "/about/founder-and-principal" },
         { label: { english: "Campus Locations", khmer: "ទីតាំងសាខា" }, href: "/about/campuses" },
-        { label: { english: "Careers at AIC", khmer: "ឱកាសការងារជាមួយវិទ្យាស្ថាន" }, href: "/about/careers" },
-        { label: { english: "Contact", khmer: "ទំនាក់ទំនង" }, href: "/about/contact" },
+        // { label: { english: "Careers at AIC", khmer: "ឱកាសការងារជាមួយវិទ្យាស្ថាន" }, href: "/about/careers" },
+        // { label: { english: "Contact", khmer: "ទំនាក់ទំនង" }, href: "/about/contact" },
       ]
     },
     {
@@ -32,9 +35,27 @@ export default function Navbar() {
       href: "/programs",
       subItems: [
         { label: { english: "Master Programs", khmer: "ថ្នាក់បរិញ្ញាបត្រជាន់ខ្ពស់" }, href: "/programs/master" },
-        { label: { english: "Bachelor Programs", khmer: "ថ្នាក់បរិញ្ញាបត្រ" }, href: "/programs/bachelor" },
+        { 
+          label: { english: "Bachelor Programs", khmer: "ថ្នាក់បរិញ្ញាបត្រ" }, 
+          href: "/programs/bachelor",
+          nestedItems: [
+            { label: { english: "National Bachelor Programs", khmer: "កម្មវិធីជាតិ" }, href: "/programs/bachelor/national" },
+            { label: { english: "International Bachelor Programs", khmer: "កម្មវិធីអន្តរជាតិ" }, href: "/programs/bachelor/international" },
+          ]
+        },
         { label: { english: "Associate Programs", khmer: "ថ្នាក់បរិញ្ញាបត្ររង" }, href: "/programs/associate" },
         { label: { english: "TVET Programs", khmer: "កម្មវិធីបណ្តុះបណ្តាលបច្ចេកទេស និងវិជ្ជាជីវៈ" }, href: "/programs/tvet" },
+        { label: { english: "Scholarships", khmer: "អាហារូបករណ៍" }, href: "/scholarships" },
+        { 
+          label: { english: "Admissions", khmer: "ការចុះឈ្មោះចូលរៀន" }, 
+          href: "/admissions",
+          nestedItems: [
+            { label: { english: "How to Apply", khmer: "របៀបចុះឈ្មោះ" }, href: "/admissions/how-to-apply" },
+            { label: { english: "Requirements", khmer: "លក្ខខណ្ឌតម្រូវ" }, href: "/admissions/requirements" },
+            { label: { english: "Intake Dates", khmer: "កាលបរិច្ឆេទចូលរៀន" }, href: "/admissions/intake-dates" },
+            { label: { english: "Tuition Fees", khmer: "តម្លៃសិក្សា" }, href: "/admissions/tuition-fees" },
+          ]
+        },
       ]
     },
     {
@@ -50,33 +71,30 @@ export default function Navbar() {
       ]
     },
     {
-      name: { english: "Admissions", khmer: "ការចុះឈ្មោះចូលរៀន" },
-      href: "/admissions",
-      subItems: [
-        { label: { english: "How to Apply", khmer: "របៀបចុះឈ្មោះ" }, href: "/admissions/how-to-apply" },
-        { label: { english: "Requirements", khmer: "លក្ខខណ្ឌតម្រូវ" }, href: "/admissions/requirements" },
-        { label: { english: "Intake Dates", khmer: "កាលបរិច្ឆេទចូលរៀន" }, href: "/admissions/intake-dates" },
-        { label: { english: "Tuition Fees", khmer: "តម្លៃសិក្សា" }, href: "/admissions/tuition-fees" },
-        { label: { english: "Scholarships", khmer: "អាហារូបករណ៍" }, href: "/scholarships" },
-      ]
-    },
-    {
       name: { english: "Student Life", khmer: "ជីវិតនិស្សិត" },
       href: "/student-life",
       subItems: [
-        { label: { english: "Careers & Internships", khmer: "កម្មសិក្សា និងការងារ" }, href: "/student-life/internships" },
-        { 
-          label: { english: "Facilities", khmer: "បរិក្ខារ" }, 
-          href: "/student-life/facilities",
-          nestedItems: [
-            { label: { english: "Self-Study Area", khmer: "កន្លែងស្វ័យសិក្សា" }, href: "/student-life/facilities/self-study" },
-            { label: { english: "Dormitory", khmer: "អន្តេវាសិកដ្ឋាន" }, href: "/student-life/facilities/dormitory" },
-            { label: { english: "Canteen (Food & Drink)", khmer: "អាហារដ្ឋាន" }, href: "/student-life/facilities/canteen" },
-          ]
-        },
+        { label: { english: "Self-Study Area", khmer: "កន្លែងស្វ័យសិក្សា" }, href: "/student-life/facilities/self-study" },
+        { label: { english: "Dormitory", khmer: "អន្តេវាសិកដ្ឋាន" }, href: "/student-life/facilities/dormitory" },
+        { label: { english: "Canteen (Food & Drink)", khmer: "អាហារដ្ឋាន" }, href: "/student-life/facilities/canteen" },
         { label: { english: "Extra-Curricular", khmer: "សកម្មភាពក្រៅម៉ោង" }, href: "/student-life/extra-curricular" },
         { label: { english: "Social Events", khmer: "ព្រឹត្តិការណ៍សង្គម" }, href: "/events" },
         { label: { english: "Graduation", khmer: "ការបញ្ចប់ការសិក្សា" }, href: "/student-life/graduation" },
+      ]
+    },
+    {
+      name: { english: "Academic Exchange", khmer: "ការផ្លាស់ប្តូរសិក្សា" },
+      href: "/academic-exchange",
+      subItems: [
+        { label: { english: "Lecturer Exchange", khmer: "ការផ្លាស់ប្តូរសាស្ត្រាចារ្យ" }, href: "/academic-exchange/lecturer" },
+        { 
+          label: { english: "Student Exchange", khmer: "ការផ្លាស់ប្តូរនិស្សិត" }, 
+          href: "/academic-exchange/student",
+          nestedItems: [
+            { label: { english: "Academic Exchange", khmer: "កម្មវិធីផ្លាស់ប្តូរសិក្សា" }, href: "/academic-exchange/student/academic" },
+            { label: { english: "Student Mobility", khmer: "ការផ្លាស់ប្តូរនិស្សិត" }, href: "/academic-exchange/student/mobility" },
+          ]
+        },
       ]
     },
     {
@@ -101,16 +119,21 @@ export default function Navbar() {
         },
       ]
     },
-    {
-      name: { english: "Journal & Research", khmer: "ស្រាវជ្រាវ និងទិនានុប្បវត្តិ" },
-      href: "/research",
-      subItems: [
-        { label: { english: "Academic Journal", khmer: "ទិនានុប្បវត្តិសិក្សា" }, href: "/research/journal" },
-        { label: { english: "Publications", khmer: "ការបោះពុម្ពផ្សាយ" }, href: "/research/publications" },
-      ]
+        {
+      name: { english: "Careers & Internships", khmer: "កម្មសិក្សា និងការងារ" },
+      href: "/careers",
+      subItems: []
     },
+    // {
+    //   name: { english: "Journal & Research", khmer: "ស្រាវជ្រាវ និងទិនានុប្បវត្តិ" },
+    //   href: "/research",
+    //   subItems: [
+    //     { label: { english: "Academic Journal", khmer: "ទិនានុប្បវត្តិសិក្សា" }, href: "/research/journal" },
+    //     { label: { english: "Publications", khmer: "ការបោះពុម្ពផ្សាយ" }, href: "/research/publications" },
+    //   ]
+    // },
     {
-      name: { english: "News", khmer: "ព័ត៌មាន" },
+      name: { english: "News & Events", khmer: "ព័ត៌មាន" },
       href: "/news",
       subItems: []
     }
@@ -172,24 +195,24 @@ export default function Navbar() {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden xl:flex space-x-6 2xl:space-x-8 items-center h-full">
+          <nav className="hidden xl:flex space-x-4 2xl:space-x-6 items-center h-full">
             {navLinks.map((link) => {
               const isActive = isLinkActive(link);
               return (
                 <div key={link.name.english} className="relative group h-full flex items-center">
                   {link.subItems.length > 0 ? (
                     <button
-                      className={`flex items-center py-1 mt-1 transition-colors whitespace-nowrap border-b-2 ${isActive ? 'text-primary font-bold border-primary' : 'text-gray-700 font-medium border-transparent hover:text-primary'
-                        } ${lang === 'kh' ? 'font-khmer text-[15px]' : ''}`}
+                      className={`flex items-center py-1 mt-1 text-sm transition-colors whitespace-nowrap border-b-2 ${isActive ? 'text-primary font-bold border-primary' : 'text-gray-700 font-medium border-transparent hover:text-primary'
+                        } ${lang === 'kh' ? 'font-khmer text-[13px]' : ''}`}
                     >
                       {t(link.name)}
-                      <ChevronDown className="w-4 h-4 ml-1 opacity-50 group-hover:opacity-100 group-hover:-rotate-180 transition-all duration-300" />
+                      <ChevronDown className="w-3.5 h-3.5 ml-1 opacity-50 group-hover:opacity-100 group-hover:-rotate-180 transition-all duration-300" />
                     </button>
                   ) : (
                     <Link
                       href={link.href}
-                      className={`flex items-center py-1 mt-1 transition-colors whitespace-nowrap border-b-2 ${isActive ? 'text-primary font-bold border-primary' : 'text-gray-700 font-medium border-transparent hover:text-primary'
-                        } ${lang === 'kh' ? 'font-khmer text-[15px]' : ''}`}
+                      className={`flex items-center py-1 mt-1 text-sm transition-colors whitespace-nowrap border-b-2 ${isActive ? 'text-primary font-bold border-primary' : 'text-gray-700 font-medium border-transparent hover:text-primary'
+                        } ${lang === 'kh' ? 'font-khmer text-[13px]' : ''}`}
                     >
                       {t(link.name)}
                     </Link>
@@ -239,14 +262,14 @@ export default function Navbar() {
           </nav>
 
           {/* Action Area */}
-          <div className="hidden xl:flex items-center space-x-4">
+          {/* <div className="hidden xl:flex items-center space-x-4">
             <Link
               href="/admissions/how-to-apply"
               className={`bg-primary hover:bg-primary-dark text-white px-6 py-2.5 rounded-sm font-bold transition-colors shadow-sm ${lang === 'kh' ? 'font-khmer' : ''}`}
             >
               {lang === 'kh' ? 'ដាក់ពាក្យចូលរៀន' : 'How to Apply'}
             </Link>
-          </div>
+          </div> */}
 
           {/* Mobile menu button */}
           <div className="xl:hidden flex items-center">
@@ -337,13 +360,13 @@ export default function Navbar() {
             })}
 
             <div className="pt-6 mt-6 border-t border-gray-200 space-y-4">
-              <Link
+              {/* <Link
                 href="/admissions/how-to-apply"
                 onClick={() => setIsOpen(false)}
                 className={`block w-full text-center bg-primary hover:bg-primary-dark text-white px-6 py-3 rounded-sm font-bold transition-colors shadow-sm mb-4 ${lang === 'kh' ? 'font-khmer' : ''}`}
               >
                 {lang === 'kh' ? 'ដាក់ពាក្យចូលរៀន' : 'How to Apply'}
-              </Link>
+              </Link> */}
               <div className="flex bg-gray-100 p-1 rounded-sm w-full">
                 <button
                   onClick={() => setLang('kh')}
