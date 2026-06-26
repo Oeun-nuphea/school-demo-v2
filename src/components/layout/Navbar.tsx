@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
@@ -11,8 +11,46 @@ export default function Navbar() {
   const [openSection, setOpenSection] = useState<string | null>(null);
   const [openSubSection, setOpenSubSection] = useState<string | null>(null);
   const [activeMegaMenu, setActiveMegaMenu] = useState<string | null>(null);
+  const [renderedMegaMenu, setRenderedMegaMenu] = useState<string | null>(null);
+  const closeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  const openMenu = (category: string | null) => {
+    if (closeTimeoutRef.current) {
+      clearTimeout(closeTimeoutRef.current);
+      closeTimeoutRef.current = null;
+    }
+    setActiveMegaMenu(category);
+  };
+
+  const closeMenu = () => {
+    if (closeTimeoutRef.current) {
+      clearTimeout(closeTimeoutRef.current);
+    }
+    closeTimeoutRef.current = setTimeout(() => {
+      setActiveMegaMenu(null);
+    }, 250);
+  };
+
+  useEffect(() => {
+    if (activeMegaMenu) {
+      setRenderedMegaMenu(activeMegaMenu);
+    }
+  }, [activeMegaMenu]);
+
+  useEffect(() => {
+    return () => {
+      if (closeTimeoutRef.current) {
+        clearTimeout(closeTimeoutRef.current);
+      }
+    };
+  }, []);
+
   const pathname = usePathname() || "";
   const { t, lang, setLang } = useLanguage();
+
+  useEffect(() => {
+    setActiveMegaMenu(null);
+  }, [pathname]);
 
   const navLinks = [
     {
@@ -552,12 +590,12 @@ export default function Navbar() {
   return (
     <header
       className="bg-white border-b uni-border sticky top-0 z-50"
-      onMouseLeave={() => setActiveMegaMenu(null)}
+      onMouseLeave={closeMenu}
     >
       <div className="w-full px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
-          <div className="flex-shrink-0 flex items-center" onMouseEnter={() => setActiveMegaMenu(null)}>
+          <div className="flex-shrink-0 flex items-center" onMouseEnter={() => openMenu(null)}>
             <Link href="/" className="flex items-center gap-3">
               <div className="relative w-16 h-16 flex items-center justify-center">
                 <Image
@@ -578,30 +616,31 @@ export default function Navbar() {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden xl:flex space-x-4 2xl:space-x-6 items-center h-full">
+          <nav className="hidden xl:flex items-center h-full">
             {navLinks.map((link) => {
               const isActive = isLinkActive(link);
               const hasDropdown = link.subItems.length > 0;
               return (
                 <div
                   key={link.name.english}
-                  className="h-full flex items-center"
-                  onMouseEnter={() => setActiveMegaMenu(hasDropdown ? link.name.english : null)}
+                  className="h-full flex items-center px-3 2xl:px-4"
+                  onMouseEnter={() => openMenu(hasDropdown ? link.name.english : null)}
+                  onMouseLeave={closeMenu}
                 >
                   {hasDropdown ? (
                     <button
                       className={`flex items-center py-1 mt-1 text-sm transition-colors whitespace-nowrap border-b-2 ${isActive || activeMegaMenu === link.name.english
-                          ? 'text-primary font-bold border-primary'
-                          : 'text-gray-700 font-medium border-transparent hover:text-primary'
+                          ? 'text-primary font-semibold border-primary'
+                          : 'text-gray-700 font-semibold border-transparent hover:text-primary'
                         } ${lang === 'kh' ? 'font-khmer text-[13px]' : ''}`}
                     >
                       {t(link.name)}
-                      <ChevronDown className={`w-3.5 h-3.5 ml-1 opacity-50 transition-all duration-300 ${activeMegaMenu === link.name.english ? '-rotate-180 text-primary opacity-100' : ''}`} />
+                      <ChevronDown className={`w-3.5 h-3.5 ml-1 opacity-50 transition-transform duration-300 pointer-events-none ${activeMegaMenu === link.name.english ? '-rotate-180 text-primary opacity-100' : ''}`} />
                     </button>
                   ) : (
                     <Link
                       href={link.href}
-                      className={`flex items-center py-1 mt-1 text-sm transition-colors whitespace-nowrap border-b-2 ${isActive ? 'text-primary font-bold border-primary' : 'text-gray-700 font-medium border-transparent hover:text-primary'
+                      className={`flex items-center py-1 mt-1 text-sm transition-colors whitespace-nowrap border-b-2 ${isActive ? 'text-primary font-semibold border-primary' : 'text-gray-700 font-semibold border-transparent hover:text-primary'
                         } ${lang === 'kh' ? 'font-khmer text-[13px]' : ''}`}
                     >
                       {t(link.name)}
@@ -635,12 +674,27 @@ export default function Navbar() {
       </div>
 
       {/* Mega Menu Container */}
-      {activeMegaMenu && (
-        <div className="absolute left-0 right-0 top-full w-full bg-white border-t border-gray-150 shadow-2xl z-40 hidden xl:block animate-slide-down">
-          <div className="absolute -top-px left-0 right-0 h-px bg-primary"></div>
-          {getMegaMenuContent(activeMegaMenu)}
-        </div>
-      )}
+      <div 
+        className={`absolute left-0 right-0 top-[calc(100%-1px)] w-full bg-white border-t border-gray-150 shadow-2xl z-40 hidden xl:block transition-all duration-250 ease-out origin-top ${
+          activeMegaMenu 
+            ? 'opacity-100 translate-y-0 pointer-events-auto' 
+            : 'opacity-0 -translate-y-2 pointer-events-none'
+        }`}
+        onMouseEnter={() => {
+          if (closeTimeoutRef.current) {
+            clearTimeout(closeTimeoutRef.current);
+            closeTimeoutRef.current = null;
+          }
+        }}
+        onMouseLeave={closeMenu}
+      >
+        <div className="absolute -top-px left-0 right-0 h-px bg-primary"></div>
+        {renderedMegaMenu && (
+          <div key={renderedMegaMenu} className="animate-fast-fade-in">
+            {getMegaMenuContent(renderedMegaMenu)}
+          </div>
+        )}
+      </div>
 
       {/* Mobile Navigation */}
       {isOpen && (
