@@ -178,11 +178,16 @@ export default function Navbar() {
 
   // helper to check active state deeply
   const isLinkActive = (link: any) => {
-    if (pathname.startsWith(link.href) && link.href !== '/') return true;
+    if (isItemActive(link.href)) return true;
     return link.subItems?.some((subItem: any) => {
-      if (pathname === subItem.href || pathname.startsWith(subItem.href)) return true;
-      return subItem.nestedItems?.some((nested: any) => pathname === nested.href || pathname.startsWith(nested.href));
+      if (isItemActive(subItem.href)) return true;
+      return subItem.nestedItems?.some((nested: any) => isItemActive(nested.href));
     });
+  };
+
+  const isItemActive = (href: string) => {
+    if (href === '/') return pathname === '/';
+    return pathname === href || pathname.startsWith(href + '/');
   };
 
   const getMegaMenuContent = (linkName: string) => {
@@ -207,7 +212,7 @@ export default function Navbar() {
                     key={sub.label.english}
                     href={sub.href}
                     onClick={() => setActiveMegaMenu(null)}
-                    className={`block text-sm text-gray-600 hover:text-primary hover:pl-2 transition-all duration-200 ${kh ? 'font-khmer' : ''}`}
+                    className={`block text-sm hover:text-primary transition-all duration-200 ${isItemActive(sub.href) ? 'text-primary font-semibold border-l-2 border-primary pl-3' : 'text-gray-600 hover:pl-2'} ${kh ? 'font-khmer' : ''}`}
                   >
                     {t(sub.label)}
                   </Link>
@@ -266,7 +271,7 @@ export default function Navbar() {
                     key={nested.label.english}
                     href={nested.href}
                     onClick={() => setActiveMegaMenu(null)}
-                    className={`block text-sm text-gray-600 hover:text-primary hover:pl-2 transition-all duration-200 ${kh ? 'font-khmer' : ''}`}
+                    className={`block text-sm hover:text-primary transition-all duration-200 ${isItemActive(nested.href) ? 'text-primary font-semibold border-l-2 border-primary pl-3' : 'text-gray-600 hover:pl-2'} ${kh ? 'font-khmer' : ''}`}
                   >
                     {t(nested.label)}
                   </Link>
@@ -288,7 +293,7 @@ export default function Navbar() {
                       key={nested.label.english}
                       href={nested.href}
                       onClick={() => setActiveMegaMenu(null)}
-                      className={`block text-sm text-gray-600 hover:text-primary hover:pl-2 transition-all duration-200 ${kh ? 'font-khmer' : ''}`}
+                      className={`block text-sm hover:text-primary transition-all duration-200 ${isItemActive(nested.href) ? 'text-primary font-semibold border-l-2 border-primary pl-3' : 'text-gray-600 hover:pl-2'} ${kh ? 'font-khmer' : ''}`}
                     >
                       {t(nested.label)}
                     </Link>
@@ -307,7 +312,7 @@ export default function Navbar() {
                     key={prog.label.english}
                     href={prog.href}
                     onClick={() => setActiveMegaMenu(null)}
-                    className={`block text-sm text-gray-600 hover:text-primary hover:pl-2 transition-all duration-200 ${kh ? 'font-khmer' : ''}`}
+                    className={`block text-sm hover:text-primary transition-all duration-200 ${isItemActive(prog.href) ? 'text-primary font-semibold border-l-2 border-primary pl-3' : 'text-gray-600 hover:pl-2'} ${kh ? 'font-khmer' : ''}`}
                   >
                     {t(prog.label)}
                   </Link>
@@ -360,7 +365,7 @@ export default function Navbar() {
                     key={sub.label.english}
                     href={sub.href}
                     onClick={() => setActiveMegaMenu(null)}
-                    className={`block text-sm text-gray-600 hover:text-primary hover:pl-2 transition-all duration-200 ${kh ? 'font-khmer' : ''}`}
+                    className={`block text-sm hover:text-primary transition-all duration-200 ${isItemActive(sub.href) ? 'text-primary font-semibold border-l-2 border-primary pl-3' : 'text-gray-600 hover:pl-2'} ${kh ? 'font-khmer' : ''}`}
                   >
                     {t(sub.label)}
                   </Link>
@@ -427,7 +432,7 @@ export default function Navbar() {
                     key={nested.label.english}
                     href={nested.href}
                     onClick={() => setActiveMegaMenu(null)}
-                    className={`block text-sm text-gray-600 hover:text-primary hover:pl-2 transition-all duration-200 ${kh ? 'font-khmer' : ''}`}
+                    className={`block text-sm hover:text-primary transition-all duration-200 ${isItemActive(nested.href) ? 'text-primary font-semibold border-l-2 border-primary pl-3' : 'text-gray-600 hover:pl-2'} ${kh ? 'font-khmer' : ''}`}
                   >
                     {t(nested.label)}
                   </Link>
@@ -446,7 +451,7 @@ export default function Navbar() {
                   key={sub.label.english}
                   href={sub.href}
                   onClick={() => setActiveMegaMenu(null)}
-                  className={`block text-sm text-gray-600 hover:text-primary hover:pl-2 transition-all duration-200 ${kh ? 'font-khmer' : ''}`}
+                  className={`block text-sm hover:text-primary transition-all duration-200 ${isItemActive(sub.href) ? 'text-primary font-semibold border-l-2 border-primary pl-3' : 'text-gray-600 hover:pl-2'} ${kh ? 'font-khmer' : ''}`}
                 >
                   {t(sub.label)}
                 </Link>
@@ -490,7 +495,7 @@ export default function Navbar() {
                     key={nested.label.english}
                     href={nested.href}
                     onClick={() => setActiveMegaMenu(null)}
-                    className={`block text-sm text-gray-600 hover:text-primary hover:pl-2 transition-all duration-200 ${kh ? 'font-khmer' : ''}`}
+                    className={`block text-sm hover:text-primary transition-all duration-200 ${isItemActive(nested.href) ? 'text-primary font-semibold border-l-2 border-primary pl-3' : 'text-gray-600 hover:pl-2'} ${kh ? 'font-khmer' : ''}`}
                   >
                     {t(nested.label)}
                   </Link>
@@ -510,7 +515,7 @@ export default function Navbar() {
                     key={nested.label.english}
                     href={nested.href}
                     onClick={() => setActiveMegaMenu(null)}
-                    className={`block text-sm text-gray-600 hover:text-primary hover:pl-2 transition-all duration-200 ${kh ? 'font-khmer' : ''}`}
+                    className={`block text-sm hover:text-primary transition-all duration-200 ${isItemActive(nested.href) ? 'text-primary font-semibold border-l-2 border-primary pl-3' : 'text-gray-600 hover:pl-2'} ${kh ? 'font-khmer' : ''}`}
                   >
                     {t(nested.label)}
                   </Link>
@@ -551,7 +556,7 @@ export default function Navbar() {
                   key={sub.label.english}
                   href={sub.href}
                   onClick={() => setActiveMegaMenu(null)}
-                  className={`block p-4 border border-gray-100 rounded-sm hover:border-primary hover:shadow-sm transition-all duration-200 ${kh ? 'font-khmer' : ''}`}
+                  className={`block p-4 border rounded-sm hover:border-primary hover:shadow-sm transition-all duration-200 ${isItemActive(sub.href) ? 'border-primary shadow-sm bg-gray-50' : 'border-gray-100'} ${kh ? 'font-khmer' : ''}`}
                 >
                   <div className="font-bold text-primary text-sm mb-1">{t(sub.label)}</div>
                   <div className="text-xs text-gray-400">
@@ -732,7 +737,7 @@ export default function Navbar() {
                             <>
                               <button
                                 onClick={() => toggleSubSection(subItem.label.english)}
-                                className={`w-full flex justify-between items-center text-base transition-colors pl-3 border-l-2 ${pathname.startsWith(subItem.href) ? 'text-primary font-bold border-primary' : 'text-gray-600 font-medium border-gray-200 hover:text-primary hover:border-primary'
+                                className={`w-full flex justify-between items-center text-base transition-colors pl-3 border-l-2 ${isItemActive(subItem.href) ? 'text-primary font-bold border-primary' : 'text-gray-600 font-medium border-gray-200 hover:text-primary hover:border-primary'
                                   } ${lang === 'kh' ? 'font-khmer' : ''}`}
                               >
                                 {t(subItem.label)}
@@ -745,7 +750,7 @@ export default function Navbar() {
                                       key={nested.label.english}
                                       href={nested.href}
                                       onClick={() => setIsOpen(false)}
-                                      className={`block text-sm transition-colors ${pathname === nested.href || pathname.startsWith(nested.href) ? 'text-primary font-bold' : 'text-gray-500 hover:text-primary'
+                                      className={`block text-sm transition-colors ${isItemActive(nested.href) ? 'text-primary font-bold' : 'text-gray-500 hover:text-primary'
                                         } ${lang === 'kh' ? 'font-khmer' : ''}`}
                                     >
                                       {t(nested.label)}
@@ -758,7 +763,7 @@ export default function Navbar() {
                             <Link
                               href={subItem.href}
                               onClick={() => setIsOpen(false)}
-                              className={`block text-base transition-colors pl-3 border-l-2 ${pathname === subItem.href || pathname.startsWith(subItem.href) ? 'text-primary font-bold border-primary' : 'text-gray-600 font-medium border-gray-200 hover:text-primary hover:border-primary'
+                              className={`block text-base transition-colors pl-3 border-l-2 ${isItemActive(subItem.href) ? 'text-primary font-bold border-primary' : 'text-gray-600 font-medium border-gray-200 hover:text-primary hover:border-primary'
                                 } ${lang === 'kh' ? 'font-khmer' : ''}`}
                             >
                               {t(subItem.label)}
