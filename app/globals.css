@@ -12,8 +12,9 @@
   --color-muted-foreground: #6b7280;
   --color-border: #e5e7eb;
   
-  --font-sans: var(--font-inter);
-  --font-serif: var(--font-playfair);
+  --font-sans: var(--font-poppins);
+  --font-serif: var(--font-poppins);
+  --font-khmer: var(--font-kantumruy);
 }
 
 body {
@@ -34,6 +35,7 @@ body {
 
 /* Khmer Typography Tuning */
 .font-khmer {
+  font-family: var(--font-khmer), sans-serif;
   line-height: 1.8;
   letter-spacing: 0.02em;
 }

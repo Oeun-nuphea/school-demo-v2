@@ -17,8 +17,8 @@ export default function QuickAccess() {
   ];
 
   return (
-    <section className="relative z-30 -mt-16 sm:-mt-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="glass-card shadow-xl rounded-sm p-6 sm:p-8 border border-white/30">
+    <section className="relative z-30 -mt-16 sm:-mt-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="bg-white shadow-xl rounded-sm p-6 sm:p-8 border-gray-150">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 sm:gap-4">
           {links.map((link) => {
             const Icon = link.icon;
@@ -26,7 +26,7 @@ export default function QuickAccess() {
               <Link 
                 key={link.name} 
                 href={link.href}
-                className={`flex flex-col items-center text-center p-4 rounded-sm border border-gray-100/50 bg-white/40 hover:bg-white hover:-translate-y-2 hover:border-secondary/35 transition-all duration-300 shadow-sm ${link.glowColor} hover:shadow-md group`}
+                className={`flex flex-col items-center text-center p-4 rounded-sm border border-gray-200/50 bg-gray-50/70 hover:bg-white hover:-translate-y-2 hover:border-secondary/35 transition-all duration-300 shadow-sm ${link.glowColor} hover:shadow-md group`}
               >
                 <div className="w-14 h-14 bg-primary/5 text-primary rounded-full flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-white group-hover:scale-110 transition-all duration-300">
                   <Icon className="w-6 h-6 group-hover:rotate-6 transition-transform" />

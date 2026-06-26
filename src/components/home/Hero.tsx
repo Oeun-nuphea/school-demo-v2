@@ -74,13 +74,6 @@ export default function Hero() {
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <Link
-                href="/admissions/how-to-apply"
-                className={`group flex items-center justify-center gap-2 bg-gradient-to-r from-secondary to-amber-500 hover:from-secondary-dark hover:to-amber-600 text-white font-bold px-8 py-3.5 rounded-sm transition-all duration-300 shadow-lg shadow-secondary/20 hover:shadow-secondary/35 text-center ${kh ? 'font-khmer' : ''}`}
-              >
-                {kh ? 'ដាក់ពាក្យចូលរៀន' : 'Enroll Now'}
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </Link>
-              <Link
                 href="/colleges"
                 className={`flex items-center justify-center border border-white/30 hover:border-white text-white bg-white/5 hover:bg-white/10 font-medium px-8 py-3.5 rounded-sm transition-colors text-center ${kh ? 'font-khmer' : ''}`}
               >
