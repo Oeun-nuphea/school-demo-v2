@@ -185,10 +185,7 @@ export default function Navbar() {
               </div>
               <div className="flex flex-col">
                 <span className="font-serif font-bold text-xl text-primary leading-tight">
-                  {lang === 'kh' ? 'វិទ្យាស្ថានអាស៊ី កម្ពុជា' : 'Asian Institute'}
-                </span>
-                <span className="font-sans text-xs tracking-widest text-gray-500 uppercase">
-                  {lang === 'kh' ? '' : 'of Cambodia'}
+                  {lang === 'kh' ? 'វិទ្យាស្ថានអាស៊ី កម្ពុជា' : 'Asian Institute of Cambodia'}
                 </span>
               </div>
             </Link>
