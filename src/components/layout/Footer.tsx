@@ -126,9 +126,9 @@ export default function Footer() {
         </div>
 
         <div className={`pt-8 border-t border-primary-light flex flex-col md:flex-row justify-between items-center text-xs text-gray-400 ${lang === 'kh' ? 'font-khmer' : ''}`}>
-          <p>&copy; {new Date().getFullYear()} {lang === 'kh' ? 'វិទ្យាស្ថានអាស៊ី កម្ពុជា' : 'Asian Institute of Cambodia (AIC)'}. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} {lang === 'kh' ? 'វិទ្យាស្ថានអាស៊ី កម្ពុជា' : 'Asian Institute of Cambodia'}. All rights reserved.</p>
           <div className="flex space-x-4 mt-4 md:mt-0">
-            <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
+            <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>    
             <Link href="/terms" className="hover:text-white transition-colors">Terms of Use</Link>
             <Link href="/accessibility" className="hover:text-white transition-colors">Accessibility</Link>
           </div>

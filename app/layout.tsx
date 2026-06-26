@@ -19,8 +19,8 @@ const kantumruy = Kantumruy_Pro({
 });
 
 export const metadata: Metadata = {
-  title: "Asian Institute of Cambodia (AIC) | Excellence in Education",
-  description: "Welcome to Asian Institute of Cambodia (AIC). Discover our programs, campus life, and commitment to Morality, Intelligence, Innovation, and Entrepreneurship.",
+  title: "Asian Institute of Cambodia | Excellence in Education",
+  description: "Welcome to Asian Institute of Cambodia. Discover our programs, campus life, and commitment to Morality, Intelligence, Innovation, and Entrepreneurship.",
 };
 
 export default function RootLayout({
