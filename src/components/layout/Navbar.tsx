@@ -19,15 +19,12 @@ export default function Navbar() {
       name: { english: "About Us", khmer: "អំពីវិទ្យាស្ថាន" },
       href: "/about",
       subItems: [
-        { label: { english: "Vision & Mission", khmer: "ទស្សនវិស័យ" }, href: "/about/vision" },
-        // { label: { english: "Mission", khmer: "បេសកកម្ម" }, href: "/about/mission" },
-        { label: { english: "Goal & Objective", khmer: "គោលដៅ" }, href: "/about/goal" },
-        // { label: { english: "Objective", khmer: "គោលបំណង" }, href: "/about/objective" },
+        { label: { english: "Vision, Mission & Goals", khmer: "ទស្សនវិស័យ បេសកកម្ម និងគោលដៅ" }, href: "/about/vision-and-missions" },
         { label: { english: "Organization Structure", khmer: "រចនាសម្ព័ន្ធស្ថាប័ន" }, href: "/about/structure" },
-        // { label: { english: "Founder & Principal", khmer: "ស្ថាបនិក និងនាយកវិទ្យាស្ថាន" }, href: "/about/founder-and-principal" },
+        { label: { english: "Founder & Principal", khmer: "ស្ថាបនិក និងនាយកវិទ្យាស្ថាន" }, href: "/about/founder-and-principal" },
         { label: { english: "Campus Locations", khmer: "ទីតាំងសាខា" }, href: "/about/campuses" },
-        // { label: { english: "Careers at AIC", khmer: "ឱកាសការងារជាមួយវិទ្យាស្ថាន" }, href: "/about/careers" },
-        // { label: { english: "Contact", khmer: "ទំនាក់ទំនង" }, href: "/about/contact" },
+        { label: { english: "Careers at AIC", khmer: "ឱកាសការងារ" }, href: "/about/careers" },
+        { label: { english: "Contact Us", khmer: "ទំនាក់ទំនង" }, href: "/about/contact" },
       ]
     },
     {
@@ -83,21 +80,6 @@ export default function Navbar() {
       ]
     },
     {
-      name: { english: "Academic Exchange", khmer: "ការផ្លាស់ប្តូរសិក្សា" },
-      href: "/academic-exchange",
-      subItems: [
-        { label: { english: "Lecturer Exchange", khmer: "ការផ្លាស់ប្តូរសាស្ត្រាចារ្យ" }, href: "/academic-exchange/lecturer" },
-        { 
-          label: { english: "Student Exchange", khmer: "ការផ្លាស់ប្តូរនិស្សិត" }, 
-          href: "/academic-exchange/student",
-          nestedItems: [
-            { label: { english: "Academic Exchange", khmer: "កម្មវិធីផ្លាស់ប្តូរសិក្សា" }, href: "/academic-exchange/student/academic" },
-            { label: { english: "Student Mobility", khmer: "ការផ្លាស់ប្តូរនិស្សិត" }, href: "/academic-exchange/student/mobility" },
-          ]
-        },
-      ]
-    },
-    {
       name: { english: "International Relations", khmer: "ទំនាក់ទំនងអន្តរជាតិ" },
       href: "/international",
       subItems: [
@@ -113,25 +95,30 @@ export default function Navbar() {
           label: { english: "Our Partners", khmer: "ដៃគូសហការ" }, 
           href: "/international/partners",
           nestedItems: [
-            { label: { english: "Asian Partners (incl. China)", khmer: "ដៃគូអាស៊ី" }, href: "/international/partners/asian" },
+            { label: { english: "Asian Partners", khmer: "ដៃគូអាស៊ី" }, href: "/international/partners/asian" },
             { label: { english: "European Partners", khmer: "ដៃគូអឺរ៉ុប" }, href: "/international/partners/european" },
           ]
         },
       ]
     },
-        {
-      name: { english: "Careers & Internships", khmer: "កម្មសិក្សា និងការងារ" },
-      href: "/careers",
-      subItems: []
+    {
+      name: { english: "Journal & Research", khmer: "ស្រាវជ្រាវ និងទិនានុប្បវត្តិ" },
+      href: "/research",
+      subItems: [
+        { label: { english: "Academic Journal", khmer: "ទិនានុប្បវត្តិសិក្សា" }, href: "/research/journal" },
+        { label: { english: "Publications", khmer: "ការបោះពុម្ពផ្សាយ" }, href: "/research/publications" },
+      ]
     },
-    // {
-    //   name: { english: "Journal & Research", khmer: "ស្រាវជ្រាវ និងទិនានុប្បវត្តិ" },
-    //   href: "/research",
-    //   subItems: [
-    //     { label: { english: "Academic Journal", khmer: "ទិនានុប្បវត្តិសិក្សា" }, href: "/research/journal" },
-    //     { label: { english: "Publications", khmer: "ការបោះពុម្ពផ្សាយ" }, href: "/research/publications" },
-    //   ]
-    // },
+    {
+      name: { english: "Alumni", khmer: "អតីតនិស្សិត" },
+      href: "/alumni/network",
+      subItems: [
+        { label: { english: "Alumni Network", khmer: "បណ្តាញអតីតនិស្សិត" }, href: "/alumni/network" },
+        { label: { english: "Success Stories", khmer: "រឿងរ៉ាវជោគជ័យ" }, href: "/alumni/success-stories" },
+        { label: { english: "Alumni Benefits", khmer: "អត្ថប្រយោជន៍" }, href: "/alumni/benefits" },
+        { label: { english: "Alumni Giving", khmer: "ការចូលរួមឧបត្ថម្ភ" }, href: "/alumni/giving" },
+      ]
+    },
     {
       name: { english: "News & Events", khmer: "ព័ត៌មាន" },
       href: "/news",

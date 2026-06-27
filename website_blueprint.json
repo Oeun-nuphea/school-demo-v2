@@ -1,0 +1,532 @@
+{
+  "sitemap": {
+    "root": "/",
+    "nodes": [
+      {
+        "path": "/",
+        "name": { "en": "Home", "kh": "ទំព័រដើម" },
+        "type": "page"
+      },
+      {
+        "path": "/about",
+        "name": { "en": "About Us", "kh": "អំពីយើង" },
+        "type": "folder",
+        "children": [
+          { "path": "/about/vision-mission-goals", "name": { "en": "Vision, Mission & Goals", "kh": "ទស្សនវិស័យ បេសកកម្ម និងគោលដៅ" }, "type": "page" },
+          { "path": "/about/structure", "name": { "en": "Organization Structure", "kh": "រចនាសម្ព័ន្ធស្ថាប័ន" }, "type": "page" },
+          { "path": "/about/founder-and-principal", "name": { "en": "Founder & Principal", "kh": "ស្ថាបនិក និងនាយកវិទ្យាស្ថាន" }, "type": "page" },
+          { "path": "/about/campuses", "name": { "en": "Campus Locations", "kh": "ទីតាំងសាខា" }, "type": "page" },
+          { "path": "/about/contact", "name": { "en": "Contact Us", "kh": "ទំនាក់ទំនង" }, "type": "page" },
+          { "path": "/about/careers", "name": { "en": "Careers & Careers Center", "kh": "ឱកាសការងារ" }, "type": "page" }
+        ]
+      },
+      {
+        "path": "/programs",
+        "name": { "en": "Academic Programs", "kh": "កម្មវិធីសិក្សា" },
+        "type": "folder",
+        "children": [
+          { "path": "/programs/master", "name": { "en": "Master Programs", "kh": "ថ្នាក់បរិញ្ញាបត្រជាន់ខ្ពស់" }, "type": "page" },
+          {
+            "path": "/programs/bachelor",
+            "name": { "en": "Bachelor Programs", "kh": "ថ្នាក់បរិញ្ញាបត្រ" },
+            "type": "folder",
+            "children": [
+              { "path": "/programs/bachelor/national", "name": { "en": "National Curriculum", "kh": "កម្មវិធីសិក្សាថ្នាក់ជាតិ" }, "type": "page" },
+              { "path": "/programs/bachelor/international", "name": { "en": "International Curriculum", "kh": "កម្មវិធីសិក្សាអន្តរជាតិ" }, "type": "page" }
+            ]
+          },
+          { "path": "/programs/associate", "name": { "en": "Associate Programs", "kh": "ថ្នាក់បរិញ្ញាបត្ររង" }, "type": "page" },
+          { "path": "/programs/tvet", "name": { "en": "TVET Programs", "kh": "កម្មវិធីបណ្តុះបណ្តាលបច្ចេកទេស និងវិជ្ជាជីវៈ" }, "type": "page" }
+        ]
+      },
+      {
+        "path": "/admissions",
+        "name": { "en": "Admissions", "kh": "ការចុះឈ្មោះចូលរៀន" },
+        "type": "folder",
+        "children": [
+          { "path": "/admissions/how-to-apply", "name": { "en": "How to Apply", "kh": "របៀបចុះឈ្មោះ" }, "type": "page" },
+          { "path": "/admissions/requirements", "name": { "en": "Admission Requirements", "kh": "លក្ខខណ្ឌតម្រូវ" }, "type": "page" },
+          { "path": "/admissions/intake-dates", "name": { "en": "Intake Dates", "kh": "កាលបរិច្ឆេទចូលរៀន" }, "type": "page" },
+          { "path": "/admissions/tuition-fees", "name": { "en": "Tuition Fees", "kh": "តម្លៃសិក្សា" }, "type": "page" },
+          { "path": "/scholarships", "name": { "en": "Scholarships", "kh": "អាហារូបករណ៍" }, "type": "page" }
+        ]
+      },
+      {
+        "path": "/student-life",
+        "name": { "en": "Student Life", "kh": "ជីវិតនិស្សិត" },
+        "type": "folder",
+        "children": [
+          {
+            "path": "/student-life/facilities",
+            "name": { "en": "Facilities", "kh": "បរិក្ខារ" },
+            "type": "folder",
+            "children": [
+              { "path": "/student-life/facilities/self-study", "name": { "en": "Self-Study Area", "kh": "កន្លែងស្វ័យសិក្សា" }, "type": "page" },
+              { "path": "/student-life/facilities/dormitory", "name": { "en": "Dormitory", "kh": "អន្តេវាសិកដ្ឋាន" }, "type": "page" },
+              { "path": "/student-life/facilities/canteen", "name": { "en": "Canteen (Food & Drink)", "kh": "អាហារដ្ឋាន" }, "type": "page" }
+            ]
+          },
+          { "path": "/student-life/extra-curricular", "name": { "en": "Extra-Curricular", "kh": "សកម្មភាពក្រៅម៉ោង" }, "type": "page" },
+          { "path": "/student-life/social-events", "name": { "en": "Social Events", "kh": "ព្រឹត្តិការណ៍សង្គម" }, "type": "page" },
+          { "path": "/student-life/graduation", "name": { "en": "Graduation", "kh": "ការបញ្ចប់ការសិក្សា" }, "type": "page" }
+        ]
+      },
+      {
+        "path": "/international",
+        "name": { "en": "International Relations", "kh": "ទំនាក់ទំនងអន្តរជាតិ" },
+        "type": "folder",
+        "children": [
+          {
+            "path": "/international/exchange",
+            "name": { "en": "Academic Exchange", "kh": "កម្មវិធីផ្លាស់ប្តូរសិក្សា" },
+            "type": "folder",
+            "children": [
+              { "path": "/international/exchange/lecturer", "name": { "en": "Lecturer Exchange", "kh": "ការផ្លាស់ប្តូរសាស្ត្រាចារ្យ" }, "type": "page" },
+              { "path": "/international/exchange/student", "name": { "en": "Student Exchange & Mobility", "kh": "ការផ្លាស់ប្តូរនិស្សិត" }, "type": "page" }
+            ]
+          },
+          {
+            "path": "/international/partners",
+            "name": { "en": "Our Partners", "kh": "ដៃគូសហការ" },
+            "type": "folder",
+            "children": [
+              { "path": "/international/partners/asian", "name": { "en": "Asian Partners (incl. China)", "kh": "ដៃគូអាស៊ី" }, "type": "page" },
+              { "path": "/international/partners/european", "name": { "en": "European Partners", "kh": "ដៃគូអឺរ៉ុប" }, "type": "page" }
+            ]
+          }
+        ]
+      },
+      {
+        "path": "/research",
+        "name": { "en": "Journal & Research", "kh": "ស្រាវជ្រាវ និងទិនានុប្បវត្តិ" },
+        "type": "folder",
+        "children": [
+          { "path": "/research/journal", "name": { "en": "Academic Journal", "kh": "ទិនានុប្បវត្តិសិក្សា" }, "type": "page" },
+          { "path": "/research/publications", "name": { "en": "Publications", "kh": "ការបោះពុម្ពផ្សាយ" }, "type": "page" }
+        ]
+      },
+      {
+        "path": "/news",
+        "name": { "en": "News", "kh": "ព័ត៌មាន" },
+        "type": "page"
+      },
+      {
+        "path": "/events",
+        "name": { "en": "Events", "kh": "ព្រឹត្តិការណ៍" },
+        "type": "page"
+      },
+      {
+        "path": "/alumni",
+        "name": { "en": "Alumni", "kh": "អតីតនិស្សិត" },
+        "type": "folder",
+        "children": [
+          { "path": "/alumni/network", "name": { "en": "Alumni Network", "kh": "បណ្តាញអតីតនិស្សិត" }, "type": "page" },
+          { "path": "/alumni/success-stories", "name": { "en": "Success Stories", "kh": "រឿងរ៉ាវជោគជ័យ" }, "type": "page" },
+          { "path": "/alumni/benefits", "name": { "en": "Alumni Benefits", "kh": "អត្ថប្រយោជន៍អតីតនិស្សិត" }, "type": "page" },
+          { "path": "/alumni/giving", "name": { "en": "Alumni Giving", "kh": "ការចូលរួមឧបត្ថម្ភ" }, "type": "page" }
+        ]
+      }
+    ]
+  },
+  "information_architecture": {
+    "branding": {
+      "primary_name": "Asian Institute of Cambodia",
+      "khmer_name": "វិទ្យាស្ថានអាស៊ី កម្ពុជា",
+      "motto_en": "Morality, Intelligence, Innovation, Entrepreneurship",
+      "motto_kh": "សីលធម៌ បញ្ញា នវានុវត្តន៍ សហគ្រិនភាព",
+      "theme_colors": {
+        "primary": "#0A2540",
+        "secondary": "#DAA520",
+        "accent": "#008080",
+        "dark": "#030A16",
+        "light": "#F8FAFC"
+      }
+    },
+    "languages": ["English", "Khmer"],
+    "target_audiences": [
+      "Prospective Students",
+      "Current Students",
+      "Parents",
+      "International Students",
+      "Academic Staff",
+      "Researchers",
+      "Alumni",
+      "Industry Partners",
+      "Government Organizations"
+    ]
+  },
+  "navigation_structure": {
+    "desktop": {
+      "mega_menu": true,
+      "nested_limit_tiers": 3,
+      "trigger_action": "hover"
+    },
+    "mobile": {
+      "layout": "hamburger_drawer",
+      "accordion_levels": 3
+    },
+    "actions": {
+      "primary_cta": {
+        "text": { "en": "Apply Now", "kh": "ដាក់ពាក្យឥឡូវនេះ" },
+        "url": "/admissions/how-to-apply"
+      },
+      "secondary_cta": {
+        "text": { "en": "Student Portal", "kh": "ផតថលនិស្សិត" },
+        "url": "https://portal.aicambodia.com"
+      }
+    }
+  },
+  "page_inventory": [
+    { "url": "/", "title": "Home", "type": "main" },
+    { "url": "/about/vision-mission-goals", "title": "Vision, Mission & Goals", "type": "about" },
+    { "url": "/about/structure", "title": "Organization Structure", "type": "about" },
+    { "url": "/about/founder-and-principal", "title": "Founder & Principal", "type": "about" },
+    { "url": "/about/campuses", "title": "Campus Locations", "type": "about" },
+    { "url": "/about/contact", "title": "Contact Us", "type": "about" },
+    { "url": "/about/careers", "title": "Careers", "type": "about" },
+    { "url": "/programs/master", "title": "Master Programs", "type": "programs" },
+    { "url": "/programs/bachelor/national", "title": "Bachelor National Curriculum", "type": "programs" },
+    { "url": "/programs/bachelor/international", "title": "Bachelor International Curriculum", "type": "programs" },
+    { "url": "/programs/associate", "title": "Associate Programs", "type": "programs" },
+    { "url": "/programs/tvet", "title": "TVET Programs", "type": "programs" },
+    { "url": "/admissions/how-to-apply", "title": "How to Apply", "type": "admissions" },
+    { "url": "/admissions/requirements", "title": "Admission Requirements", "type": "admissions" },
+    { "url": "/admissions/intake-dates", "title": "Intake Dates", "type": "admissions" },
+    { "url": "/admissions/tuition-fees", "title": "Tuition Fees", "type": "admissions" },
+    { "url": "/scholarships", "title": "Scholarships", "type": "admissions" },
+    { "url": "/student-life/facilities/self-study", "title": "Self-Study Area", "type": "student_life" },
+    { "url": "/student-life/facilities/dormitory", "title": "Dormitory", "type": "student_life" },
+    { "url": "/student-life/facilities/canteen", "title": "Canteen (Food & Drink)", "type": "student_life" },
+    { "url": "/student-life/extra-curricular", "title": "Extra-Curricular Activities", "type": "student_life" },
+    { "url": "/student-life/social-events", "title": "Social Events", "type": "student_life" },
+    { "url": "/student-life/graduation", "title": "Graduation ceremonies", "type": "student_life" },
+    { "url": "/international/exchange/lecturer", "title": "Lecturer Exchange", "type": "international" },
+    { "url": "/international/exchange/student", "title": "Student Exchange & Mobility", "type": "international" },
+    { "url": "/international/partners/asian", "title": "Asian Partners", "type": "international" },
+    { "url": "/international/partners/european", "title": "European Partners", "type": "international" },
+    { "url": "/research/journal", "title": "Academic Journal", "type": "research" },
+    { "url": "/research/publications", "title": "Publications & Projects", "type": "research" },
+    { "url": "/news", "title": "News Listing", "type": "news" },
+    { "url": "/events", "title": "Events Listing", "type": "news" },
+    { "url": "/alumni/network", "title": "Alumni Network", "type": "alumni" },
+    { "url": "/alumni/success-stories", "title": "Success Stories", "type": "alumni" },
+    { "url": "/alumni/benefits", "title": "Alumni Benefits", "type": "alumni" },
+    { "url": "/alumni/giving", "title": "Alumni Giving", "type": "alumni" }
+  ],
+  "detailed_content_plans": {
+    "home_page": {
+      "purpose": "Serve as the primary portal representing the Asian Institute of Cambodia, projecting brand values of Morality, Intelligence, Innovation, and Entrepreneurship.",
+      "target_audience": "Prospective Students, Parents, Current Students, and Partners.",
+      "page_goal": "Establish institutional prestige, drive admissions inquiries, highlight scholarship conditions, and guide visitors to key academic offerings.",
+      "suggested_url": "/",
+      "seo_title": "Asian Institute of Cambodia | Leading University in Phnom Penh & Provinces",
+      "seo_description": "Welcome to the Asian Institute of Cambodia (AIC). Offering high-quality Master, Bachelor, Associate, and TVET programs across 5 campuses. Secure up to 100% scholarships.",
+      "hero_section_content": {
+        "headline_en": "Building Leaders of Tomorrow with Morality and Innovation",
+        "headline_kh": "កសាងអ្នកដឹកនាំថ្ងៃស្អែកប្រកបដោយសីលធម៌ និងនវានុវត្តន៍",
+        "subheadline_en": "Explore accredited Master's, Bachelor's, Associate's, and TVET programs tailored for regional and global employability.",
+        "subheadline_kh": "ស្វែងយល់ពីកម្មវិធីសិក្សាថ្នាក់បរិញ្ញាបត្រជាន់ខ្ពស់ បរិញ្ញាបត្រ បរិញ្ញាបត្ររង និង TVET ដែលស្របតាមតម្រូវការទីផ្សារការងារជាតិ និងអន្តរជាតិ។",
+        "cta_primary": { "text": { "en": "Apply for Intake", "kh": "ដាក់ពាក្យចូលរៀន" }, "url": "/admissions/how-to-apply" },
+        "cta_secondary": { "text": { "en": "Explore Programs", "kh": "ស្វែងយល់ពីកម្មវិធីសិក្សា" }, "url": "/programs" },
+        "statistics": [
+          { "value": "5", "label": { "en": "Campuses Across Cambodia", "kh": "សាខាទូទាំងប្រទេសកម្ពុជា" } },
+          { "value": "100%", "label": { "en": "Scholarship Opportunities Available", "kh": "ឱកាសទទួលបានអាហារូបករណ៍ ១០០%" } },
+          { "value": "$300+", "label": { "en": "Internship Starter Salaries", "kh": "ប្រាក់ខែដំបូងពេលចុះកម្មសិក្សា" } },
+          { "value": "20+", "label": { "en": "Global Partner Institutions", "kh": "គ្រឹះស្ថានដៃគូសហប្រតិបត្តិការអន្តរជាតិ" } }
+        ]
+      },
+      "sections": [
+        {
+          "name": "University Overview",
+          "objective": "Introduce the history, core motto, and reach of AIC.",
+          "headline_example": { "en": "About Asian Institute of Cambodia", "kh": "អំពីវិទ្យាស្ថានអាស៊ី កម្ពុជា" },
+          "content_example": {
+            "en": "AIC is a premier higher education institution in Cambodia, providing career-focused education across five regional campuses: Phnom Penh, Kratie, Mondulkiri, Ratanakiri, and Stung Treng. We instill moral value, intelligence, and business-focused capability to ensure our students excel in any market.",
+            "kh": "វិទ្យាស្ថានអាស៊ី កម្ពុជា គឺជាគ្រឹះស្ថានឧត្តមសិក្សាឈានមុខគេមួយនៅក្នុងប្រទេសកម្ពុជា ដោយផ្តល់ជូននូវការអប់រំតម្រង់ទិសអាជីពនៅតាមបណ្តាសាខាទាំង៥៖ ភ្នំពេញ ក្រចេះ មណ្ឌលគិរី រតនគិរី និងស្ទឹងត្រែង។ យើងបណ្តុះបណ្តាលសីលធម៌ បញ្ញា និងសមត្ថភាពអាជីវកម្ម ដើម្បីធានាថាជោគជ័យគ្រប់វិស័យ។"
+          },
+          "ux_recommendations": "Split-grid layout. Right side: dynamic video showcase of the Phnom Penh campus. Left side: core text with clean spacing and subtle icons for values.",
+          "cta_recommendations": { "text": { "en": "Read Director's Message", "kh": "អានសារលិខិតនាយកវិទ្យាស្ថាន" }, "url": "/about/founder-and-principal" }
+        },
+        {
+          "name": "Why Choose Us",
+          "objective": "List key benefits such as jobs, international exposure, and practical focus.",
+          "headline_example": { "en": "The AIC Edge for Career Success", "kh": "ចំណុចខ្លាំងរបស់ AIC សម្រាប់ជោគជ័យក្នុងអាជីព" },
+          "content_example": {
+            "en": "With partner networks in Japan, China, Thailand, and Europe, our graduates qualify for jobs with monthly salaries between $300 to $1,000 locally, and up to $2,500 in Japan.",
+            "kh": "តាមរយៈបណ្តាញដៃគូនៅប្រទេសជប៉ុន ចិន ថៃ និងអឺរ៉ុប និស្សិតដែលបញ្ចប់ការសិក្សាពីយើងអាចទទួលបានការងារដែលមានប្រាក់ខែចាប់ពី $300 ដល់ $1,000 ក្នុងស្រុក និងរហូតដល់ $2,500 នៅប្រទេសជប៉ុន។"
+          },
+          "ux_recommendations": "A 3-card horizontal grid highlighting: 1. Practical Internships, 2. International Partnerships, 3. Guaranteed Placements.",
+          "cta_recommendations": { "text": { "en": "Learn More About Placements", "kh": "ស្វែងយល់បន្ថែមអំពីឱកាសការងារ" }, "url": "/about/careers" }
+        },
+        {
+          "name": "Academic Programs Overview",
+          "objective": "Introduce Master, Bachelor, Associate, and TVET programs.",
+          "headline_example": { "en": "Our Educational Pathways", "kh": "កម្រិតសិក្សារបស់យើង" },
+          "content_example": {
+            "en": "Select from our range of programs customized to fit your schedule: morning, afternoon, evening, or weekend options.",
+            "kh": "ជ្រើសរើសពីជម្រើសសិក្សាដ៏សម្បូរបែបដែលត្រូវនឹងពេលវេលារបស់អ្នក៖ វេនព្រឹក រសៀល យប់ ឬ ថ្ងៃសៅរ៍-អាទិត្យ។"
+          },
+          "ux_recommendations": "Interactive tabbed interface. Tabs for Master, Bachelor, Associate, and TVET. Each tab displays a brief details block and button linking to the route.",
+          "cta_recommendations": { "text": { "en": "View Curriculum Structure", "kh": "មើលរចនាសម្ព័ន្ធកម្មវិធីសិក្សា" }, "url": "/programs" }
+        },
+        {
+          "name": "Scholarships Banner",
+          "objective": "Prominently display the 100% scholarship conditions.",
+          "headline_example": { "en": "100% Scholarship Opportunities", "kh": "ឱកាសអាហារូបករណ៍ ១០០%" },
+          "content_example": {
+            "en": "Get 100% scholarship coverage, complimentary student dormitory lodging in regional hubs, and global study tours when you pass your entry evaluation.",
+            "kh": "ទទួលបានអាហារូបករណ៍រហូតដល់ ១០០% រួមជាមួយការស្នាក់នៅអន្តេវាសិកដ្ឋានដោយឥតគិតថ្លៃ និងឱកាសទស្សនកិច្ចសិក្សានៅក្រៅប្រទេស។"
+          },
+          "ux_recommendations": "High-contrast golden card section with gradient border, highlighting levels: Master, Bachelor, Associate.",
+          "cta_recommendations": { "text": { "en": "Check Requirements", "kh": "ពិនិត្យលក្ខខណ្ឌតម្រូវ" }, "url": "/scholarships" }
+        },
+        {
+          "name": "Student Life Highlights",
+          "objective": "Display a visual teaser of self-study areas, dormitory facilities, and campus culture.",
+          "headline_example": { "en": "Vibrant Campus Life", "kh": "ជីវិតនិស្សិតដ៏រស់រវើក" },
+          "content_example": {
+            "en": "Life at AIC extends far beyond lectures. Dive into community development, extracurricular athletic tournaments, and student-run association festivals.",
+            "kh": "ជីវិតនៅ AIC គឺលើសពីការសិក្សានៅក្នុងថ្នាក់។ ចូលរួមសកម្មភាពអភិវឌ្ឍន៍សង្គម ព្រឹត្តិការណ៍កីឡា និងសកម្មភាពក្លឹបនិស្សិតជាច្រើន។"
+          },
+          "ux_recommendations": "Grid gallery showcasing historical photos of campuses, graduation days, dormitory settings, and self-study areas.",
+          "cta_recommendations": { "text": { "en": "Discover Campus Life", "kh": "ស្វែងយល់បន្ថែមពីជីវិតនិស្សិត" }, "url": "/student-life" }
+        }
+      ]
+    },
+    "about_us": {
+      "pages": [
+        {
+          "name": "Vision, Mission & Goals",
+          "url": "/about/vision-mission-goals",
+          "word_count": 800,
+          "content_hierarchy": [
+            "1. Introduction",
+            "2. Vision Statement",
+            "3. Mission Blueprint",
+            "4. Core Goals (10 Points)",
+            "5. Core Values & Principles"
+          ],
+          "details": {
+            "vision": {
+              "en": "AIC will become a leading higher education institution in training human resources with quality, competence, professionalism, and morality to meet the needs of the national and international labor market.",
+              "kh": "វិទ្យាស្ថានអាស៊ី កម្ពុជា នឹងក្លាយជាគ្រឹះស្ថានឧត្តមសិក្សាឈានមុខគេក្នុងការបណ្តុះបណ្តាលធនធានមនុស្សប្រកបដោយ គុណភាព សមត្ថភាព វិជ្ជាជីវៈ និងសីលធម៌ ដើម្បីឆ្លើយតបទៅនឹងតម្រូវការទីផ្សារការងារជាតិ និងអន្តរជាតិ។"
+            },
+            "goals": [
+              { "en": "Train students to have broad knowledge in both theory and practice.", "kh": "បណ្តុះបណ្តាលនិស្សិតឱ្យមានចំណេះដឹងទូលំទូលាយ ទាំងទ្រឹស្តី និងការអនុវត្តជាក់ស្តែង។" },
+              { "en": "Integrate English and computer skills for students in all majors.", "kh": "បញ្ជ្រាបចំណេះដឹងផ្នែកភាសាអង់គ្លេស និងកុំព្យូទ័រដល់និស្សិតគ្រប់ជំនាញ។" },
+              { "en": "Encourage students to be creative and conduct scientific research.", "kh": "ជំរុញឱ្យនិស្សិតមានគំនិតច្នៃប្រឌិត និងការស្រាវជ្រាវបែបវិទ្យាសាស្ត្រ។" },
+              { "en": "Provide opportunities for students to intern at companies, factories, and enterprises both domestically and internationally.", "kh": "ផ្តល់ឱកាសដល់និស្សិតក្នុងការចុះកម្មសិក្សានៅតាមបណ្តាក្រុមហ៊ុន រោងចក្រ សហគ្រាស ទាំងក្នុង និងក្រៅប្រទេស។" },
+              { "en": "Cultivate a spirit of morality, compassion, leadership, and high responsibility.", "kh": "បណ្តុះស្មារតីនិស្សិតឱ្យមានសីលធម៌ មេត្តា ករុណា និងភាពជាអ្នកដឹកនាំ ព្រមទាំងការទទួលខុសត្រូវខ្ពស់។" },
+              { "en": "Enhance the quality of education and provide efficient and transparent academic services.", "kh": "លើកកម្ពស់គុណភាពអប់រំ និងផ្តល់សេវាកម្មសិក្សាប្រកបដោយប្រសិទ្ធភាព និងតម្លាភាព។" },
+              { "en": "Collaborate with national and international partners to expand education and research potential.", "kh": "សហការជាមួយដៃគូជាតិ និងអន្តរជាតិ ដើម្បីពង្រីកសក្តានុពលនៃការអប់រំ និងការស្រាវជ្រាវ។" },
+              { "en": "Establish a Research and Development Center to support study and work implementation.", "kh": "បង្កើតមជ្ឈមណ្ឌលស្រាវជ្រាវ និងអភិវឌ្ឍន៍ ដើម្បីគាំទ្រដល់ការសិក្សា និងការអនុវត្តការងារ។" },
+              { "en": "Provide employment opportunities to students after graduation.", "kh": "ផ្តល់ឱកាសការងារដល់និស្សិតបន្ទាប់ពីបញ្ចប់ការសិក្សា។" },
+              { "en": "Contribute to national social and economic development through quality human resource training.", "kh": "រួមចំណែកក្នុងការអភិវឌ្ឍសង្គម និងសេដ្ឋកិច្ចជាតិ តាមរយៈការបណ្តុះបណ្តាលធនធានមនុស្សប្រកបដោយគុណភាព។" }
+            ]
+          },
+          "suggested_imagery": "Inspirational banners showing students inside modern, well-lit lecture halls, interacting with technology.",
+          "cta_recommendations": { "text": { "en": "See Academic Offerings", "kh": "មើលកម្មវិធីសិក្សា" }, "url": "/programs" }
+        },
+        {
+          "name": "Organization Structure",
+          "url": "/about/structure",
+          "word_count": 500,
+          "content_hierarchy": [
+            "1. Executive Committee",
+            "2. Academic Board",
+            "3. Campus Administration Nodes",
+            "4. Research & Development Divisions"
+          ],
+          "suggested_imagery": "Clean, interactive hierarchical chart explaining the leadership reporting lines and department divisions.",
+          "cta_recommendations": { "text": { "en": "Meet Leadership Team", "kh": "ជួបក្រុមថ្នាក់ដឹកនាំ" }, "url": "/about/founder-and-principal" }
+        },
+        {
+          "name": "Founder & Principal",
+          "url": "/about/founder-and-principal",
+          "word_count": 1000,
+          "content_hierarchy": [
+            "1. Director's Welcome Address",
+            "2. Biography of the Founder",
+            "3. Educational Philosophy & Impact",
+            "4. Community & Moral Legacy Initiatives"
+          ],
+          "suggested_imagery": "High-quality professional portrait of the founder, accompanied by a signature graphic.",
+          "cta_recommendations": { "text": { "en": "Read Strategic Vision", "kh": "អានយុទ្ធសាស្ត្រអភិវឌ្ឍន៍" }, "url": "/about/vision-mission-goals" }
+        },
+        {
+          "name": "Campus Locations",
+          "url": "/about/campuses",
+          "word_count": 800,
+          "content_hierarchy": [
+            "1. Phnom Penh Campus (HQ)",
+            "2. Kratie Province Campus",
+            "3. Mondulkiri Province Campus",
+            "4. Ratanakiri Province Campus",
+            "5. Stung Treng Province Campus"
+          ],
+          "details": {
+            "campuses": [
+              { "name_en": "Phnom Penh Campus", "name_kh": "សាខាភ្នំពេញ", "address_en": "Building 12, Street 271, Sangkat Tuek Thla, Khan Sen Sok, Phnom Penh", "address_kh": "អាគារលេខ១២ ផ្លូវ២៧១ សង្កាត់ទឹកថ្លា ខណ្ឌសែនសុខ រាជធានីភ្នំពេញ" },
+              { "name_en": "Kratie Campus", "name_kh": "សាខាក្រចេះ", "address_en": "Ou Ruessei 2 Village, Sangkat Ou Ruessei, Kratie City, Kratie Province", "address_kh": "ភូមិអូរឫស្សី២ សង្កាត់អូរឫស្សី ក្រុងក្រចេះ ខេត្តក្រចេះ" },
+              { "name_en": "Mondulkiri Campus", "name_kh": "សាខាមណ្ឌលគិរី", "address_en": "Svay Chek Village, Sangkat Sokdom, Sen Monorom City, Mondulkiri Province", "address_kh": "ភូមិស្វាយចេក សង្កាត់សុខដុម ក្រុងសែនមនោរម្យ ខេត្តមណ្ឌលគិរី" },
+              { "name_en": "Ratanakiri Campus", "name_kh": "សាខារតនគិរី", "address_en": "Tes Anlong Village, Sangkat Boeung Kansaeng, Banlung City, Ratanakiri Province", "address_kh": "ភូមិទេសអន្លង់ សង្កាត់បឹងកន្សែង ក្រុងបានលុង ខេត្តរតនគិរី" },
+              { "name_en": "Stung Treng Campus", "name_kh": "សាខាស្ទឹងត្រែង", "address_en": "Racha Nukul Village, Sangkat Stung Treng, Stung Treng City, Stung Treng Province", "address_kh": "ភូមិរាជានុកូល សង្កាត់ស្ទឹងត្រែង ក្រុងស្ទឹងត្រែង ខេត្តស្ទឹងត្រែង" }
+            ]
+          },
+          "suggested_imagery": "Interactive map detailing campus markers with regional photos displaying buildings, computer labs, and courtyards.",
+          "cta_recommendations": { "text": { "en": "Contact Selected Campus", "kh": "ទាក់ទងមកកាន់សាខា" }, "url": "/about/contact" }
+        }
+      ]
+    },
+    "academic_programs": {
+      "structure_details": {
+        "colleges": [
+          "College of Business Administration (មហាវិទ្យាល័យគ្រប់គ្រងពាណិជ្ជកម្ម)",
+          "College of Law (មហាវិទ្យាល័យនីតិសាស្ត្រ)",
+          "College of Arts, Humanities & Foreign Languages (មហាវិទ្យាល័យសិល្បៈ មនុស្សសាស្ត្រ និងភាសាបរទេស)",
+          "College of Agriculture (មហាវិទ្យាល័យកសិកម្ម)",
+          "College of Science and Technology (មហាវិទ្យាល័យវិទ្យាសាស្ត្រ និងបច្ចេកវិទ្យា)",
+          "College of Electrical Engineering and Electronics (មហាវិទ្យាល័យវិស្វកម្មអគ្គិសនី និងអេឡិចត្រូនិច)",
+          "College of Civil Engineering (មហាវិទ្យាល័យវិស្វកម្មសំណង់)"
+        ]
+      },
+      "program_template_fields": {
+        "hero": {
+          "title": "Dynamic program title (Bachelor of Business Administration in International Business)",
+          "subtitle": "Accredited multi-year program aiming at global job placement."
+        },
+        "program_overview": "Comprehensive introduction, study shifts, entry criteria, degree level, and typical career routes.",
+        "learning_outcomes": "List of core capabilities that students acquire upon graduation (moral standards, technology focus, practical skills).",
+        "curriculum_structure": "Divided into years and semesters, listing core modules and credits.",
+        "course_breakdown": {
+          "sample": {
+            "program": "International Business",
+            "semesters": [
+              {
+                "label": "Semester I",
+                "courses": [
+                  { "code": "ENG 101", "name": "Academic English I" },
+                  { "code": "BUS 101", "name": "Introduction to Business" },
+                  { "code": "MAT 101", "name": "Business Mathematics" }
+                ]
+              },
+              {
+                "label": "Semester IV",
+                "courses": [
+                  { "code": "IBS 201", "name": "International Trade" },
+                  { "code": "MKT 201", "name": "International Marketing" },
+                  { "code": "HRM 101", "name": "Human Resource Management" }
+                ]
+              }
+            ]
+          }
+        },
+        "faculty_members": "Profile cards of prominent lecturers holding PhD and Master degrees in respective fields.",
+        "career_opportunities": [
+          "Global Trade Officer",
+          "International Operations Manager",
+          "Logistics Consultant",
+          "Bilingual Business Analyst"
+        ],
+        "industry_partners": ["National Banks", "ASEAN Logistical Enterprises", "Japanese Recruiter Partners"],
+        "internships": "Mandatory Semester VII & VIII placement system with monthly stipends of $300-$1000.",
+        "scholarships": "100% tuition coverage for qualifying national examination candidates.",
+        "admission_requirements": "High School Certificate (Bac II) or equivalent academic score card, basic language proficiency.",
+        "tuition_fees": "$450/year in Phnom Penh campus, $400/year in regional provinces.",
+        "faqs": [
+          { "q": "Are classes taught in Khmer or English?", "a": "International curricula are taught in English; national programs combine Khmer lectures with English textbooks." }
+        ],
+        "apply_cta": "/admissions/how-to-apply"
+      }
+    },
+    "admissions": {
+      "journey": {
+        "step_1": { "name": "Select Major & Campus", "action": "Browse the college lists and find the appropriate level (Master, Bachelor, Associate, TVET)." },
+        "step_2": { "name": "Check Scholarship Eligibility", "action": "Determine if you qualify for the 100% fee waiver based on Bac II scores or entry tests." },
+        "step_3": { "name": "Prepare Documents", "action": "Gather High School diploma, transcripts, 4x6 photos, and national identification cards." },
+        "step_4": { "name": "Online or In-Person Submission", "action": "Submit files via the Online portal or directly visit one of the 5 campuses." },
+        "step_5": { "name": "Interview & Placement", "action": "Undergo basic language or aptitude evaluation tests depending on program selection." }
+      },
+      "intake_dates": [
+        { "intake": "1st Intake", "date": "01 December 2023" },
+        { "intake": "2nd Intake", "date": "01 January 2024" },
+        { "intake": "3rd Intake", "date": "01 March 2024" }
+      ],
+      "tuition_fees": {
+        "phnom_penh": { "master": "$550/year", "bachelor": "$450/year", "associate": "$400/year" },
+        "provinces": { "master": "$450/year", "bachelor": "$400/year", "associate": "$350/year" }
+      }
+    },
+    "student_life": {
+      "campus_life": {
+        "description": "Details about self-study areas, dormitory settings, and local canteen selections.",
+        "photo_galleries": [
+          "Modern computing labs and interactive library spaces",
+          "Dormitory rooms and recreational lounges",
+          "Sports tournaments and charity volunteer events",
+          "Graduation ceremonies displaying diploma distributions"
+        ]
+      },
+      "facilities": {
+        "self_study": "Equipped with high-speed WiFi, research database terminals, and discussion rooms.",
+        "dormitory": "Free housing provided to bachelor and master students who meet scholarship criteria, featuring round-the-clock security.",
+        "canteen": "Affordable meal choices with strict compliance to hygiene and health guidelines."
+      }
+    },
+    "international_relations": {
+      "focus": "Promoting global exchange and creating foreign pathways.",
+      "academic_exchange": {
+        "lecturer_exchange": "Historical collaborations where international professors deliver guest lectures in Phnom Penh.",
+        "student_exchange": "Mobility pathways allowing students to spend semesters abroad in China, Japan, Korea, Thailand, and Malaysia."
+      },
+      "partnerships": {
+        "asian": "Strategic agreements with Chinese, Japanese, and ASEAN universities.",
+        "european": "Exchange channels matching European research programs and funding structures."
+      }
+    },
+    "research_publications": {
+      "centers": "AIC Research and Development Center hosting multidisciplinary regional projects.",
+      "journals": "AIC Journal of Multidisciplinary Studies, featuring peer-reviewed publications.",
+      "publications": [
+        { "title": "Socio-Economic Development along the Mekong Basin", "author": "Dr. Sopheap et al.", "year": "2024" },
+        { "title": "ASEAN Trade & Logistics Integration Trends", "author": "Prof. Chen Wei", "year": "2023" }
+      ]
+    },
+    "news_events": {
+      "listing": "Provides filters by tag (Academics, Scholarships, Social, Admissions, Press Releases) and location.",
+      "gallery": "Grid layout allowing sorting of past event picture galleries."
+    },
+    "careers": {
+      "positions": {
+        "academic": "Openings for Lecturers holding Master or Doctorate degrees in IT, Finance, Law, and TEFL.",
+        "administrative": "Positions in Registrar office, Campus Management, IT Support, and student relations."
+      },
+      "process": "Online Application -> Resume Screening -> Technical Evaluation / Teaching Demo -> Final Board Panel Interview."
+    },
+    "alumni": {
+      "benefits": "Mentorship pathways, alumni campus library access, and professional career service support.",
+      "success_stories": [
+        { "name": "Chhim Leakhena", "class": "2022", "position": "Senior Logistics Analyst in Japan", "quote": "AIC gave me both the language skills and the internship link to land my dream career." }
+      ]
+    },
+    "contact": {
+      "directory": {
+        "admissions_office": "+855 98 322 872",
+        "phnom_penh_main": "+855 71 21 000 06",
+        "regional_kratie": "+855 99 888 707",
+        "email_support": "sopheap4anka@gmail.com"
+      }
+    }
+  },
+  "missing_features": [
+    "Integrated Student Portal Single-Sign-On (SSO)",
+    "Online Tuition Fee Payment Gateway integration",
+    "Live-chat Support / Telegram Admissions Bot",
+    "Digital Alumnus Network Registry"
+  ],
+  "future_enhancements": [
+    "Virtual 3D Tour for all 5 regional campuses",
+    "Student Application Progress Tracker",
+    "AI Course Recommendation Engine"
+  ]
+}
