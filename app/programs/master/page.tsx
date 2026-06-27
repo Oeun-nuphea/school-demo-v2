@@ -90,11 +90,18 @@ export default function MasterProgramsPage() {
               <div className="bg-gray-50 p-6 rounded-sm border border-gray-100">
                 <h3 className="text-lg font-serif font-bold text-primary mb-4 border-b border-gray-200 pb-2">Programs</h3>
                 <ul className="space-y-3">
+                  <li><Link href="/programs" className="block text-gray-600 hover:text-primary transition-colors">{kh ? 'កម្មវិធីទាំងអស់' : 'All Programs'}</Link></li>
                   <li><Link href="/programs/master" className="block text-primary font-bold border-l-2 border-primary pl-3">{kh ? 'ថ្នាក់បរិញ្ញាបត្រជាន់ខ្ពស់' : 'Master Programs'}</Link></li>
                   <li><Link href="/programs/bachelor" className="block text-gray-600 hover:text-primary transition-colors">{kh ? 'ថ្នាក់បរិញ្ញាបត្រ' : 'Bachelor Programs'}</Link></li>
                   <li><Link href="/programs/associate" className="block text-gray-600 hover:text-primary transition-colors">{kh ? 'ថ្នាក់បរិញ្ញាបត្ររង' : 'Associate Programs'}</Link></li>
                   <li><Link href="/programs/tvet" className="block text-gray-600 hover:text-primary transition-colors">{kh ? 'កម្មវិធីបណ្តុះបណ្តាលបច្ចេកទេស' : 'TVET Programs'}</Link></li>
                 </ul>
+                <div className="border-t border-gray-200 pt-4 mt-4">
+                  <ul className="space-y-3">
+                    <li><Link href="/scholarships" className="block text-gray-600 hover:text-primary transition-colors">{kh ? 'អាហារូបករណ៍' : 'Scholarships'}</Link></li>
+                    <li><Link href="/admissions" className="block text-gray-600 hover:text-primary transition-colors">{kh ? 'ការចុះឈ្មោះចូលរៀន' : 'Admissions'}</Link></li>
+                  </ul>
+                </div>
               </div>
               <div className="bg-secondary/10 border border-secondary/30 p-6 rounded-sm">
                 <h4 className={`font-bold text-primary mb-2 ${kh ? 'font-khmer' : ''}`}>{kh ? 'ត្រូវការជំនួយ?' : 'Need Guidance?'}</h4>

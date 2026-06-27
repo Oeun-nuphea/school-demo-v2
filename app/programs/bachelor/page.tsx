@@ -8,6 +8,7 @@ import CurriculumAccordion from "@/components/CurriculumAccordion";
 
 export default function BachelorProgramsPage() {
   const { t, lang } = useLanguage();
+  const kh = lang === 'kh';
   const [activeTab, setActiveTab] = useState<'national' | 'international'>('national');
 
   // Placeholder data for the Curriculum Accordion to demonstrate the split
@@ -42,7 +43,7 @@ export default function BachelorProgramsPage() {
 
         <div className="relative z-20 text-center px-4 py-16">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white mb-4 drop-shadow-md">
-            {lang === 'kh' ? 'ថ្នាក់បរិញ្ញាបត្រ' : 'Bachelor Programs'}
+            {kh ? 'ថ្នាក់បរិញ្ញាបត្រ' : 'Bachelor Programs'}
           </h1>
           <p className="text-lg text-white/75 font-sans max-w-2xl mx-auto">
             {lang === 'kh' ? 'កម្មវិធីសិក្សាថ្នាក់បរិញ្ញាបត្រ (Bachelor Degree)' : 'Begin your academic journey with our comprehensive undergraduate programs.'}
@@ -57,7 +58,7 @@ export default function BachelorProgramsPage() {
           <ChevronRight className="w-4 h-4 mx-2 opacity-50" />
           <span className="text-gray-900 font-medium">Academic Programs</span>
           <ChevronRight className="w-4 h-4 mx-2 opacity-50" />
-          <span className="text-gray-900 font-medium">{lang === 'kh' ? 'ថ្នាក់បរិញ្ញាបត្រ' : 'Bachelor Programs'}</span>
+          <span className="text-gray-900 font-medium">{kh ? 'ថ្នាក់បរិញ្ញាបត្រ' : 'Bachelor Programs'}</span>
         </div>
       </div>
 
@@ -71,18 +72,27 @@ export default function BachelorProgramsPage() {
               <h3 className="text-lg font-serif font-bold text-primary mb-4 border-b border-gray-200 pb-2">Programs</h3>
               <ul className="space-y-3">
                 <li>
-                  <Link href="/programs/master" className="block text-gray-600 hover:text-primary transition-colors">{lang === 'kh' ? 'ថ្នាក់បរិញ្ញាបត្រជាន់ខ្ពស់' : 'Master Programs'}</Link>
+                  <Link href="/programs" className="block text-gray-600 hover:text-primary transition-colors">{kh ? 'កម្មវិធីទាំងអស់' : 'All Programs'}</Link>
                 </li>
                 <li>
-                  <Link href="/programs/bachelor" className="block text-primary font-bold border-l-2 border-primary pl-3 transition-colors">{lang === 'kh' ? 'ថ្នាក់បរិញ្ញាបត្រ' : 'Bachelor Programs'}</Link>
+                  <Link href="/programs/master" className="block text-gray-600 hover:text-primary transition-colors">{kh ? 'ថ្នាក់បរិញ្ញាបត្រជាន់ខ្ពស់' : 'Master Programs'}</Link>
                 </li>
                 <li>
-                  <Link href="/programs/associate" className="block text-gray-600 hover:text-primary transition-colors">{lang === 'kh' ? 'ថ្នាក់បរិញ្ញាបត្ររង' : 'Associate Programs'}</Link>
+                  <Link href="/programs/bachelor" className="block text-primary font-bold border-l-2 border-primary pl-3 transition-colors">{kh ? 'ថ្នាក់បរិញ្ញាបត្រ' : 'Bachelor Programs'}</Link>
                 </li>
                 <li>
-                  <Link href="/programs/tvet" className="block text-gray-600 hover:text-primary transition-colors">{lang === 'kh' ? 'កម្មវិធីបណ្តុះបណ្តាលបច្ចេកទេស' : 'TVET Programs'}</Link>
+                  <Link href="/programs/associate" className="block text-gray-600 hover:text-primary transition-colors">{kh ? 'ថ្នាក់បរិញ្ញាបត្ររង' : 'Associate Programs'}</Link>
+                </li>
+                <li>
+                  <Link href="/programs/tvet" className="block text-gray-600 hover:text-primary transition-colors">{kh ? 'កម្មវិធីបណ្តុះបណ្តាលបច្ចេកទេស' : 'TVET Programs'}</Link>
                 </li>
               </ul>
+              <div className="border-t border-gray-200 pt-4 mt-4">
+                <ul className="space-y-3">
+                  <li><Link href="/scholarships" className="block text-gray-600 hover:text-primary transition-colors">{kh ? 'អាហារូបករណ៍' : 'Scholarships'}</Link></li>
+                  <li><Link href="/admissions" className="block text-gray-600 hover:text-primary transition-colors">{kh ? 'ការចុះឈ្មោះចូលរៀន' : 'Admissions'}</Link></li>
+                </ul>
+              </div>
             </div>
           </aside>
 

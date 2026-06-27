@@ -89,6 +89,12 @@ export default function NationalCurriculumPage() {
                   <li><Link href="/programs/bachelor/national" className="block text-primary font-bold border-l-2 border-primary pl-3">{kh ? 'កម្មវិធីជាតិ' : 'National Curriculum'}</Link></li>
                   <li><Link href="/programs/bachelor/international" className="block text-gray-600 hover:text-primary transition-colors">{kh ? 'កម្មវិធីអន្តរជាតិ' : 'International Curriculum'}</Link></li>
                 </ul>
+                <div className="border-t border-gray-200 pt-4 mt-4">
+                  <ul className="space-y-3">
+                    <li><Link href="/scholarships" className="block text-gray-600 hover:text-primary transition-colors">{kh ? 'អាហារូបករណ៍' : 'Scholarships'}</Link></li>
+                    <li><Link href="/admissions" className="block text-gray-600 hover:text-primary transition-colors">{kh ? 'ការចុះឈ្មោះចូលរៀន' : 'Admissions'}</Link></li>
+                  </ul>
+                </div>
               </div>
               <div className="bg-secondary/10 border border-secondary/30 p-6 rounded-sm">
                 <Shield className="w-8 h-8 text-primary mb-3" />
