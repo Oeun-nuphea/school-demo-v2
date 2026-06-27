@@ -75,9 +75,9 @@ export default function CollegePage({ params }: { params: Promise<{ slug: string
       {/* Breadcrumbs */}
       <div className="bg-gray-100 border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center text-sm text-gray-500 overflow-x-auto whitespace-nowrap">
-          <Link href="/" className="hover:text-primary transition-colors">Home</Link>
+          <Link href="/" className={`hover:text-primary transition-colors ${lang === 'kh' ? 'font-khmer' : ''}`}>{lang === 'kh' ? 'ទំព័រដើម' : 'Home'}</Link>
           <ChevronRight className="w-4 h-4 mx-2 opacity-50 flex-shrink-0" />
-          <span className="text-gray-900 font-medium">Colleges</span>
+          <span className={`text-gray-900 font-medium ${lang === 'kh' ? 'font-khmer' : ''}`}>{lang === 'kh' ? 'មហាវិទ្យាល័យ' : 'Colleges'}</span>
           <ChevronRight className="w-4 h-4 mx-2 opacity-50 flex-shrink-0" />
           <span className="text-gray-900 font-medium">{currentTitle}</span>
         </div>
@@ -90,12 +90,12 @@ export default function CollegePage({ params }: { params: Promise<{ slug: string
           {/* Sidebar Navigation */}
           <aside className="lg:w-1/4">
             <div className="sticky top-28 bg-gray-50 p-6 rounded-sm border border-gray-100">
-              <h3 className="text-lg font-serif font-bold text-primary mb-4 border-b border-gray-200 pb-2">Academic Colleges</h3>
+              <h3 className={`text-lg font-serif font-bold text-primary mb-4 border-b border-gray-200 pb-2 ${lang === 'kh' ? 'font-khmer' : ''}`}>{lang === 'kh' ? 'មហាវិទ្យាល័យ' : 'Academic Colleges'}</h3>
               <ul className="space-y-3">
                 {Object.keys(collegeSlugs).map((slugKey) => {
                   const isActive = slugKey === resolvedParams.slug;
                   const enName = slugKey === 'engineering' ? 'Engineering' : collegeSlugs[slugKey].replace("College of ", "");
-                  const khName = info.academic_programs.bachelor_programs_by_college.find(c => c.college_name.english === collegeSlugs[slugKey])?.college_name.khmer || enName;
+                  const khName = slugKey === 'engineering' ? 'មហាវិទ្យាល័យវិស្វកម្ម' : (info.academic_programs.bachelor_programs_by_college.find(c => c.college_name.english === collegeSlugs[slugKey])?.college_name.khmer || enName);
                   return (
                     <li key={slugKey}>
                       <Link 

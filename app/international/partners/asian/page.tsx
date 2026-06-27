@@ -117,7 +117,7 @@ export default function AsianPartnersPage() {
               <h2 className={`text-3xl font-serif font-bold text-gray-900 mb-3 ${kh ? 'font-khmer' : ''}`}>{kh ? 'បណ្ដាញទំនាក់ទំនងអាស៊ី' : 'Our Asian Academic Network'}</h2>
               <div className="w-16 h-1 bg-secondary mb-6"></div>
               <p className={`text-lg text-gray-700 leading-relaxed ${kh ? 'font-khmer' : ''}`}>
-                {kh ? 'វិទ្យាស្ថានអាស៊ីកម្ពុជា (AIC) បានបង្កើតកិច្ចព្រមព្រៀងសហប្រតិបត្តិការជាមួយ សាកលវិទ្យាល័យ និងស្ថាប័នសិក្សាឈ្នះជ្រើសនៅទូទាំងអាស៊ី ដើម្បីផ្ដល់ឱ្យនិស្សិត និងសាស្ត្រាចារ្យនូវឱកាសសិក្សា ស្រាវជ្រាវ និងការប្ដូររំដោះ។' : 'The Asian Institute of Cambodia (AIC) has established formal cooperation agreements with top universities across Asia, providing our students and faculty with unparalleled opportunities for study, research, and cultural exchange.'}
+                {kh ? 'វិទ្យាស្ថានអាស៊ីកម្ពុជា បានបង្កើតកិច្ចព្រមព្រៀងសហប្រតិបត្តិការជាមួយ សាកលវិទ្យាល័យ និងស្ថាប័នសិក្សាឈ្នះជ្រើសនៅទូទាំងអាស៊ី ដើម្បីផ្ដល់ឱ្យនិស្សិត និងសាស្ត្រាចារ្យនូវឱកាសសិក្សា ស្រាវជ្រាវ និងការប្ដូររំដោះ។' : 'The Asian Institute of Cambodia has established formal cooperation agreements with top universities across Asia, providing our students and faculty with unparalleled opportunities for study, research, and cultural exchange.'}
               </p>
             </div>
 

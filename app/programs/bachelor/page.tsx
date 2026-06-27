@@ -42,11 +42,11 @@ export default function BachelorProgramsPage() {
         <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-secondary opacity-10 blur-3xl" />
 
         <div className="relative z-20 text-center px-4 py-16">
-          <p className="text-secondary font-bold uppercase tracking-widest text-sm mb-3">{kh ? 'កម្មវិធីសិក្សាថ្នាក់បរិញ្ញាបត្រ' : 'Undergraduate Studies'}</p>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white mb-4 drop-shadow-md">
+          <p className={`text-secondary font-bold uppercase tracking-widest text-sm mb-3 ${kh ? 'font-khmer' : ''}`}>{kh ? 'កម្មវិធីសិក្សាថ្នាក់បរិញ្ញាបត្រ' : 'Undergraduate Studies'}</p>
+          <h1 className={`text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white mb-4 drop-shadow-md ${kh ? 'font-khmer' : ''}`}>
             {kh ? 'ថ្នាក់បរិញ្ញាបត្រ' : 'Bachelor Programs'}
           </h1>
-          <p className="text-lg text-white/80 max-w-2xl mx-auto">
+          <p className={`text-lg text-white/80 max-w-2xl mx-auto ${kh ? 'font-khmer' : ''}`}>
             {kh ? 'កម្មវិធីសិក្សាថ្នាក់បរិញ្ញាបត្រ (Bachelor Degree)' : 'Begin your academic journey with our comprehensive undergraduate programs.'}
           </p>
         </div>

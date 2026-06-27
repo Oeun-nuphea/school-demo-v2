@@ -1,7 +1,7 @@
 'use client'
 import React from "react";
 import Link from "next/link";
-import { ChevronRight, Globe, CheckCircle, ArrowRight, Star, Building2 } from "lucide-react";
+import { ChevronRight, Globe, CheckCircle, ArrowRight, Star } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 
 export default function InternationalCurriculumPage() {

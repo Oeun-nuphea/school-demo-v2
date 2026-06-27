@@ -15,7 +15,7 @@ export default function TVETProgramsPage() {
     { en: 'Culinary Arts', kh: 'សិល្បៈធ្វើម្ហូប', duration: '1 yr', icon: '🍽️', desc: { en: 'Professional cooking, plating & kitchen management', kh: 'ការធ្វើម្ហូបវិជ្ជាជីវៈ និងគ្រប់គ្រងផ្ទះបាយ' } },
     { en: 'IT Support & Networking', kh: 'ព័ត៌មានវិទ្យា និងបណ្ដាញ', duration: '1–2 yrs', icon: '💻', desc: { en: 'Hardware, software, LAN/WAN networking', kh: 'ផ្នែករឹង ផ្នែកទន់ និងបណ្ដាញ LAN/WAN' } },
     { en: 'Air Conditioning & Refrigeration', kh: 'ប្រព័ន្ធត្រជាក់', duration: '1 yr', icon: '❄️', desc: { en: 'Installation, maintenance of AC & cooling systems', kh: 'ការដំឡើង និងថែទាំម៉ាស៊ីនត្រជាក់' } },
-    { en: 'Beauty & Cosmetology', kh: 'សម្ផស្ស', duration: '6 months–1 yr', icon: '💅', desc: { en: 'Hair, skincare, makeup & nail techniques', kh: 'ស្វ័យប្រវត្តិ ស្បែក ការតុបតែង' } },
+    { en: 'Beauty & Cosmetology', kh: 'សម្ផស្ស', duration: '6 months–1 yr', icon: '💅', desc: { en: 'Hair, skincare, makeup & nail techniques', kh: 'សក់ ស្បែក ការតុបតែង និងធ្វើក្រចក' } },
     { en: 'Plumbing & Sanitation', kh: 'បំពង់ទឹក និងអនាម័យ', duration: '1 yr', icon: '🔩', desc: { en: 'Water systems installation and maintenance', kh: 'ការដំឡើង និងថែទាំប្រព័ន្ធទឹក' } },
   ];
 
@@ -38,14 +38,6 @@ export default function TVETProgramsPage() {
           <p className={`text-lg text-white/80 max-w-2xl mx-auto ${kh ? 'font-khmer' : ''}`}>
             {kh ? 'ជំនាញជាក់ស្ដែងដែលទីផ្សារការងារត្រូវការ — ចូលបម្រើការងារក្នុងរយៈពេល ៦ ខែ–២ ឆ្នាំ' : 'Practical skills employers demand — job-ready in as little as 6 months to 2 years.'}
           </p>
-          <div className="mt-8 flex flex-wrap gap-4 justify-center">
-            <Link href="/admissions/how-to-apply" className={`bg-secondary hover:bg-secondary/90 text-primary-dark font-bold px-8 py-3 rounded-sm transition-colors ${kh ? 'font-khmer' : ''}`}>
-              {kh ? 'ដាក់ពាក្យ' : 'Enroll Now'}
-            </Link>
-            <Link href="/admissions/tuition-fees" className="border-2 border-white text-white hover:bg-white/10 font-bold px-8 py-3 rounded-sm transition-colors">
-              {kh ? 'ថ្លៃសិក្សា' : 'View Fees'}
-            </Link>
-          </div>
         </div>
       </div>
 
@@ -93,9 +85,6 @@ export default function TVETProgramsPage() {
                 <Briefcase className="w-8 h-8 text-primary mb-3" />
                 <p className={`text-sm font-bold text-gray-900 mb-1 ${kh ? 'font-khmer' : ''}`}>{kh ? 'ចង់ចូលការងារឆាប់' : 'Want a Job Fast?'}</p>
                 <p className={`text-xs text-gray-600 mb-3 ${kh ? 'font-khmer' : ''}`}>{kh ? 'TVET ជួយអ្នកចូលបម្រើការងារក្នុងរយៈពេល ៦ ខែ' : 'TVET gets you job-ready in as little as 6 months.'}</p>
-                <Link href="/admissions/how-to-apply" className={`block text-center bg-primary text-white py-2 rounded-sm text-sm font-bold hover:bg-primary-dark transition-colors ${kh ? 'font-khmer' : ''}`}>
-                  {kh ? 'ចុះឈ្មោះ' : 'Enroll Now'}
-                </Link>
               </div>
             </div>
           </aside>

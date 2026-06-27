@@ -17,10 +17,10 @@ export default function IntakeDatesPage() {
         <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-secondary opacity-10 blur-3xl" />
 
         <div className="relative z-20 text-center px-4 py-16">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white mb-4 drop-shadow-md">
+          <h1 className={`text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white mb-4 drop-shadow-md ${lang === 'kh' ? 'font-khmer' : ''}`}>
             {lang === 'kh' ? 'កាលបរិច្ឆេទចូលរៀន' : 'Intake Dates'}
           </h1>
-          <p className="text-lg text-white/75 font-sans max-w-2xl mx-auto">
+          <p className={`text-lg text-white/75 font-sans max-w-2xl mx-auto ${lang === 'kh' ? 'font-khmer' : ''}`}>
             {lang === 'kh' ? 'វគ្គសិក្សាថ្មី និងការទទួលពាក្យ' : 'Important deadlines and upcoming semesters.'}
           </p>
         </div>
@@ -33,7 +33,7 @@ export default function IntakeDatesPage() {
           <ChevronRight className="w-4 h-4 mx-2 opacity-50" />
           <span className="text-gray-900 font-medium">Admissions</span>
           <ChevronRight className="w-4 h-4 mx-2 opacity-50" />
-          <span className="text-gray-900 font-medium">{lang === 'kh' ? 'កាលបរិច្ឆេទចូលរៀន' : 'Intake Dates'}</span>
+          <span className={`text-gray-900 font-medium ${lang === 'kh' ? 'font-khmer' : ''}`}>{lang === 'kh' ? 'កាលបរិច្ឆេទចូលរៀន' : 'Intake Dates'}</span>
         </div>
       </div>
 
@@ -47,16 +47,19 @@ export default function IntakeDatesPage() {
               <h3 className="text-lg font-serif font-bold text-primary mb-4 border-b border-gray-200 pb-2">Admissions</h3>
               <ul className="space-y-3">
                 <li>
-                  <Link href="/admissions/master" className="block text-gray-600 hover:text-primary transition-colors">{lang === 'kh' ? 'ថ្នាក់បរិញ្ញាបត្រជាន់ខ្ពស់' : 'Master Programs'}</Link>
+                  <Link href="/admissions/how-to-apply" className="block text-gray-600 hover:text-primary transition-colors">{lang === 'kh' ? 'របៀបចុះឈ្មោះ' : 'How to Apply'}</Link>
                 </li>
                 <li>
-                  <Link href="/admissions/bachelor" className="block text-gray-600 hover:text-primary transition-colors">{lang === 'kh' ? 'ថ្នាក់បរិញ្ញាបត្រ' : 'Bachelor Programs'}</Link>
+                  <Link href="/admissions/requirements" className="block text-gray-600 hover:text-primary transition-colors">{lang === 'kh' ? 'លក្ខខណ្ឌតម្រូវ' : 'Requirements'}</Link>
                 </li>
                 <li>
                   <Link href="/admissions/intake-dates" className="block text-primary font-bold border-l-2 border-primary pl-3 transition-colors">{lang === 'kh' ? 'កាលបរិច្ឆេទចូលរៀន' : 'Intake Dates'}</Link>
                 </li>
                 <li>
                   <Link href="/admissions/tuition-fees" className="block text-gray-600 hover:text-primary transition-colors">{lang === 'kh' ? 'តម្លៃសិក្សា' : 'Tuition Fees'}</Link>
+                </li>
+                <li>
+                  <Link href="/scholarships" className="block text-gray-600 hover:text-primary transition-colors">{lang === 'kh' ? 'អាហារូបករណ៍' : 'Scholarships'}</Link>
                 </li>
               </ul>
             </div>
@@ -69,7 +72,7 @@ export default function IntakeDatesPage() {
             </h2>
             <div className="w-16 h-1 bg-secondary mb-10"></div>
             
-            <p className="text-lg text-gray-700 mb-12 leading-relaxed">
+            <p className={`text-lg text-gray-700 mb-12 leading-relaxed ${lang === 'kh' ? 'font-khmer' : ''}`}>
               {lang === 'kh' ? 'យើងផ្តល់ជូនវគ្គចូលរៀនជាច្រើនលើកក្នុងមួយឆ្នាំ។ សូមរួសរាន់ដាក់ពាក្យឱ្យបានមុនកាលកំណត់។' : 'We offer multiple intakes throughout the year. Ensure you submit your application well before the deadlines associated with these dates.'}
             </p>
 
@@ -87,7 +90,7 @@ export default function IntakeDatesPage() {
                       </h3>
                       <p className="text-gray-700 text-lg mb-6 font-khmer">{t(intakeObj.date)}</p>
                       
-                      <Link href="/admissions/apply" className="inline-flex items-center text-primary font-semibold hover:text-primary-light transition-colors">
+                      <Link href="/admissions/how-to-apply" className="inline-flex items-center text-primary font-semibold hover:text-primary-light transition-colors">
                         {lang === 'kh' ? 'ដាក់ពាក្យចូលរៀន' : 'Apply for this intake'} <ArrowRight className="w-4 h-4 ml-2" />
                       </Link>
                     </div>

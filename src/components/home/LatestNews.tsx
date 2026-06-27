@@ -130,27 +130,34 @@ export default function LatestNews() {
             ) : (
               <div className="space-y-8">
                 {news.map((item) => (
-                  <article key={item.id} className="flex flex-col sm:flex-row gap-6 group">
+                  <article key={item.id} className="flex flex-col sm:flex-row gap-6 group pb-8 border-b border-gray-100 last:border-0 last:pb-0">
                     {item.imageUrl && (
-                      <div className="w-full sm:w-56 h-40 relative overflow-hidden rounded-sm flex-shrink-0">
-                        {/* Use standard img tag for ease without configuring next domains */}
+                      <div className="w-full sm:w-56 h-40 relative overflow-hidden rounded-sm flex-shrink-0 shadow-sm group-hover:shadow-md transition-shadow">
                         <img 
                           src={item.imageUrl} 
                           alt={t(item.title)}
-                          className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500"
+                          className="object-cover w-full h-full group-hover:scale-[1.03] transition-transform duration-500"
                         />
+                        {/* Overlay shadow gradient */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none"></div>
                       </div>
                     )}
                     <div className="flex flex-col justify-center">
-                      <div className="flex items-center gap-3 mb-2 text-xs font-semibold tracking-wider uppercase">
-                        <span className={`text-primary ${lang === 'kh' ? 'font-khmer' : ''}`}>{t(item.category)}</span>
-                        <span className="text-gray-400">|</span>
-                        <span className={`text-gray-500 ${lang === 'kh' ? 'font-khmer' : ''}`}>{t(item.date)}</span>
+                      <div className="flex items-center gap-3 mb-2.5 text-[11px] font-bold tracking-wider uppercase">
+                        <span className={`text-secondary bg-secondary/5 px-2 py-0.5 rounded-full border border-secondary/15 ${lang === 'kh' ? 'font-khmer' : ''}`}>
+                          {t(item.category)}
+                        </span>
+                        <span className="text-gray-300">•</span>
+                        <span className={`text-gray-400 font-medium ${lang === 'kh' ? 'font-khmer' : ''}`}>
+                          {t(item.date)}
+                        </span>
                       </div>
-                      <h3 className={`text-xl font-serif font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors leading-snug ${lang === 'kh' ? 'font-khmer' : ''}`}>
+                      <h3 className={`text-lg sm:text-xl font-serif font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors leading-snug ${lang === 'kh' ? 'font-khmer leading-relaxed' : ''}`}>
                         <Link href={`/news/${item.id}`}>{t(item.title)}</Link>
                       </h3>
-                      <p className={`text-gray-600 line-clamp-2 text-sm ${lang === 'kh' ? 'font-khmer' : ''}`}>{t(item.excerpt)}</p>
+                      <p className={`text-gray-500 line-clamp-2 text-sm leading-relaxed ${lang === 'kh' ? 'font-khmer font-light leading-relaxed' : ''}`}>
+                        {t(item.excerpt)}
+                      </p>
                     </div>
                   </article>
                 ))}
@@ -165,11 +172,11 @@ export default function LatestNews() {
                 <h2 className={`text-3xl font-serif font-bold text-primary ${lang === 'kh' ? 'font-khmer' : ''}`}>
                   {lang === 'kh' ? 'ព្រឹត្តិការណ៍នាពេលខាងមុខ' : 'Upcoming Events'}
                 </h2>
-                <p className={`text-gray-500 mt-2 ${lang === 'kh' ? 'font-khmer' : ''}`}>
+                <p className={`text-gray-500 mt-2 ${lang === 'kh' ? 'font-khmer text-sm' : ''}`}>
                   {lang === 'kh' ? 'ចូលរួមជាមួយសហគមន៍របស់យើង' : 'Join our vibrant campus community'}
                 </p>
               </div>
-              <Link href="/events" className={`text-primary font-medium hover:text-primary-light flex items-center text-sm mb-1 ${lang === 'kh' ? 'font-khmer' : ''}`}>
+              <Link href="/events" className={`text-primary font-bold hover:text-secondary flex items-center text-sm mb-1 ${lang === 'kh' ? 'font-khmer' : ''}`}>
                 {lang === 'kh' ? 'ព្រឹត្តិការណ៍ទាំងអស់' : 'All Events'} <ArrowRight className="w-4 h-4 ml-1" />
               </Link>
             </div>
@@ -181,39 +188,57 @@ export default function LatestNews() {
                 ))}
               </div>
             ) : (
-              <div className="space-y-4">
+              <div className="space-y-5">
                 {events.map((event) => {
                   const { day, displayMonth, timeRange } = getEventDateInfo(event);
                   const displayLocation = lang === 'kh' ? event.location.khmer : event.location.english;
                   return (
-                    <div key={event.id} className="flex bg-gray-50 hover:bg-gray-100 transition-colors border uni-border rounded-sm overflow-hidden">
-                      <div className="bg-primary text-white p-4 flex flex-col justify-center items-center min-w-[80px] text-center border-r border-primary-light">
-                        <span className="text-2xl font-bold font-serif leading-none">{day}</span>
-                        <span className={`text-xs tracking-widest mt-1 font-medium ${lang === 'kh' ? 'font-khmer text-[11px]' : ''}`}>{displayMonth}</span>
+                    <div key={event.id} className="flex bg-white hover:bg-gray-50/50 hover:shadow-lg hover:border-secondary/20 transition-all duration-300 border border-gray-100/70 rounded-sm overflow-hidden">
+                      {/* Physical Calendar Sheet representation */}
+                      <div className="bg-primary/5 text-primary p-4 flex flex-col justify-center items-center min-w-[85px] text-center border-r border-gray-100 relative">
+                        {/* Red/Gold top tab line */}
+                        <div className="absolute top-0 left-0 right-0 h-[4px] bg-secondary"></div>
+                        <span className="text-3xl font-serif font-black text-primary leading-none mt-1">{day}</span>
+                        <span className={`text-[10px] tracking-wider uppercase font-bold text-gray-500 mt-1.5 ${lang === 'kh' ? 'font-khmer text-[9px]' : ''}`}>
+                          {displayMonth}
+                        </span>
                       </div>
-                      <div className="p-4 flex-1">
-                        <h3 className={`font-serif font-bold text-gray-900 mb-2 leading-tight ${lang === 'kh' ? 'font-khmer' : ''}`}>
-                          <Link href={`/events/${event.id}`} className="hover:text-primary">{lang === 'kh' ? event.title.khmer : event.title.english}</Link>
-                        </h3>
-                        <div className="space-y-1">
-                          <div className="flex items-center text-xs text-gray-500">
-                            <Clock className="w-3 h-3 mr-2 flex-shrink-0" />
-                            <span className={lang === 'kh' ? 'font-khmer' : ''}>{timeRange}</span>
-                          </div>
-                          <div className="flex items-center text-xs text-gray-500">
-                            <MapPin className="w-3 h-3 mr-2 flex-shrink-0" />
-                            {event.isVirtual && event.virtualLink ? (
-                              <a 
-                                href={event.virtualLink.startsWith('http') ? event.virtualLink : `https://${event.virtualLink}`}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="text-primary hover:underline break-all"
-                              >
-                                {event.virtualLink}
-                              </a>
-                            ) : (
-                              <span className={lang === 'kh' ? 'font-khmer' : ''}>{displayLocation}</span>
-                            )}
+                      
+                      <div className="p-4 flex-1 flex flex-col justify-between">
+                        <div>
+                          <h3 className={`font-serif font-bold text-gray-900 mb-2.5 leading-snug hover:text-primary transition-colors ${lang === 'kh' ? 'font-khmer text-sm leading-relaxed' : ''}`}>
+                            <Link href={`/events/${event.id}`}>
+                              {lang === 'kh' ? event.title.khmer : event.title.english}
+                            </Link>
+                          </h3>
+                          <div className="space-y-1.5">
+                            <div className="flex items-center text-xs text-gray-400">
+                              <Clock className="w-3.5 h-3.5 mr-2 flex-shrink-0 text-slate-400" />
+                              <span className={lang === 'kh' ? 'font-khmer text-[11px]' : ''}>{timeRange}</span>
+                            </div>
+                            <div className="flex items-start text-xs text-gray-400">
+                              <MapPin className="w-3.5 h-3.5 mr-2 flex-shrink-0 text-slate-400 mt-0.5" />
+                              {event.isVirtual && event.virtualLink ? (
+                                <div className="flex flex-col items-start gap-1">
+                                  <span className="inline-flex items-center gap-1 text-[10px] font-bold text-emerald-600 bg-emerald-50 border border-emerald-100 px-2 py-0.5 rounded-full mb-1">
+                                    <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-ping"></span>
+                                    {lang === 'kh' ? 'កម្មវិធីអនឡាញ' : 'Virtual Zoom'}
+                                  </span>
+                                  <a 
+                                    href={event.virtualLink.startsWith('http') ? event.virtualLink : `https://${event.virtualLink}`}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-primary hover:underline break-all font-semibold"
+                                  >
+                                    {event.virtualLink}
+                                  </a>
+                                </div>
+                              ) : (
+                                <span className={`${lang === 'kh' ? 'font-khmer text-[11px] leading-normal' : ''} text-gray-500`}>
+                                  {displayLocation}
+                                </span>
+                              )}
+                            </div>
                           </div>
                         </div>
                       </div>
