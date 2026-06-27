@@ -87,11 +87,11 @@ export default function StructurePage() {
             <div className="sticky top-28 bg-gray-50 p-6 rounded-sm border border-gray-100">
               <h3 className="text-lg font-serif font-bold text-primary mb-4 border-b border-gray-200 pb-2">About Us</h3>
               <ul className="space-y-3">
-                <li><Link href="/about/vision-and-missions" className="block text-gray-600 hover:text-primary transition-colors">{kh ? 'ទស្សនវិស័យ បេសកកម្ម' : 'Vision & Mission'}</Link></li>
+                <li><Link href="/about/vision-and-missions" className="block text-gray-600 hover:text-primary transition-colors">{kh ? 'ទស្សនវិស័យ បេសកកម្ម និងគោលដៅ' : 'Vision, Mission & Goals'}</Link></li>
                 <li><Link href="/about/structure" className="block text-primary font-bold border-l-2 border-primary pl-3">{kh ? 'រចនាសម្ព័ន្ធ' : 'Organization Structure'}</Link></li>
                 <li><Link href="/about/founder-and-principal" className="block text-gray-600 hover:text-primary transition-colors">{kh ? 'ស្ថាបនិក' : 'Founder & Principal'}</Link></li>
                 <li><Link href="/about/campuses" className="block text-gray-600 hover:text-primary transition-colors">{kh ? 'ទីតាំងសាខា' : 'Campus Locations'}</Link></li>
-                <li><Link href="/careers" className="block text-gray-600 hover:text-primary transition-colors">{kh ? 'ឱកាសការងារ' : 'Careers at AIC'}</Link></li>
+                <li><Link href="/about/contact" className="block text-gray-600 hover:text-primary transition-colors">{kh ? 'ទំនាក់ទំនង' : 'Contact Us'}</Link></li>
               </ul>
             </div>
           </aside>

@@ -32,7 +32,7 @@ export default function FounderAndPrincipalPage() {
           <ChevronRight className="w-4 h-4 mx-2 opacity-50" />
           <span className="text-gray-900 font-medium">About Us</span>
           <ChevronRight className="w-4 h-4 mx-2 opacity-50" />
-          <span className="text-gray-900 font-medium">{lang === 'kh' ? 'ស្ថាបនិក និងនាយកវិទ្យាស្ថាន' : 'Priciple'}</span>
+          <span className="text-gray-900 font-medium">{lang === 'kh' ? 'ស្ថាបនិក និងនាយកវិទ្យាស្ថាន' : 'Principal'}</span>
         </div>
       </div>
 
@@ -43,19 +43,22 @@ export default function FounderAndPrincipalPage() {
           {/* Sidebar Navigation */}
           <aside className="lg:w-1/4">
             <div className="sticky top-28 bg-gray-50 p-6 rounded-sm border border-gray-100">
-              <h3 className="text-lg font-serif font-bold text-primary mb-4 border-b border-gray-200 pb-2">In this section</h3>
+              <h3 className="text-lg font-serif font-bold text-primary mb-4 border-b border-gray-200 pb-2">About Us</h3>
               <ul className="space-y-3">
                 <li>
-                  <Link href="/about/vision-and-missions" className="block text-gray-600 hover:text-primary transition-colors">{lang === 'kh' ? 'សីលធម៌ និងទស្សនវិស័យ' : 'Vision & Missions'}</Link>
+                  <Link href="/about/vision-and-missions" className="block text-gray-600 hover:text-primary transition-colors">{lang === 'kh' ? 'ទស្សនវិស័យ បេសកកម្ម និងគោលដៅ' : 'Vision, Mission & Goals'}</Link>
                 </li>
                 <li>
-                  <Link href="/about/founder-and-principal" className="block text-primary font-bold border-l-2 border-primary pl-3 transition-colors">{lang === 'kh' ? 'ស្ថាបនិក និងនាយកវិទ្យាស្ថាន' : 'Priciple'}</Link>
+                  <Link href="/about/structure" className="block text-gray-600 hover:text-primary transition-colors">{lang === 'kh' ? 'រចនាសម្ព័ន្ធស្ថាប័ន' : 'Organization Structure'}</Link>
+                </li>
+                <li>
+                  <Link href="/about/founder-and-principal" className="block text-primary font-bold border-l-2 border-primary pl-3 transition-colors">{lang === 'kh' ? 'ស្ថាបនិក និងនាយកវិទ្យាស្ថាន' : 'Founder & Principal'}</Link>
                 </li>
                 <li>
                   <Link href="/about/campuses" className="block text-gray-600 hover:text-primary transition-colors">{lang === 'kh' ? 'ទីតាំងសាខា' : 'Campus Locations'}</Link>
                 </li>
                 <li>
-                  <Link href="/about/contact" className="block text-gray-600 hover:text-primary transition-colors">{lang === 'kh' ? 'ទំនាក់ទំនង' : 'Contact'}</Link>
+                  <Link href="/about/contact" className="block text-gray-600 hover:text-primary transition-colors">{lang === 'kh' ? 'ទំនាក់ទំនង' : 'Contact Us'}</Link>
                 </li>
               </ul>
             </div>
@@ -72,7 +75,7 @@ export default function FounderAndPrincipalPage() {
                   <div className="aspect-[3/4] bg-gray-100 rounded-sm overflow-hidden relative border border-gray-200">
                     <img
                       src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                      alt="Priciple"
+                      alt="Principal"
                       className="w-full h-full object-cover"
                     />
                     <div className="absolute bottom-0 left-0 right-0 bg-primary/90 text-white p-4 text-center">
@@ -96,7 +99,7 @@ export default function FounderAndPrincipalPage() {
                     <p className="text-lg">
                       {lang === 'kh'
                         ? `សូមស្វាគមន៍មកកាន់ ${t(info.institution_info.name)}។ ក្នុងនាមជាស្ថាបនិក និងនាយកវិទ្យាស្ថាន ខ្ញុំមានសេចក្តីសោមនស្សរីករាយយ៉ាងក្រៃលែង ដែលបានស្វាគមន៍អ្នកទាំងអស់គ្នាមកកាន់គ្រឹះស្ថានឧត្តមសិក្សារបស់យើង។`
-                        : `Welcome to ${t(info.institution_info.name)}. As the Priciple, I am immensely pleased to welcome you all to our higher education institution.`}
+                        : `Welcome to ${t(info.institution_info.name)}. As the Principal, I am immensely pleased to welcome you all to our higher education institution.`}
                     </p>
                     <p>
                       {lang === 'kh'

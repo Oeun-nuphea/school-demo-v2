@@ -44,19 +44,22 @@ export default function CampusesPage() {
           {/* Sidebar Navigation */}
           <aside className="lg:w-1/4">
             <div className="sticky top-28 bg-gray-50 p-6 rounded-sm border border-gray-100">
-              <h3 className="text-lg font-serif font-bold text-primary mb-4 border-b border-gray-200 pb-2">In this section</h3>
+              <h3 className="text-lg font-serif font-bold text-primary mb-4 border-b border-gray-200 pb-2">About Us</h3>
               <ul className="space-y-3">
                 <li>
-                  <Link href="/about/vision-and-missions" className="block text-gray-600 hover:text-primary transition-colors">{lang === 'kh' ? 'សីលធម៌ និងទស្សនវិស័យ' : 'Vision & Missions'}</Link>
+                  <Link href="/about/vision-and-missions" className="block text-gray-600 hover:text-primary transition-colors">{lang === 'kh' ? 'ទស្សនវិស័យ បេសកកម្ម និងគោលដៅ' : 'Vision, Mission & Goals'}</Link>
                 </li>
                 <li>
-                  <Link href="/about/founder-and-principal" className="block text-gray-600 hover:text-primary transition-colors">{lang === 'kh' ? 'ស្ថាបនិក និងនាយកវិទ្យាស្ថាន' : 'Priciple'}</Link>
+                  <Link href="/about/structure" className="block text-gray-600 hover:text-primary transition-colors">{lang === 'kh' ? 'រចនាសម្ព័ន្ធស្ថាប័ន' : 'Organization Structure'}</Link>
+                </li>
+                <li>
+                  <Link href="/about/founder-and-principal" className="block text-gray-600 hover:text-primary transition-colors">{lang === 'kh' ? 'ស្ថាបនិក និងនាយកវិទ្យាស្ថាន' : 'Founder & Principal'}</Link>
                 </li>
                 <li>
                   <Link href="/about/campuses" className="block text-primary font-bold border-l-2 border-primary pl-3 transition-colors">{lang === 'kh' ? 'ទីតាំងសាខា' : 'Campus Locations'}</Link>
                 </li>
                 <li>
-                  <Link href="/about/contact" className="block text-gray-600 hover:text-primary transition-colors">{lang === 'kh' ? 'ទំនាក់ទំនង' : 'Contact'}</Link>
+                  <Link href="/about/contact" className="block text-gray-600 hover:text-primary transition-colors">{lang === 'kh' ? 'ទំនាក់ទំនង' : 'Contact Us'}</Link>
                 </li>
               </ul>
             </div>
