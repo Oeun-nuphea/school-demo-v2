@@ -123,7 +123,7 @@ export default function ScholarshipsPage() {
             </h1>
             <p className={`text-white/75 text-lg ${lang === 'kh' ? 'font-khmer' : ''}`}>
               {lang === 'kh'
-                ? 'ឱកាសអាហារូបករណ៍ ១០០% សម្រាប់និស្សិតឆ្នើម — គ្រប,ដណ្ដប់ថ្លៃសិក្សា ការស្នាក់នៅ និងឱកាសសិក្សានៅក្រៅប្រទេស។'
+                ? 'ឱកាសអាហារូបករណ៍ ១០០% សម្រាប់និស្សិតឆ្នើម — គ្របដណ្ដប់ថ្លៃសិក្សា ការស្នាក់នៅ និងឱកាសសិក្សានៅក្រៅប្រទេស។'
                 : '100% scholarship opportunities for outstanding students — covering tuition, accommodation, and international study experiences.'}
             </p>
           </div>

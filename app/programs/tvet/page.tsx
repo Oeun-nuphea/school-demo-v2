@@ -15,7 +15,7 @@ export default function TVETProgramsPage() {
     { en: 'Culinary Arts', kh: 'សិល្បៈធ្វើម្ហូប', duration: '1 yr', icon: '🍽️', desc: { en: 'Professional cooking, plating & kitchen management', kh: 'ការធ្វើម្ហូបវិជ្ជាជីវៈ និងគ្រប់គ្រងផ្ទះបាយ' } },
     { en: 'IT Support & Networking', kh: 'ព័ត៌មានវិទ្យា និងបណ្ដាញ', duration: '1–2 yrs', icon: '💻', desc: { en: 'Hardware, software, LAN/WAN networking', kh: 'ផ្នែករឹង ផ្នែកទន់ និងបណ្ដាញ LAN/WAN' } },
     { en: 'Air Conditioning & Refrigeration', kh: 'ប្រព័ន្ធត្រជាក់', duration: '1 yr', icon: '❄️', desc: { en: 'Installation, maintenance of AC & cooling systems', kh: 'ការដំឡើង និងថែទាំម៉ាស៊ីនត្រជាក់' } },
-    { en: 'Beauty & Cosmetology', kh: 'សម្ផស្ស', duration: '6 months–1 yr', icon: '💅', desc: { en: 'Hair, skincare, makeup & nail techniques', kh: 'ស្វ័យប្រវត្តិ ស្បែក ការតុបតែង' } },
+    { en: 'Beauty & Cosmetology', kh: 'សម្ផស្ស', duration: '6 months–1 yr', icon: '💅', desc: { en: 'Hair, skincare, makeup & nail techniques', kh: 'សក់ ស្បែក ការតុបតែង និងធ្វើក្រចក' } },
     { en: 'Plumbing & Sanitation', kh: 'បំពង់ទឹក និងអនាម័យ', duration: '1 yr', icon: '🔩', desc: { en: 'Water systems installation and maintenance', kh: 'ការដំឡើង និងថែទាំប្រព័ន្ធទឹក' } },
   ];
 

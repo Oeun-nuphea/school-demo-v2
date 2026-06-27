@@ -57,28 +57,17 @@ export default function Navbar() {
       name: { english: "About Us", khmer: "អំពីវិទ្យាស្ថាន" },
       href: "/about",
       subItems: [
-        { label: { english: "Vision & Mission", khmer: "ទស្សនវិស័យ & បេសកកម្ម" }, href: "/about/vision" },
-        { label: { english: "Goal & Objective", khmer: "គោលដៅ & គោលបំណង" }, href: "/about/goal" },
+        { label: { english: "Vision, Mission & Goals", khmer: "ទស្សនវិស័យ បេសកកម្ម និងគោលដៅ" }, href: "/about/vision-and-missions" },
         { label: { english: "Organization Structure", khmer: "រចនាសម្ព័ន្ធស្ថាប័ន" }, href: "/about/structure" },
+        { label: { english: "Founder & Principal", khmer: "ស្ថាបនិក និងនាយកវិទ្យាស្ថាន" }, href: "/about/founder-and-principal" },
         { label: { english: "Campus Locations", khmer: "ទីតាំងសាខា" }, href: "/about/campuses" },
+        { label: { english: "Contact Us", khmer: "ទំនាក់ទំនង" }, href: "/about/contact" },
       ]
     },
     {
       name: { english: "Academic Programs", khmer: "កម្មវិធីសិក្សា" },
       href: "/programs",
       subItems: [
-        {
-          label: { english: "Colleges", khmer: "មហាវិទ្យាល័យ" },
-          href: "/colleges",
-          nestedItems: [
-            { label: { english: "Business Administration", khmer: "គ្រប់គ្រងពាណិជ្ជកម្ម" }, href: "/colleges/business" },
-            { label: { english: "Law", khmer: "នីតិសាស្ត្រ" }, href: "/colleges/law" },
-            { label: { english: "Arts & Humanities", khmer: "សិល្បៈ និងមនុស្សសាស្ត្ស" }, href: "/colleges/arts" },
-            { label: { english: "Agriculture", khmer: "កសិកម្ម" }, href: "/colleges/agriculture" },
-            { label: { english: "Science & Technology", khmer: "វិទ្យាសាស្ត្រ និងបច្ចេកវិទ្យា" }, href: "/colleges/science" },
-            { label: { english: "Engineering", khmer: "វិស្វកម្ម" }, href: "/colleges/engineering" },
-          ]
-        },
         { label: { english: "Master Programs", khmer: "ថ្នាក់បរិញ្ញាបត្រជាន់ខ្ពស់" }, href: "/programs/master" },
         {
           label: { english: "Bachelor Programs", khmer: "ថ្នាក់បរិញ្ញាបត្រ" },
@@ -89,35 +78,42 @@ export default function Navbar() {
           ]
         },
         { label: { english: "Associate Programs", khmer: "ថ្នាក់បរិញ្ញាបត្ររង" }, href: "/programs/associate" },
-        { label: { english: "TVET Programs", khmer: "កម្មវិធីបណ្តុះបណ្តាលវិជ្ជាជីវៈ" }, href: "/programs/tvet" },
+        { label: { english: "TVET Programs", khmer: "កម្មវិធីបណ្តុះបណ្តាលបច្ចេកទេស និងវិជ្ជាជីវៈ" }, href: "/programs/tvet" },
+        { label: { english: "Scholarships", khmer: "អាហារូបករណ៍" }, href: "/scholarships" },
+        {
+          label: { english: "Admissions", khmer: "ការចុះឈ្មោះចូលរៀន" },
+          href: "/admissions",
+          nestedItems: [
+            { label: { english: "How to Apply", khmer: "របៀបចុះឈ្មោះ" }, href: "/admissions/how-to-apply" },
+            { label: { english: "Requirements", khmer: "លក្ខខណ្ឌតម្រូវ" }, href: "/admissions/requirements" },
+            { label: { english: "Intake Dates", khmer: "កាលបរិច្ឆេទចូលរៀន" }, href: "/admissions/intake-dates" },
+            { label: { english: "Tuition Fees", khmer: "តម្លៃសិក្សា" }, href: "/admissions/tuition-fees" },
+          ]
+        },
       ]
     },
     {
-      name: { english: "Admissions", khmer: "ការចុះឈ្មោះចូលរៀន" },
-      href: "/admissions",
+      name: { english: "Colleges", khmer: "មហាវិទ្យាល័យ" },
+      href: "/colleges",
       subItems: [
-        { label: { english: "How to Apply", khmer: "របៀបចុះឈ្មោះ" }, href: "/admissions/how-to-apply" },
-        { label: { english: "Requirements", khmer: "លក្ខខណ្ឌតម្រូវ" }, href: "/admissions/requirements" },
-        { label: { english: "Intake Dates", khmer: "កាលបរិច្ឆេទចូលរៀន" }, href: "/admissions/intake-dates" },
-        { label: { english: "Tuition Fees", khmer: "តម្លៃសិក្សា" }, href: "/admissions/tuition-fees" },
-        { label: { english: "Scholarships", khmer: "អាហារូបករណ៍" }, href: "/scholarships" },
+        { label: { english: "Business Administration", khmer: "គ្រប់គ្រងពាណិជ្ជកម្ម" }, href: "/colleges/business" },
+        { label: { english: "Law", khmer: "នីតិសាស្ត្រ" }, href: "/colleges/law" },
+        { label: { english: "Arts, Humanities & Foreign Languages", khmer: "សិល្បៈ មនុស្សសាស្ត្រ និងភាសាបរទេស" }, href: "/colleges/arts" },
+        { label: { english: "Agriculture", khmer: "កសិកម្ម" }, href: "/colleges/agriculture" },
+        { label: { english: "Science and Technology", khmer: "វិទ្យាសាស្ត្រ និងបច្ចេកវិទ្យា" }, href: "/colleges/science" },
+        { label: { english: "Engineering", khmer: "វិស្វកម្ម" }, href: "/colleges/engineering" },
       ]
     },
     {
       name: { english: "Student Life", khmer: "ជីវិតនិស្សិត" },
       href: "/student-life",
       subItems: [
-        {
-          label: { english: "Facilities", khmer: "បរិក្ខារសិក្សា" },
-          href: "/student-life/facilities",
-          nestedItems: [
-            { label: { english: "Self-Study Area", khmer: "កន្លែងស្វ័យសិក្សា" }, href: "/student-life/facilities/self-study" },
-            { label: { english: "Dormitory", khmer: "អន្តេវាសិកដ្ឋាន" }, href: "/student-life/facilities/dormitory" },
-            { label: { english: "Canteen", khmer: "អាហារដ្ឋាន" }, href: "/student-life/facilities/canteen" },
-          ]
-        },
+        { label: { english: "Study Schedules", khmer: "វេនសិក្សា" }, href: "/student-life/schedules" },
+        { label: { english: "Self-Study Area", khmer: "កន្លែងស្វ័យសិក្សា" }, href: "/student-life/facilities/self-study" },
+        { label: { english: "Dormitory", khmer: "អន្តេវាសិកដ្ឋាន" }, href: "/student-life/facilities/dormitory" },
+        { label: { english: "Canteen (Food & Drink)", khmer: "អាហារដ្ឋាន" }, href: "/student-life/facilities/canteen" },
         { label: { english: "Extra-Curricular", khmer: "សកម្មភាពក្រៅម៉ោង" }, href: "/student-life/extra-curricular" },
-        { label: { english: "Social Events", khmer: "ព្រឹត្តិការណ៍សង្គម" }, href: "/events" },
+        { label: { english: "Social Events", khmer: "ព្រឹត្តិការណ៍សង្គម" }, href: "/student-life/social-events" },
         { label: { english: "Graduation", khmer: "ការបញ្ចប់ការសិក្សា" }, href: "/student-life/graduation" },
       ]
     },
@@ -144,7 +140,7 @@ export default function Navbar() {
       ]
     },
     {
-      name: { english: "Research & Journal", khmer: "ការស្រាវជ្រាវ & ទិនានុប្បវត្តិ" },
+      name: { english: "Journal & Research", khmer: "ស្រាវជ្រាវ និងទិនានុប្បវត្តិ" },
       href: "/research",
       subItems: [
         { label: { english: "Academic Journal", khmer: "ទិនានុប្បវត្តិសិក្សា" }, href: "/research/journal" },
@@ -152,7 +148,26 @@ export default function Navbar() {
       ]
     },
     {
-      name: { english: "News & Events", khmer: "ព័ត៌មាន & ព្រឹត្តិការណ៍" },
+      name: { english: "Careers", khmer: "ឱកាសការងារ" },
+      href: "/careers",
+      subItems: [
+        { label: { english: "Careers at AIC", khmer: "ការងារនៅ AIC" }, href: "/careers" },
+        { label: { english: "Internships", khmer: "កម្មសិក្សា" }, href: "/careers/internships" },
+      ]
+    },
+    // IMPORTANT FOR AI AGENT: DO NOT REMOVE THIS COMMENT 
+    // {
+    //   name: { english: "Alumni", khmer: "អតីតនិស្សិត" },
+    //   href: "/alumni/network",
+    //   subItems: [
+    //     { label: { english: "Alumni Network", khmer: "បណ្តាញអតីតនិស្សិត" }, href: "/alumni/network" },
+    //     { label: { english: "Success Stories", khmer: "រឿងរ៉ាវជោគជ័យ" }, href: "/alumni/success-stories" },
+    //     { label: { english: "Alumni Benefits", khmer: "អត្ថប្រយោជន៍" }, href: "/alumni/benefits" },
+    //     { label: { english: "Alumni Giving", khmer: "ការចូលរួមឧបត្ថម្ភ" }, href: "/alumni/giving" },
+    //   ]
+    // },
+    {
+      name: { english: "News & Events", khmer: "ព័ត៌មាន" },
       href: "/news",
       subItems: []
     }
@@ -253,35 +268,15 @@ export default function Navbar() {
     }
 
     if (linkName === "Academic Programs") {
-      const colleges = link.subItems.find(s => s.label.english === "Colleges");
       const bachelor = link.subItems.find(s => s.label.english === "Bachelor Programs");
-      const otherPrograms = link.subItems.filter(s => s.label.english !== "Colleges" && s.label.english !== "Bachelor Programs");
+      const admissions = link.subItems.find(s => s.label.english === "Admissions");
+      const degreePrograms = link.subItems.filter(s => s.label.english !== "Bachelor Programs" && s.label.english !== "Scholarships" && s.label.english !== "Admissions");
+      const quickLinks = link.subItems.filter(s => s.label.english === "Scholarships" || s.label.english === "Admissions");
 
       return (
         <div className="max-w-7xl mx-auto px-8 py-10 grid grid-cols-12 gap-8">
-          {/* Column 1: Colleges */}
-          {colleges && (
-            <div className="col-span-4 border-r border-gray-100 pr-6">
-              <h4 className={`text-xs font-bold text-primary uppercase tracking-wider mb-4 pb-2 border-b border-gray-100 ${kh ? 'font-khmer' : ''}`}>
-                {t(colleges.label)}
-              </h4>
-              <div className="grid grid-cols-1 gap-2.5">
-                {colleges.nestedItems?.map((nested) => (
-                  <Link
-                    key={nested.label.english}
-                    href={nested.href}
-                    onClick={() => setActiveMegaMenu(null)}
-                    className={`block text-sm hover:text-primary transition-all duration-200 ${isItemActive(nested.href) ? 'text-primary font-semibold border-l-2 border-primary pl-3' : 'text-gray-600 hover:pl-2'} ${kh ? 'font-khmer' : ''}`}
-                  >
-                    {t(nested.label)}
-                  </Link>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {/* Column 2: Bachelor & Degrees */}
-          <div className="col-span-4 pr-6 border-r border-gray-100">
+          {/* Column 1: Bachelor & Master */}
+          <div className="col-span-4 border-r border-gray-100 pr-6">
             {bachelor && (
               <div className="mb-6">
                 <h4 className={`text-xs font-bold text-primary uppercase tracking-wider mb-3 pb-1 border-b border-gray-50 ${kh ? 'font-khmer' : ''}`}>
@@ -301,23 +296,64 @@ export default function Navbar() {
                 </div>
               </div>
             )}
+            <h4 className={`text-xs font-bold text-primary uppercase tracking-wider mb-3 pb-1 border-b border-gray-50 ${kh ? 'font-khmer' : ''}`}>
+              {kh ? 'កម្មវិធីសញ្ញាបត្រ' : 'Degree Programs'}
+            </h4>
+            <div className="space-y-2">
+              {degreePrograms.map((prog) => (
+                <Link
+                  key={prog.label.english}
+                  href={prog.href}
+                  onClick={() => setActiveMegaMenu(null)}
+                  className={`block text-sm hover:text-primary transition-all duration-200 ${isItemActive(prog.href) ? 'text-primary font-semibold border-l-2 border-primary pl-3' : 'text-gray-600 hover:pl-2'} ${kh ? 'font-khmer' : ''}`}
+                >
+                  {t(prog.label)}
+                </Link>
+              ))}
+            </div>
+          </div>
 
-            <div>
-              <h4 className={`text-xs font-bold text-primary uppercase tracking-wider mb-3 pb-1 border-b border-gray-50 ${kh ? 'font-khmer' : ''}`}>
-                {kh ? 'កម្រិតសិក្សាផ្សេងទៀត' : 'Other Degree Pathways'}
-              </h4>
-              <div className="space-y-2">
-                {otherPrograms.map((prog) => (
-                  <Link
-                    key={prog.label.english}
-                    href={prog.href}
-                    onClick={() => setActiveMegaMenu(null)}
-                    className={`block text-sm hover:text-primary transition-all duration-200 ${isItemActive(prog.href) ? 'text-primary font-semibold border-l-2 border-primary pl-3' : 'text-gray-600 hover:pl-2'} ${kh ? 'font-khmer' : ''}`}
-                  >
-                    {t(prog.label)}
-                  </Link>
-                ))}
-              </div>
+          {/* Column 2: Quick Links */}
+          <div className="col-span-4 pr-6 border-r border-gray-100">
+            <h4 className={`text-xs font-bold text-primary uppercase tracking-wider mb-4 pb-2 border-b border-gray-100 ${kh ? 'font-khmer' : ''}`}>
+              {kh ? 'តំណរភ្ជាប់រហ័ស' : 'Quick Links'}
+            </h4>
+            <div className="space-y-2">
+              {quickLinks.map((link) => (
+                <div key={link.label.english}>
+                  {link.nestedItems ? (
+                    <div>
+                      <Link
+                        href={link.href}
+                        onClick={() => setActiveMegaMenu(null)}
+                        className={`block text-sm font-semibold text-primary mb-2 hover:text-primary-light transition-colors ${kh ? 'font-khmer' : ''}`}
+                      >
+                        {t(link.label)}
+                      </Link>
+                      <div className="space-y-1.5 pl-3 border-l-2 border-gray-100">
+                        {link.nestedItems.map((nested) => (
+                          <Link
+                            key={nested.label.english}
+                            href={nested.href}
+                            onClick={() => setActiveMegaMenu(null)}
+                            className={`block text-sm hover:text-primary transition-all duration-200 ${isItemActive(nested.href) ? 'text-primary font-semibold border-l-2 border-primary pl-3' : 'text-gray-600 hover:pl-2'} ${kh ? 'font-khmer' : ''}`}
+                          >
+                            {t(nested.label)}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  ) : (
+                    <Link
+                      href={link.href}
+                      onClick={() => setActiveMegaMenu(null)}
+                      className={`block text-sm hover:text-primary transition-all duration-200 ${isItemActive(link.href) ? 'text-primary font-semibold border-l-2 border-primary pl-3' : 'text-gray-600 hover:pl-2'} ${kh ? 'font-khmer' : ''}`}
+                    >
+                      {t(link.label)}
+                    </Link>
+                  )}
+                </div>
+              ))}
             </div>
           </div>
 
@@ -543,7 +579,7 @@ export default function Navbar() {
       );
     }
 
-    if (linkName === "Research & Journal") {
+    if (linkName === "Journal & Research") {
       return (
         <div className="max-w-7xl mx-auto px-8 py-10 grid grid-cols-12 gap-8">
           <div className="col-span-8">
@@ -589,7 +625,47 @@ export default function Navbar() {
       );
     }
 
-    return null;
+    return (
+      <div className="max-w-7xl mx-auto px-8 py-10">
+        <div className="grid grid-cols-4 gap-8">
+          {link.subItems.map((sub) => (
+            <div key={sub.label.english}>
+              {sub.nestedItems ? (
+                <div>
+                  <Link
+                    href={sub.href}
+                    onClick={() => setActiveMegaMenu(null)}
+                    className={`block text-sm font-semibold text-primary mb-3 hover:text-primary-light transition-colors ${kh ? 'font-khmer' : ''}`}
+                  >
+                    {t(sub.label)}
+                  </Link>
+                  <div className="space-y-2 pl-3 border-l-2 border-gray-100">
+                    {sub.nestedItems.map((nested) => (
+                      <Link
+                        key={nested.label.english}
+                        href={nested.href}
+                        onClick={() => setActiveMegaMenu(null)}
+                        className={`block text-sm hover:text-primary transition-all duration-200 ${isItemActive(nested.href) ? 'text-primary font-semibold border-l-2 border-primary pl-3' : 'text-gray-600 hover:pl-2'} ${kh ? 'font-khmer' : ''}`}
+                      >
+                        {t(nested.label)}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              ) : (
+                <Link
+                  href={sub.href}
+                  onClick={() => setActiveMegaMenu(null)}
+                  className={`block text-sm hover:text-primary transition-all duration-200 ${isItemActive(sub.href) ? 'text-primary font-semibold border-l-2 border-primary pl-3' : 'text-gray-600 hover:pl-2'} ${kh ? 'font-khmer' : ''}`}
+                >
+                  {t(sub.label)}
+                </Link>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+    );
   };
 
   return (
@@ -679,27 +755,27 @@ export default function Navbar() {
       </div>
 
       {/* Mega Menu Container */}
-      <div 
-        className={`absolute left-0 right-0 top-[calc(100%-1px)] w-full bg-white border-t border-gray-150 shadow-2xl z-40 hidden xl:block transition-all duration-250 ease-out origin-top ${
-          activeMegaMenu 
-            ? 'opacity-100 translate-y-0 pointer-events-auto' 
-            : 'opacity-0 -translate-y-2 pointer-events-none'
-        }`}
-        onMouseEnter={() => {
-          if (closeTimeoutRef.current) {
-            clearTimeout(closeTimeoutRef.current);
-            closeTimeoutRef.current = null;
-          }
-        }}
-        onMouseLeave={closeMenu}
-      >
-        <div className="absolute -top-px left-0 right-0 h-px bg-primary"></div>
-        {renderedMegaMenu && (
+      {renderedMegaMenu && getMegaMenuContent(renderedMegaMenu) && (
+        <div 
+          className={`absolute left-0 right-0 top-[calc(100%-1px)] w-full bg-white border-t border-gray-150 shadow-2xl z-40 hidden xl:block transition-all duration-250 ease-out origin-top ${
+            activeMegaMenu 
+              ? 'opacity-100 translate-y-0 pointer-events-auto' 
+              : 'opacity-0 -translate-y-2 pointer-events-none'
+          }`}
+          onMouseEnter={() => {
+            if (closeTimeoutRef.current) {
+              clearTimeout(closeTimeoutRef.current);
+              closeTimeoutRef.current = null;
+            }
+          }}
+          onMouseLeave={closeMenu}
+        >
+          <div className="absolute -top-px left-0 right-0 h-px bg-primary"></div>
           <div key={renderedMegaMenu} className="animate-fast-fade-in">
             {getMegaMenuContent(renderedMegaMenu)}
           </div>
-        )}
-      </div>
+        </div>
+      )}
 
       {/* Mobile Navigation */}
       {isOpen && (

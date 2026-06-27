@@ -17,10 +17,10 @@ export default function TuitionFeesPage() {
         <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-secondary opacity-10 blur-3xl" />
 
         <div className="relative z-20 text-center px-4 py-16">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white mb-4 drop-shadow-md">
+          <h1 className={`text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white mb-4 drop-shadow-md ${lang === 'kh' ? 'font-khmer' : ''}`}>
             {lang === 'kh' ? 'តម្លៃសិក្សា' : 'Tuition & Fees'}
           </h1>
-          <p className="text-lg text-white/75 font-sans max-w-2xl mx-auto">
+          <p className={`text-lg text-white/75 font-sans max-w-2xl mx-auto ${lang === 'kh' ? 'font-khmer' : ''}`}>
             {lang === 'kh' ? 'ការបង់ថ្លៃសិក្សា និងអាហារូបករណ៍' : 'Educational investment and scholarship opportunities.'}
           </p>
         </div>
@@ -33,7 +33,7 @@ export default function TuitionFeesPage() {
           <ChevronRight className="w-4 h-4 mx-2 opacity-50" />
           <span className="text-gray-900 font-medium">Admissions</span>
           <ChevronRight className="w-4 h-4 mx-2 opacity-50" />
-          <span className="text-gray-900 font-medium">{lang === 'kh' ? 'តម្លៃសិក្សា' : 'Tuition Fees'}</span>
+          <span className={`text-gray-900 font-medium ${lang === 'kh' ? 'font-khmer' : ''}`}>{lang === 'kh' ? 'តម្លៃសិក្សា' : 'Tuition Fees'}</span>
         </div>
       </div>
 
@@ -47,16 +47,19 @@ export default function TuitionFeesPage() {
               <h3 className="text-lg font-serif font-bold text-primary mb-4 border-b border-gray-200 pb-2">Admissions</h3>
               <ul className="space-y-3">
                 <li>
-                  <Link href="/admissions/master" className="block text-gray-600 hover:text-primary transition-colors">{lang === 'kh' ? 'ថ្នាក់បរិញ្ញាបត្រជាន់ខ្ពស់' : 'Master Programs'}</Link>
+                  <Link href="/admissions/how-to-apply" className="block text-gray-600 hover:text-primary transition-colors">{lang === 'kh' ? 'របៀបចុះឈ្មោះ' : 'How to Apply'}</Link>
                 </li>
                 <li>
-                  <Link href="/admissions/bachelor" className="block text-gray-600 hover:text-primary transition-colors">{lang === 'kh' ? 'ថ្នាក់បរិញ្ញាបត្រ' : 'Bachelor Programs'}</Link>
+                  <Link href="/admissions/requirements" className="block text-gray-600 hover:text-primary transition-colors">{lang === 'kh' ? 'លក្ខខណ្ឌតម្រូវ' : 'Requirements'}</Link>
                 </li>
                 <li>
                   <Link href="/admissions/intake-dates" className="block text-gray-600 hover:text-primary transition-colors">{lang === 'kh' ? 'កាលបរិច្ឆេទចូលរៀន' : 'Intake Dates'}</Link>
                 </li>
                 <li>
                   <Link href="/admissions/tuition-fees" className="block text-primary font-bold border-l-2 border-primary pl-3 transition-colors">{lang === 'kh' ? 'តម្លៃសិក្សា' : 'Tuition Fees'}</Link>
+                </li>
+                <li>
+                  <Link href="/scholarships" className="block text-gray-600 hover:text-primary transition-colors">{lang === 'kh' ? 'អាហារូបករណ៍' : 'Scholarships'}</Link>
                 </li>
               </ul>
             </div>
@@ -69,7 +72,7 @@ export default function TuitionFeesPage() {
             </h2>
             <div className="w-16 h-1 bg-secondary mb-10"></div>
             
-            <p className="text-lg text-gray-700 mb-8 leading-relaxed">
+            <p className={`text-lg text-gray-700 mb-8 leading-relaxed ${lang === 'kh' ? 'font-khmer' : ''}`}>
               {lang === 'kh' ? 'ខាងក្រោមនេះជាតារាងតម្លៃសិក្សាសម្រាប់គ្រប់ទីតាំងសាខាទាំងអស់។ តម្លៃគិតជាប្រាក់ដុល្លារអាមេរិក (USD)។' : 'Below is our comprehensive fee structure across all campuses. All figures are represented in USD.'}
             </p>
 
@@ -136,7 +139,7 @@ export default function TuitionFeesPage() {
                 {lang === 'kh' ? 'ដាក់ពាក្យចូលរៀនឥឡូវនេះ ដើម្បីទទួលបានអាហារូបករណ៍ និងឱកាសការងារដ៏ល្អ។' : 'Apply today to secure your scholarship and unlock global opportunities.'}
               </p>
               <Link 
-                href="/apply" 
+                href="/admissions/how-to-apply" 
                 className="inline-block px-8 py-4 bg-primary text-white font-bold rounded-sm hover:bg-primary-dark transition-colors shadow-md"
               >
                 {lang === 'kh' ? 'ដាក់ពាក្យចូលរៀនឥឡូវនេះ' : 'Apply Now'}

@@ -160,7 +160,15 @@ export default function AssociateProgramsPage() {
 
             {/* CTA */}
             <div className="bg-primary text-white rounded-sm p-8 flex flex-col md:flex-row items-center justify-between gap-6">
-              <Link href="/admissions/how-to-apply" className={`flex items-center gap-2 bg-secondary hover:bg-secondary/90 text-primary-dark font-bold px-8 py-3 rounded-sm whitespace-nowrap transition-colors ${kh ? 'font-khmer' : ''}`}>
+              <div>
+                <h3 className={`text-2xl font-serif font-bold mb-2 ${kh ? 'font-khmer' : ''}`}>
+                  {kh ? 'ត្រៀមខ្លួនដើម្បីចាប់ផ្តើមហើយឬនៅ?' : 'Ready to Get Started?'}
+                </h3>
+                <p className={`text-white/80 ${kh ? 'font-khmer' : ''}`}>
+                  {kh ? 'ចាប់ផ្តើមដំណើរសិក្សារបស់អ្នកជាមួយពួកយើងថ្ងៃនេះ។' : 'Begin your educational journey with us today.'}
+                </p>
+              </div>
+              <Link href="/admissions/how-to-apply" className={`flex items-center gap-2 bg-secondary hover:bg-secondary/90 text-primary-dark font-bold px-8 py-3 rounded-sm whitespace-nowrap transition-colors shrink-0 ${kh ? 'font-khmer' : ''}`}>
                 {kh ? 'ដាក់ពាក្យ' : 'Apply Now'} <ArrowRight className="w-4 h-4" />
               </Link>
             </div>

@@ -62,7 +62,7 @@ export default function CurriculumPage({
       {/* Breadcrumbs */}
       <div className="bg-gray-100 border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center text-sm text-gray-500 overflow-x-auto whitespace-nowrap gap-0">
-          <Link href="/" className="hover:text-primary transition-colors">Home</Link>
+          <Link href="/" className={`hover:text-primary transition-colors ${lang === 'kh' ? 'font-khmer' : ''}`}>{lang === 'kh' ? 'ទំព័រដើម' : 'Home'}</Link>
           <ChevronRight className="w-4 h-4 mx-2 opacity-50 flex-shrink-0" />
           <Link href={`/colleges/${slug}`} className="hover:text-primary transition-colors">{collegeTitle}</Link>
           <ChevronRight className="w-4 h-4 mx-2 opacity-50 flex-shrink-0" />
