@@ -804,25 +804,25 @@ export default function Navbar() {
               return (
                 <div
                   key={link.name.english}
-                  className="h-full flex items-center px-3 2xl:px-4"
+                  className="h-full flex items-center px-2 2xl:px-3"
                   onMouseEnter={() => openMenu(hasDropdown ? link.name.english : null)}
                   onMouseLeave={closeMenu}
                 >
                   {hasDropdown ? (
                     <button
-                      className={`flex items-center py-1 mt-1 text-sm transition-colors whitespace-nowrap border-b-2 ${isActive || activeMegaMenu === link.name.english
+                      className={`flex items-center py-0.5 mt-0.5 text-xs transition-colors whitespace-nowrap border-b-2 ${isActive || activeMegaMenu === link.name.english
                           ? 'text-primary font-semibold border-primary'
                           : 'text-gray-700 font-semibold border-transparent hover:text-primary'
-                        } ${lang === 'kh' ? 'font-khmer text-[13px]' : ''}`}
+                        } ${lang === 'kh' ? 'font-khmer text-[12px]' : ''}`}
                     >
                       {t(link.name)}
-                      <ChevronDown className={`w-3.5 h-3.5 ml-1 opacity-50 transition-transform duration-300 pointer-events-none ${activeMegaMenu === link.name.english ? '-rotate-180 text-primary opacity-100' : ''}`} />
+                      <ChevronDown className={`w-3 h-3 ml-0.5 opacity-50 transition-transform duration-300 pointer-events-none ${activeMegaMenu === link.name.english ? '-rotate-180 text-primary opacity-100' : ''}`} />
                     </button>
                   ) : (
                     <Link
                       href={link.href}
-                      className={`flex items-center py-1 mt-1 text-sm transition-colors whitespace-nowrap border-b-2 ${isActive ? 'text-primary font-semibold border-primary' : 'text-gray-700 font-semibold border-transparent hover:text-primary'
-                        } ${lang === 'kh' ? 'font-khmer text-[13px]' : ''}`}
+                      className={`flex items-center py-0.5 mt-0.5 text-xs transition-colors whitespace-nowrap border-b-2 ${isActive ? 'text-primary font-semibold border-primary' : 'text-gray-700 font-semibold border-transparent hover:text-primary'
+                        } ${lang === 'kh' ? 'font-khmer text-[12px]' : ''}`}
                     >
                       {t(link.name)}
                     </Link>
