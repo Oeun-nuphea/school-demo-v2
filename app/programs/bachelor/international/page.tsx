@@ -20,7 +20,6 @@ export default function InternationalCurriculumPage() {
     { country: 'China', flag: '🇨🇳', universities: ['Yunnan University', 'Guangxi University'] },
     { country: 'Japan', flag: '🇯🇵', universities: ['Partner Universities in Tokyo', 'Technical Institutes'] },
     { country: 'Korea', flag: '🇰🇷', universities: ['Korean Exchange Partners'] },
-    { country: 'Thailand', flag: '🇹🇭', universities: ['Thai Partner Institutions'] },
     { country: 'Malaysia', flag: '🇲🇾', universities: ['Malaysian University Partners'] },
     { country: 'Europe', flag: '🇪🇺', universities: ['European Partner Institutions'] },
   ];

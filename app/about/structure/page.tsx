@@ -91,7 +91,7 @@ export default function StructurePage() {
                 <li><Link href="/about/structure" className="block text-primary font-bold border-l-2 border-primary pl-3">{kh ? 'រចនាសម្ព័ន្ធ' : 'Organization Structure'}</Link></li>
                 <li><Link href="/about/founder-and-principal" className="block text-gray-600 hover:text-primary transition-colors">{kh ? 'ស្ថាបនិក' : 'Founder & Principal'}</Link></li>
                 <li><Link href="/about/campuses" className="block text-gray-600 hover:text-primary transition-colors">{kh ? 'ទីតាំងសាខា' : 'Campus Locations'}</Link></li>
-                <li><Link href="/about/careers" className="block text-gray-600 hover:text-primary transition-colors">{kh ? 'ឱកាសការងារ' : 'Careers at AIC'}</Link></li>
+                <li><Link href="/careers" className="block text-gray-600 hover:text-primary transition-colors">{kh ? 'ឱកាសការងារ' : 'Careers at AIC'}</Link></li>
               </ul>
             </div>
           </aside>
@@ -157,7 +157,7 @@ export default function StructurePage() {
                 <h3 className={`text-xl font-bold mb-2 ${kh ? 'font-khmer' : ''}`}>{kh ? 'ចង់ចូលបម្រើការងារ?' : 'Interested in Joining Our Team?'}</h3>
                 <p className={`text-white/75 text-sm ${kh ? 'font-khmer' : ''}`}>{kh ? 'ស្វែងរកឱកាសការងារបច្ចុប្បន្ន' : 'View our current open positions and apply today.'}</p>
               </div>
-              <Link href="/about/careers" className={`flex items-center gap-2 bg-secondary text-primary-dark font-bold px-6 py-3 rounded-sm whitespace-nowrap hover:bg-secondary/90 transition-colors ${kh ? 'font-khmer' : ''}`}>
+              <Link href="/careers" className={`flex items-center gap-2 bg-secondary text-primary-dark font-bold px-6 py-3 rounded-sm whitespace-nowrap hover:bg-secondary/90 transition-colors ${kh ? 'font-khmer' : ''}`}>
                 {kh ? 'ឱកាសការងារ' : 'View Openings'} <ArrowRight className="w-4 h-4" />
               </Link>
             </div>

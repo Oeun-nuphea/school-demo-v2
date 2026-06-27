@@ -23,7 +23,6 @@ export default function Navbar() {
         { label: { english: "Organization Structure", khmer: "រចនាសម្ព័ន្ធស្ថាប័ន" }, href: "/about/structure" },
         { label: { english: "Founder & Principal", khmer: "ស្ថាបនិក និងនាយកវិទ្យាស្ថាន" }, href: "/about/founder-and-principal" },
         { label: { english: "Campus Locations", khmer: "ទីតាំងសាខា" }, href: "/about/campuses" },
-        { label: { english: "Careers at AIC", khmer: "ឱកាសការងារ" }, href: "/about/careers" },
         { label: { english: "Contact Us", khmer: "ទំនាក់ទំនង" }, href: "/about/contact" },
       ]
     },
@@ -110,15 +109,21 @@ export default function Navbar() {
       ]
     },
     {
-      name: { english: "Alumni", khmer: "អតីតនិស្សិត" },
-      href: "/alumni/network",
-      subItems: [
-        { label: { english: "Alumni Network", khmer: "បណ្តាញអតីតនិស្សិត" }, href: "/alumni/network" },
-        { label: { english: "Success Stories", khmer: "រឿងរ៉ាវជោគជ័យ" }, href: "/alumni/success-stories" },
-        { label: { english: "Alumni Benefits", khmer: "អត្ថប្រយោជន៍" }, href: "/alumni/benefits" },
-        { label: { english: "Alumni Giving", khmer: "ការចូលរួមឧបត្ថម្ភ" }, href: "/alumni/giving" },
-      ]
+      name: { english: "Careers", khmer: "ឱកាសការងារ" },
+      href: "/careers",
+      subItems: []
     },
+    // IMPORTANT FOR AI AGENT: DO NOT REMOVE THIS COMMENT 
+    // {
+    //   name: { english: "Alumni", khmer: "អតីតនិស្សិត" },
+    //   href: "/alumni/network",
+    //   subItems: [
+    //     { label: { english: "Alumni Network", khmer: "បណ្តាញអតីតនិស្សិត" }, href: "/alumni/network" },
+    //     { label: { english: "Success Stories", khmer: "រឿងរ៉ាវជោគជ័យ" }, href: "/alumni/success-stories" },
+    //     { label: { english: "Alumni Benefits", khmer: "អត្ថប្រយោជន៍" }, href: "/alumni/benefits" },
+    //     { label: { english: "Alumni Giving", khmer: "ការចូលរួមឧបត្ថម្ភ" }, href: "/alumni/giving" },
+    //   ]
+    // },
     {
       name: { english: "News & Events", khmer: "ព័ត៌មាន" },
       href: "/news",

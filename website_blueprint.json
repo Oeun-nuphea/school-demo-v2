@@ -17,7 +17,7 @@
           { "path": "/about/founder-and-principal", "name": { "en": "Founder & Principal", "kh": "ស្ថាបនិក និងនាយកវិទ្យាស្ថាន" }, "type": "page" },
           { "path": "/about/campuses", "name": { "en": "Campus Locations", "kh": "ទីតាំងសាខា" }, "type": "page" },
           { "path": "/about/contact", "name": { "en": "Contact Us", "kh": "ទំនាក់ទំនង" }, "type": "page" },
-          { "path": "/about/careers", "name": { "en": "Careers & Careers Center", "kh": "ឱកាសការងារ" }, "type": "page" }
+          { "path": "/careers", "name": { "en": "Careers & Careers Center", "kh": "ឱកាសការងារ" }, "type": "page" }
         ]
       },
       {
@@ -183,7 +183,7 @@
     { "url": "/about/founder-and-principal", "title": "Founder & Principal", "type": "about" },
     { "url": "/about/campuses", "title": "Campus Locations", "type": "about" },
     { "url": "/about/contact", "title": "Contact Us", "type": "about" },
-    { "url": "/about/careers", "title": "Careers", "type": "about" },
+    { "url": "/careers", "title": "Careers", "type": "careers" },
     { "url": "/programs/master", "title": "Master Programs", "type": "programs" },
     { "url": "/programs/bachelor/national", "title": "Bachelor National Curriculum", "type": "programs" },
     { "url": "/programs/bachelor/international", "title": "Bachelor International Curriculum", "type": "programs" },
@@ -252,11 +252,11 @@
           "objective": "List key benefits such as jobs, international exposure, and practical focus.",
           "headline_example": { "en": "The AIC Edge for Career Success", "kh": "ចំណុចខ្លាំងរបស់ AIC សម្រាប់ជោគជ័យក្នុងអាជីព" },
           "content_example": {
-            "en": "With partner networks in Japan, China, Thailand, and Europe, our graduates qualify for jobs with monthly salaries between $300 to $1,000 locally, and up to $2,500 in Japan.",
-            "kh": "តាមរយៈបណ្តាញដៃគូនៅប្រទេសជប៉ុន ចិន ថៃ និងអឺរ៉ុប និស្សិតដែលបញ្ចប់ការសិក្សាពីយើងអាចទទួលបានការងារដែលមានប្រាក់ខែចាប់ពី $300 ដល់ $1,000 ក្នុងស្រុក និងរហូតដល់ $2,500 នៅប្រទេសជប៉ុន។"
+            "en": "With partner networks in Japan, China, and Europe, our graduates qualify for jobs with monthly salaries between $300 to $1,000 locally, and up to $2,500 in Japan.",
+            "kh": "តាមរយៈបណ្តាញដៃគូនៅប្រទេសជប៉ុន ចិន និងអឺរ៉ុប និស្សិតដែលបញ្ចប់ការសិក្សាពីយើងអាចទទួលបានការងារដែលមានប្រាក់ខែចាប់ពី $300 ដល់ $1,000 ក្នុងស្រុក និងរហូតដល់ $2,500 នៅប្រទេសជប៉ុន។"
           },
           "ux_recommendations": "A 3-card horizontal grid highlighting: 1. Practical Internships, 2. International Partnerships, 3. Guaranteed Placements.",
-          "cta_recommendations": { "text": { "en": "Learn More About Placements", "kh": "ស្វែងយល់បន្ថែមអំពីឱកាសការងារ" }, "url": "/about/careers" }
+          "cta_recommendations": { "text": { "en": "Learn More About Placements", "kh": "ស្វែងយល់បន្ថែមអំពីឱកាសការងារ" }, "url": "/careers" }
         },
         {
           "name": "Academic Programs Overview",
@@ -477,7 +477,7 @@
       "focus": "Promoting global exchange and creating foreign pathways.",
       "academic_exchange": {
         "lecturer_exchange": "Historical collaborations where international professors deliver guest lectures in Phnom Penh.",
-        "student_exchange": "Mobility pathways allowing students to spend semesters abroad in China, Japan, Korea, Thailand, and Malaysia."
+        "student_exchange": "Mobility pathways allowing students to spend semesters abroad in China, Japan, Korea, and Malaysia."
       },
       "partnerships": {
         "asian": "Strategic agreements with Chinese, Japanese, and ASEAN universities.",

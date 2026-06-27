@@ -43,7 +43,6 @@ export default function AsianPartnersPage() {
       flag: '🇸🇬',
       universities: [
         { name: 'National University of Singapore', dept: { en: 'Various Programs', kh: 'កម្មវិធីផ្សេងៗ' } },
-        { name: 'Chulalongkorn University (Thailand)', dept: { en: 'Business & Economics', kh: 'ពាណិជ្ជកម្ម និងសេដ្ឋកិច្ច' } },
         { name: 'Vietnam National University', dept: { en: 'Technology & Computing', kh: 'បច្ចេកវិទ្យា' } },
       ],
       color: 'bg-green-50 border-green-200'

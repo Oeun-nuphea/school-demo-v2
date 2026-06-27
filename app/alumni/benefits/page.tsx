@@ -27,7 +27,7 @@ export default function AlumniBenefitsPage() {
     {
       icon: Globe,
       title: { en: 'International Network', kh: 'បណ្ដាញអន្តរជាតិ' },
-      desc: { en: 'Connect with AIC graduates based in Japan, Korea, China, Thailand, Malaysia, and across Southeast Asia.', kh: 'ភ្ជាប់ទំនាក់ទំនងជាមួយអតីតនិស្សិត AIC នៅប្រទេសជប៉ុន កូរ៉េ ចិន ថៃ ម៉ាឡេស៊ី និងអាស៊ីអាគ្នេយ៍។' },
+      desc: { en: 'Connect with AIC graduates based in Japan, Korea, China, Malaysia, and across Southeast Asia.', kh: 'ភ្ជាប់ទំនាក់ទំនងជាមួយអតីតនិស្សិត AIC នៅប្រទេសជប៉ុន កូរ៉េ ចិន ម៉ាឡេស៊ី និងអាស៊ីអាគ្នេយ៍។' },
     },
     {
       icon: Gift,

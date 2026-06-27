@@ -25,7 +25,7 @@ const activities = [
   {
     icon: Globe,
     title: { en: 'Study Tours Abroad', kh: 'ទស្សនកិច្ចសិក្សានៅក្រៅប្រទេស' },
-    description: { en: 'Students have opportunities to visit and intern in countries across Asia including China, Korea, Japan, Thailand, and more.', kh: 'និស្សិតមានឱកាសទៅទស្សនកិច្ចសិក្សា និងកម្មសិក្សានៅប្រទេសជាច្រើននៅអាស៊ី។' },
+    description: { en: 'Students have opportunities to visit and intern in countries across Asia including China, Korea, Japan, and more.', kh: 'និស្សិតមានឱកាសទៅទស្សនកិច្ចសិក្សា និងកម្មសិក្សានៅប្រទេសជាច្រើននៅអាស៊ី។' },
   },
   {
     icon: Award,
