@@ -59,7 +59,7 @@ export default function MasterProgramsPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center text-sm text-gray-500">
           <Link href="/" className="hover:text-primary transition-colors">Home</Link>
           <ChevronRight className="w-4 h-4 mx-2 opacity-50" />
-          <span className="text-gray-900 font-medium">Academic Programs</span>
+          <Link href="/programs" className="hover:text-primary transition-colors">Academic Programs</Link>
           <ChevronRight className="w-4 h-4 mx-2 opacity-50" />
           <span className={`text-gray-900 font-medium ${kh ? 'font-khmer' : ''}`}>{kh ? 'ថ្នាក់បរិញ្ញាបត្រជាន់ខ្ពស់' : 'Master Programs'}</span>
         </div>

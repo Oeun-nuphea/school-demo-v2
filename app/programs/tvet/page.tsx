@@ -49,6 +49,16 @@ export default function TVETProgramsPage() {
         </div>
       </div>
 
+      <div className="bg-gray-100 border-b border-gray-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center text-sm text-gray-500">
+          <Link href="/" className="hover:text-primary transition-colors">Home</Link>
+          <ChevronRight className="w-4 h-4 mx-2 opacity-50" />
+          <Link href="/programs" className="hover:text-primary transition-colors">Academic Programs</Link>
+          <ChevronRight className="w-4 h-4 mx-2 opacity-50" />
+          <span className={`text-gray-900 font-medium ${kh ? 'font-khmer' : ''}`}>{kh ? 'កម្មវិធី TVET' : 'TVET Programs'}</span>
+        </div>
+      </div>
+
       <div className="bg-primary text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
           <div className="grid grid-cols-3 gap-6 text-center">
@@ -56,16 +66,6 @@ export default function TVETProgramsPage() {
             <div><Wrench className="w-5 h-5 text-secondary mx-auto mb-1" /><div className="text-xl font-bold">8+</div><div className="text-white/70 text-xs">{kh ? 'ជំនាញ' : 'Specializations'}</div></div>
             <div><Star className="w-5 h-5 text-secondary mx-auto mb-1" /><div className="text-xl font-bold">90%</div><div className="text-white/70 text-xs">{kh ? 'ចូលបម្រើការងារ' : 'Employment Rate'}</div></div>
           </div>
-        </div>
-      </div>
-
-      <div className="bg-gray-100 border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center text-sm text-gray-500">
-          <Link href="/" className="hover:text-primary transition-colors">Home</Link>
-          <ChevronRight className="w-4 h-4 mx-2 opacity-50" />
-          <span className="text-gray-900 font-medium">Academic Programs</span>
-          <ChevronRight className="w-4 h-4 mx-2 opacity-50" />
-          <span className={`text-gray-900 font-medium ${kh ? 'font-khmer' : ''}`}>{kh ? 'កម្មវិធី TVET' : 'TVET Programs'}</span>
         </div>
       </div>
 

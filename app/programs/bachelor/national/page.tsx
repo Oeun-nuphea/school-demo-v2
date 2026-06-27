@@ -138,7 +138,7 @@ export default function NationalCurriculumPage() {
             </div>
 
             <div>
-              <h2 className={`text-3xl font-serif font-bold text-gray-900 mb-3 ${kh ? 'font-khmer' : ''}`}>
+              <h2 className={`text-3xl font-serif font-bold text-gray-900 my-4 ${kh ? 'font-khmer' : ''}`}>
                 {kh ? 'គំរូរចនាសម្ព័ន្ធកម្មវិធី' : 'Sample Curriculum Structure'}
               </h2>
               <div className="w-16 h-1 bg-secondary mb-4"></div>
