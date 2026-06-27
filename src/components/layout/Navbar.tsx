@@ -113,7 +113,8 @@ export default function Navbar() {
       name: { english: "Careers", khmer: "ឱកាសការងារ" },
       href: "/careers",
       subItems: [
-        { label: { english: "Internships & Jobs", khmer: "កម្មសិក្សា និងការងារ" }, href: "/careers/internships" },
+        { label: { english: "Careers at AIC", khmer: "ការងារនៅ AIC" }, href: "/careers" },
+        { label: { english: "Internships", khmer: "កម្មសិក្សា" }, href: "/careers/internships" },
       ]
     },
     // IMPORTANT FOR AI AGENT: DO NOT REMOVE THIS COMMENT 

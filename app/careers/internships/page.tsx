@@ -2,7 +2,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { ChevronRight, Briefcase, Globe, Building2, TrendingUp, MapPin, CheckCircle, ArrowRight } from 'lucide-react';
-import info from '../../information.json';
+import info from '../../../information.json';
 import { useLanguage } from '@/context/LanguageContext';
 
 const destinations = [
