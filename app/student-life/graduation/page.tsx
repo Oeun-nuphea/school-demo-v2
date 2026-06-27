@@ -54,48 +54,77 @@ export default function GraduationPage() {
 
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className={`text-3xl font-serif font-bold text-gray-900 mb-6 ${kh ? 'font-khmer' : ''}`}>
-            {kh ? 'អនុស្សាវរីយ៍នៃភាពជោគជ័យ' : 'Memories of Success'}
-          </h2>
-          <div className="w-16 h-1 bg-secondary mx-auto mb-6"></div>
-          <p className={`text-lg text-gray-700 leading-relaxed ${kh ? 'font-khmer' : ''}`}>
-            {kh 
-              ? 'ពិធីប្រគល់សញ្ញាបត្រ គឺជាព្រឹត្តិការណ៍ដ៏សំខាន់បំផុតមួយក្នុងជីវិតនិស្សិត។ ខាងក្រោមនេះគឺជារូបភាពអនុស្សាវរីយ៍មួយចំនួនពីកម្មវិធីបញ្ចប់ការសិក្សារបស់វិទ្យាស្ថានយើង។' 
-              : 'The graduation ceremony is a major milestone in every student\'s life. Here are some beautiful memories from our previous graduation events capturing the joy of our alumni and their families.'}
-          </p>
-        </div>
+        <div className="flex flex-col lg:flex-row gap-12">
 
-        {/* Requirements Banner */}
-        <div className="bg-gray-50 border border-gray-200 rounded-sm p-8 flex flex-col md:flex-row items-center justify-between gap-6 mb-16">
-          <div>
-            <div className="flex items-center gap-3 mb-3">
-              <Award className="w-6 h-6 text-primary" />
-              <h3 className={`text-xl font-serif font-bold text-gray-900 ${kh ? 'font-khmer' : ''}`}>
-                {kh ? 'លក្ខខណ្ឌបញ្ចប់ការសិក្សា' : 'Graduation Requirements'}
-              </h3>
+          <aside className="lg:w-1/4">
+            <div className="sticky top-28 bg-gray-50 p-6 rounded-sm border border-gray-100">
+              <h3 className="text-lg font-serif font-bold text-primary mb-4 border-b border-gray-200 pb-2">Student Life</h3>
+              <ul className="space-y-3">
+                {[
+                  { href: '/student-life/schedules', en: 'Study Schedules', kh: 'វេនសិក្សា' },
+                  { href: '/student-life/facilities/self-study', en: 'Self-Study Area', kh: 'កន្លែងស្វ័យសិក្សា' },
+                  { href: '/student-life/facilities/dormitory', en: 'Dormitory', kh: 'អន្តេវាសិកដ្ឋាន' },
+                  { href: '/student-life/facilities/canteen', en: 'Canteen', kh: 'អាហារដ្ឋាន' },
+                  { href: '/student-life/extra-curricular', en: 'Extra-Curricular', kh: 'សកម្មភាពក្រៅម៉ោង' },
+                  { href: '/student-life/graduation', en: 'Graduation', kh: 'ការបញ្ចប់ការសិក្សា', active: true },
+                ].map((item) => (
+                  <li key={item.href}>
+                    <Link
+                      href={item.href}
+                      className={`block pl-3 transition-colors border-l-2 ${item.active ? 'text-primary font-bold border-primary' : 'text-gray-600 hover:text-primary border-transparent'} ${kh ? 'font-khmer' : ''}`}
+                    >
+                      {kh ? item.kh : item.en}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </div>
-            <p className={`text-gray-600 ${kh ? 'font-khmer' : ''}`}>
-              {kh 
-                ? 'និស្សិតត្រូវបញ្ចប់ក្រេឌីតទាំងអស់ដោយជោគជ័យ និងការពារសារណាបញ្ចប់ការសិក្សា។' 
-                : 'Students must successfully complete all required course credits, internships, and their final thesis defense to be eligible for graduation.'}
-            </p>
+          </aside>
+
+          <div className="lg:w-3/4">
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <h2 className={`text-3xl font-serif font-bold text-gray-900 mb-6 ${kh ? 'font-khmer' : ''}`}>
+                {kh ? 'អនុស្សាវរីយ៍នៃភាពជោគជ័យ' : 'Memories of Success'}
+              </h2>
+              <div className="w-16 h-1 bg-secondary mx-auto mb-6"></div>
+              <p className={`text-lg text-gray-700 leading-relaxed ${kh ? 'font-khmer' : ''}`}>
+                {kh 
+                  ? 'ពិធីប្រគល់សញ្ញាបត្រ គឺជាព្រឹត្តិការណ៍ដ៏សំខាន់បំផុតមួយក្នុងជីវិតនិស្សិត។ ខាងក្រោមនេះគឺជារូបភាពអនុស្សាវរីយ៍មួយចំនួនពីកម្មវិធីបញ្ចប់ការសិក្សារបស់វិទ្យាស្ថានយើង។' 
+                  : 'The graduation ceremony is a major milestone in every student\'s life. Here are some beautiful memories from our previous graduation events capturing the joy of our alumni and their families.'}
+              </p>
+            </div>
+
+            {/* Requirements Banner */}
+            <div className="bg-gray-50 border border-gray-200 rounded-sm p-8 flex flex-col md:flex-row items-center justify-between gap-6 mb-16">
+              <div>
+                <div className="flex items-center gap-3 mb-3">
+                  <Award className="w-6 h-6 text-primary" />
+                  <h3 className={`text-xl font-serif font-bold text-gray-900 ${kh ? 'font-khmer' : ''}`}>
+                    {kh ? 'លក្ខខណ្ឌបញ្ចប់ការសិក្សា' : 'Graduation Requirements'}
+                  </h3>
+                </div>
+                <p className={`text-gray-600 ${kh ? 'font-khmer' : ''}`}>
+                  {kh 
+                    ? 'និស្សិតត្រូវបញ្ចប់ក្រេឌីតទាំងអស់ដោយជោគជ័យ និងការពារសារណាបញ្ចប់ការសិក្សា។' 
+                    : 'Students must successfully complete all required course credits, internships, and their final thesis defense to be eligible for graduation.'}
+                </p>
+              </div>
+              <Link
+                href="/admissions"
+                className={`inline-flex items-center justify-center bg-primary hover:bg-primary-dark text-white font-bold px-6 py-3 rounded-sm whitespace-nowrap transition-colors ${kh ? 'font-khmer' : ''}`}
+              >
+                {kh ? 'ព័ត៌មានបន្ថែម' : 'Learn More'}
+              </Link>
+            </div>
+
+            {/* Photo Gallery Component */}
+            <h3 className={`text-2xl font-serif font-bold text-gray-900 mb-6 ${kh ? 'font-khmer' : ''}`}>
+              {kh ? 'កម្រងរូបភាព' : 'Photo Gallery'}
+            </h3>
+            <PhotoGallery photos={graduationPhotos} />
           </div>
-          <Link
-            href="/admissions"
-            className={`inline-flex items-center justify-center bg-primary hover:bg-primary-dark text-white font-bold px-6 py-3 rounded-sm whitespace-nowrap transition-colors ${kh ? 'font-khmer' : ''}`}
-          >
-            {kh ? 'ព័ត៌មានបន្ថែម' : 'Learn More'}
-          </Link>
+
         </div>
-
-        {/* Photo Gallery Component */}
-        <h3 className={`text-2xl font-serif font-bold text-gray-900 mb-6 ${kh ? 'font-khmer' : ''}`}>
-          {kh ? 'កម្រងរូបភាព' : 'Photo Gallery'}
-        </h3>
-        <PhotoGallery photos={graduationPhotos} />
-
       </div>
     </main>
   );

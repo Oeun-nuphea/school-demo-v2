@@ -7,6 +7,7 @@ import { useLanguage } from "@/context/LanguageContext";
 
 export default function SchedulesPage() {
   const { t, lang } = useLanguage();
+  const kh = lang === 'kh';
 
   return (
     <main className="min-h-screen bg-white">
@@ -46,12 +47,23 @@ export default function SchedulesPage() {
             <div className="sticky top-28 bg-gray-50 p-6 rounded-sm border border-gray-100">
               <h3 className="text-lg font-serif font-bold text-primary mb-4 border-b border-gray-200 pb-2">Student Life</h3>
               <ul className="space-y-3">
-                <li>
-                  <Link href="/student-life/schedules" className="block text-primary font-bold border-l-2 border-primary pl-3 transition-colors">{lang === 'kh' ? 'វេនសិក្សា' : 'Study Schedules'}</Link>
-                </li>
-                <li>
-                  <Link href="/student-life/internships" className="block text-gray-600 hover:text-primary border-l-2 border-transparent pl-3 transition-colors">{lang === 'kh' ? 'កម្មសិក្សា និងការងារ' : 'Internships & Jobs'}</Link>
-                </li>
+                {[
+                  { href: '/student-life/schedules', en: 'Study Schedules', kh: 'វេនសិក្សា', active: true },
+                  { href: '/student-life/facilities/self-study', en: 'Self-Study Area', kh: 'កន្លែងស្វ័យសិក្សា' },
+                  { href: '/student-life/facilities/dormitory', en: 'Dormitory', kh: 'អន្តេវាសិកដ្ឋាន' },
+                  { href: '/student-life/facilities/canteen', en: 'Canteen', kh: 'អាហារដ្ឋាន' },
+                  { href: '/student-life/extra-curricular', en: 'Extra-Curricular', kh: 'សកម្មភាពក្រៅម៉ោង' },
+                  { href: '/student-life/graduation', en: 'Graduation', kh: 'ការបញ្ចប់ការសិក្សា' },
+                ].map((item) => (
+                  <li key={item.href}>
+                    <Link
+                      href={item.href}
+                      className={`block pl-3 transition-colors border-l-2 ${item.active ? 'text-primary font-bold border-primary' : 'text-gray-600 hover:text-primary border-transparent'} ${kh ? 'font-khmer' : ''}`}
+                    >
+                      {kh ? item.kh : item.en}
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </div>
           </aside>

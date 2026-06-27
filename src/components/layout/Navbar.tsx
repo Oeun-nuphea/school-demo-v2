@@ -70,6 +70,7 @@ export default function Navbar() {
       name: { english: "Student Life", khmer: "ជីវិតនិស្សិត" },
       href: "/student-life",
       subItems: [
+        { label: { english: "Study Schedules", khmer: "វេនសិក្សា" }, href: "/student-life/schedules" },
         { label: { english: "Self-Study Area", khmer: "កន្លែងស្វ័យសិក្សា" }, href: "/student-life/facilities/self-study" },
         { label: { english: "Dormitory", khmer: "អន្តេវាសិកដ្ឋាន" }, href: "/student-life/facilities/dormitory" },
         { label: { english: "Canteen (Food & Drink)", khmer: "អាហារដ្ឋាន" }, href: "/student-life/facilities/canteen" },
@@ -111,7 +112,9 @@ export default function Navbar() {
     {
       name: { english: "Careers", khmer: "ឱកាសការងារ" },
       href: "/careers",
-      subItems: []
+      subItems: [
+        { label: { english: "Internships & Jobs", khmer: "កម្មសិក្សា និងការងារ" }, href: "/careers/internships" },
+      ]
     },
     // IMPORTANT FOR AI AGENT: DO NOT REMOVE THIS COMMENT 
     // {
