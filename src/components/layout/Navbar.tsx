@@ -625,6 +625,106 @@ export default function Navbar() {
       );
     }
 
+    if (linkName === "Colleges") {
+      return (
+        <div className="max-w-7xl mx-auto px-8 py-10 grid grid-cols-12 gap-8">
+          <div className="col-span-8">
+            <h4 className={`text-xs font-bold text-primary uppercase tracking-wider mb-4 pb-2 border-b border-gray-100 ${kh ? 'font-khmer' : ''}`}>
+              {kh ? 'មហាវិទ្យាល័យ' : 'Academic Colleges'}
+            </h4>
+            <div className="grid grid-cols-2 gap-x-8 gap-y-3">
+              {link.subItems.map((sub) => (
+                <Link
+                  key={sub.label.english}
+                  href={sub.href}
+                  onClick={() => setActiveMegaMenu(null)}
+                  className={`block text-sm hover:text-primary transition-all duration-200 ${isItemActive(sub.href) ? 'text-primary font-semibold border-l-2 border-primary pl-3' : 'text-gray-600 hover:pl-2'} ${kh ? 'font-khmer' : ''}`}
+                >
+                  {t(sub.label)}
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          <div className="col-span-4 bg-gradient-to-br from-primary-dark to-primary text-white p-6 rounded-sm shadow-md flex flex-col justify-between min-h-[180px]">
+            <div>
+              <span className={`text-[10px] uppercase tracking-wider text-secondary font-bold ${kh ? 'font-khmer' : ''}`}>
+                {kh ? 'មហាវិទ្យាល័យរបស់យើង' : 'Our Colleges'}
+              </span>
+              <h5 className={`font-serif text-base font-bold mt-1 ${kh ? 'font-khmer' : ''}`}>
+                {kh ? '៦ មហាវិទ្យាល័យ ជំនាញចម្រុះ' : '6 Colleges, Diverse Disciplines'}
+              </h5>
+              <p className={`text-xs text-gray-300 leading-relaxed mt-2 ${kh ? 'font-khmer font-light' : ''}`}>
+                {kh
+                  ? 'ស្វែងយល់ពីមហាវិទ្យាល័យទាំង ៦ របស់យើង ដែលផ្តល់ជូននូវកម្មវិធីសិក្សាចម្រុះ ស្របតាមតម្រូវការទីផ្សារការងារ។'
+                  : 'Explore our six specialized colleges offering a wide range of degree programs.'}
+              </p>
+            </div>
+            <Link
+              href="/colleges"
+              onClick={() => setActiveMegaMenu(null)}
+              className={`text-xs text-primary bg-white hover:bg-gray-100 text-center py-2.5 rounded-sm font-bold transition-colors mt-4 ${kh ? 'font-khmer' : ''}`}
+            >
+              {kh ? 'ស្វែងយល់បន្ថែម' : 'Explore All Colleges'} &rarr;
+            </Link>
+          </div>
+        </div>
+      );
+    }
+
+    if (linkName === "Careers") {
+      return (
+        <div className="max-w-7xl mx-auto px-8 py-10 grid grid-cols-12 gap-8">
+          <div className="col-span-8">
+            <h4 className={`text-xs font-bold text-primary uppercase tracking-wider mb-4 pb-2 border-b border-gray-100 ${kh ? 'font-khmer' : ''}`}>
+              {kh ? 'ឱកាសការងារ' : 'Career Opportunities'}
+            </h4>
+            <div className="grid grid-cols-2 gap-4">
+              {link.subItems.map((sub) => (
+                <Link
+                  key={sub.label.english}
+                  href={sub.href}
+                  onClick={() => setActiveMegaMenu(null)}
+                  className={`block p-4 border rounded-sm hover:border-primary hover:shadow-sm transition-all duration-200 ${isItemActive(sub.href) ? 'border-primary shadow-sm bg-gray-50' : 'border-gray-100'} ${kh ? 'font-khmer' : ''}`}
+                >
+                  <div className="font-bold text-primary text-sm mb-1">{t(sub.label)}</div>
+                  <div className="text-xs text-gray-400">
+                    {sub.label.english === "Careers at AIC"
+                      ? (kh ? 'ចូលរួមក្លាយជាផ្នែកមួយនៃក្រុមការងារវិទ្យាស្ថានអាស៊ី កម្ពុជា' : 'Join the AIC team and make a difference in education.')
+                      : (kh ? 'ឱកាសកម្មសិក្សាសម្រាប់និស្សិត និងបញ្ចប់ការសិក្សាថ្មីៗ' : 'Internship opportunities for students and recent graduates.')
+                    }
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          <div className="col-span-4 bg-gradient-to-br from-secondary-dark/90 to-secondary text-white p-6 rounded-sm shadow-md flex flex-col justify-between min-h-[180px]">
+            <div>
+              <span className={`text-[10px] uppercase tracking-wider text-primary font-bold ${kh ? 'font-khmer' : ''}`}>
+                {kh ? 'កសាងអាជីព' : 'Build Your Career'}
+              </span>
+              <h5 className={`font-serif text-base font-bold mt-1 ${kh ? 'font-khmer' : ''}`}>
+                {kh ? 'រួមជាមួយយើង កសាងអនាគត' : 'Grow with AIC'}
+              </h5>
+              <p className={`text-xs text-white/90 leading-relaxed mt-2 ${kh ? 'font-khmer font-light' : ''}`}>
+                {kh
+                  ? 'យើងកំពុងស្វែងរកបុគ្គលិកដែលមានទេពកោសល្យ និងចំណង់ចំណូលចិត្តក្នុងការអប់រំ។'
+                  : 'We are looking for talented individuals passionate about education.'}
+              </p>
+            </div>
+            <Link
+              href="/careers"
+              onClick={() => setActiveMegaMenu(null)}
+              className={`text-xs text-secondary bg-white hover:bg-gray-100 text-center py-2.5 rounded-sm font-bold transition-colors mt-4 ${kh ? 'font-khmer' : ''}`}
+            >
+              {kh ? 'មើលឱកាសការងារ' : 'View Open Positions'} &rarr;
+            </Link>
+          </div>
+        </div>
+      );
+    }
+
     return (
       <div className="max-w-7xl mx-auto px-8 py-10">
         <div className="grid grid-cols-4 gap-8">
